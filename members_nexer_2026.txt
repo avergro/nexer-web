@@ -1,0 +1,67 @@
+Nombre	Universidad	Google Scholar
+# — Universidad de Antofagasta —
+Mailing Rivera	Universidad de Antofagasta	https://scholar.google.com/citations?user=6jEQMNgAAAAJ
+Pedro Zamorano	Universidad de Antofagasta	https://scholar.google.com/citations?user=3fpYxmgAAAAJ
+Pablo Aguilar	Universidad de Antofagasta	https://scholar.google.com/citations?user=EQCRTIcAAAAJ
+Carolina Cubillos	Universidad de Antofagasta	https://scholar.google.com/citations?user=uKr5ClsAAAAJ
+Raquel Rodríguez	Universidad de Antofagasta	https://scholar.google.com/citations?user=Up9xQO4AAAAJ
+Bernardita Valenzuela Guerrero	Universidad de Antofagasta	—
+Mayra Cayo Torrejón	Universidad de Antofagasta	—
+Francisco Solís	Universidad de Antofagasta	—
+# — Universidad de Santiago de Chile —
+Jenny Blamey	Universidad de Santiago de Chile	https://scholar.google.com/citations?user=bXcdEp4AAAAJ
+Gustavo Zúñiga	Universidad de Santiago de Chile	https://scholar.google.com/citations?user=cLH8_BEAAAAJ
+Felipe Arenas	Universidad de Santiago de Chile	https://scholar.google.com/citations?user=AQ7yOeIAAAAJ
+Rodrigo Contreras	Universidad de Santiago de Chile	https://scholar.google.com/citations?user=SwISutgAAAAJ
+Carmen Pizarro	Universidad de Santiago de Chile	https://scholar.google.com/citations?user=hKvrk_MAAAAJ
+Claudia Ortíz	Universidad de Santiago de Chile	—
+Alberto González	Universidad de Santiago de Chile	—
+Virgilio Gavic	Universidad de Santiago de Chile	—
+# — Universidad de O'Higgins —
+Humberto Aponte	Universidad de O'Higgins	https://scholar.google.com/citations?user=vTVMRqYAAAAJ
+Morgane Derrien	Universidad de O'Higgins	https://scholar.google.com/citations?user=vZE2FMIAAAAJ
+Claudia Rojas	Universidad de O'Higgins	https://scholar.google.com/citations?user=DdmIhqMAAAAJ
+Manuel Martínez	Universidad de O'Higgins	https://scholar.google.com/citations?user=LMTdtVYAAAAJ
+Jorge Romero	Universidad de O'Higgins	https://scholar.google.com/citations?user=hhnmVMUAAAAJ
+Laura Becerril	Universidad de O'Higgins	https://scholar.google.com/citations?user=Nd2n2y0AAAAJ
+Raúl Valenzuela	Universidad de O'Higgins	https://scholar.google.com/citations?user=7Gxwv5oAAAAJ
+Etienne Bresciani	Universidad de O'Higgins	https://scholar.google.com/citations?user=TowPuucAAAAJ
+Alejandro Venegas	Universidad de O'Higgins	https://scholar.google.com/citations?user=vO6QYDgAAAAJ
+Ernesto San Blas	Universidad de O'Higgins	https://scholar.google.com/citations?user=jzjK7j0AAAAJ
+Alexander Vergara	Universidad de O'Higgins	https://scholar.google.com/citations?user=AQKvOdQAAAAJ
+Wilson Cortés	Universidad de O'Higgins	—
+# — Universidad de La Frontera —
+Marcela Calabi-Floody	Universidad de La Frontera	https://scholar.google.com/citations?user=CmmbHmMAAAAJ
+León A. Bravo	Universidad de La Frontera	https://scholar.google.com/citations?user=_ERGBOEAAAAJ
+Francisco Matus	Universidad de La Frontera	https://scholar.google.com/citations?user=h4Tg7eQAAAAJ
+María de la Luz Mora	Universidad de La Frontera	https://scholar.google.com/citations?user=dqABFysAAAAJ
+Milko Jorquera	Universidad de La Frontera	https://scholar.google.com/citations?user=mb_L_nwAAAAJ
+Cledir Santos	Universidad de La Frontera	https://scholar.google.com/citations?user=tG2mCyMAAAAJ
+Marjorie Reyes-Díaz	Universidad de La Frontera	https://scholar.google.com/citations?user=OjoSgUYAAAAJ
+Fernanda Cid Alda	Universidad de La Frontera	https://scholar.google.com/citations?user=HCKbmzMAAAAJ
+Claudio Lamilla	Universidad de La Frontera	https://scholar.google.com/citations?user=-lsH3uUAAAAJ
+Patricio Barra	Universidad de La Frontera	https://scholar.google.com/citations?user=KQaHpa8AAAAJ
+César Arriagada Escamilla	Universidad de La Frontera	https://scholar.google.com/citations?user=q6yo0UIAAAAJ
+Patricia Sáez Delgado	Universidad de La Frontera	https://scholar.google.com/citations?user=2D9ZitUAAAAJ
+Carolina Merino	Universidad de La Frontera	https://scholar.google.com/citations?user=fW-3JM0AAAAJ
+Mara Cea	Universidad de La Frontera	https://scholar.google.com/citations?user=QyCzrYcAAAAJ
+Michel Abanto	Universidad de La Frontera	https://scholar.google.com/citations?user=aIZMsJ0AAAAJ
+Adison Altamirano	Universidad de La Frontera	https://scholar.google.com/citations?user=ilJDLokAAAAJ
+Alejandro Miranda	Universidad de La Frontera	https://scholar.google.com/citations?user=jnCygvAAAAAJ
+Daniel Basualto Alarcón	Universidad de La Frontera	https://scholar.google.com/citations?user=IeG8Zo8AAAAJ
+Alejandra Ribera Fonseca	Universidad de La Frontera	—
+Paula Cartes Indo	Universidad de La Frontera	—
+Ronald Cancino Salas	Universidad de La Frontera	—
+# — Universidad de Magallanes —
+Juan Carlos Aravena	Universidad de Magallanes	https://scholar.google.com/citations?user=Li7lgskAAAAJ
+Sergio Radic	Universidad de Magallanes	https://scholar.google.com/citations?user=fvJOtRIAAAAJ
+Elke Schüttler	Universidad de Magallanes	https://scholar.google.com/citations?user=zOYi5KwAAAAJ
+Javier Díaz	Universidad de Magallanes	https://scholar.google.com/citations?user=XHGCYcsAAAAJ
+Nelso Navarro	Universidad de Magallanes	https://scholar.google.com/citations?user=CmIXLdMAAAAJ
+Flavia Morello	Universidad de Magallanes	https://scholar.google.com/citations?user=SvAEiwsAAAAJ
+Jaime Ojeda	Universidad de Magallanes	https://scholar.google.com/citations?user=cMgSYGQAAAAJ
+Jimena Torres	Universidad de Magallanes	https://scholar.google.com/citations?user=B5jnLdYAAAAJ
+Ricardo Rozzi	Universidad de Magallanes	https://scholar.google.com/citations?user=b3y2fQUAAAAJ
+Yolanda Espinoza	Universidad de Magallanes	https://scholar.google.com/citations?user=aMUfA_wAAAAJ
+Claudia Mansilla	Universidad de Magallanes	https://scholar.google.com/citations?user=8jkdO00AAAAJ
+Víctor Sierpe	Universidad de Magallanes	—

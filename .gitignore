@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# runtime data (SQLite DB generated at runtime)
+/data/
+
 # production
 /build
 

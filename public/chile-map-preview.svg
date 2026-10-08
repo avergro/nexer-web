@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 670" width="460" height="670" style="background:#f9f7f2;font-family:Georgia,serif">
+
+  <!-- Chile mainland -->
+  <path
+    d="M 84,20 C 81,30 78,46 76,63 C 74,79 72,96 70,116 C 68,133 64,150 61,169 C 58,185 54,200 52,218 C 49,233 46,248 44,263 C 43,273 42,284 42,294 C 43,306 44,320 46,334 C 48,345 50,358 52,370 C 53,383 55,396 55,408 C 56,420 56,432 56,442 C 56,454 55,466 54,475 C 52,485 49,496 47,508 C 45,520 43,534 41,547 C 39,560 38,574 38,588 C 38,600 39,612 41,624 C 42,634 43,643 44,652 L 64,654 C 69,652 74,647 80,641 C 83,635 85,626 86,615 C 87,604 87,591 87,577 C 87,562 87,547 87,533 C 87,518 86,504 85,490 C 84,474 83,458 82,441 C 83,424 84,406 85,384 C 86,368 87,352 87,348 C 88,332 89,309 89,291 C 89,274 89,259 89,246 C 89,234 90,214 92,192 C 95,176 98,162 102,152 C 106,139 109,120 111,103 C 113,86 114,68 115,53 C 115,38 113,27 109,18 Z"
+    fill="#e8e4dc" stroke="#1c1917" stroke-width="1.1"
+    stroke-linejoin="round" stroke-linecap="round"
+    fill-opacity="0.7" stroke-opacity="0.35"
+  />
+
+  <!-- Chiloe island -->
+  <path
+    d="M 46,458 C 43,462 41,472 43,484 C 45,493 51,494 56,488 C 60,482 60,470 57,460 C 53,453 48,453 46,458 Z"
+    fill="#e8e4dc" stroke="#1c1917" stroke-width="0.8"
+    fill-opacity="0.65" stroke-opacity="0.28"
+  />
+
+  <!-- Vertical spine -->
+  <line x1="70" y1="112" x2="70" y2="608"
+    stroke="#a09890" stroke-width="0.8" stroke-dasharray="2 6" opacity="0.5"/>
+
+  <!-- Norte · Antofagasta -->
+  <circle cx="72" cy="95" r="5" fill="#c4a04a"/>
+  <line x1="80" y1="95" x2="148" y2="95" stroke="#c4a04a" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6"/>
+  <text x="152" y="88" font-size="8" fill="#c4a04a" letter-spacing="1.2">UA · ATACAMA</text>
+  <text x="152" y="100" font-size="17" fill="#1c1917">Antofagasta</text>
+  <text x="152" y="113" font-size="9.5" fill="#78716c">Universidad de Antofagasta</text>
+
+  <!-- USACH · Santiago -->
+  <circle cx="68" cy="248" r="5" fill="#6b5f8e"/>
+  <line x1="76" y1="248" x2="148" y2="248" stroke="#6b5f8e" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6"/>
+  <text x="152" y="241" font-size="8" fill="#6b5f8e" letter-spacing="1.2">USACH · ANDINA</text>
+  <text x="152" y="253" font-size="17" fill="#1c1917">Santiago</text>
+  <text x="152" y="266" font-size="9.5" fill="#78716c">Universidad de Santiago</text>
+
+  <!-- UOH · Rancagua -->
+  <circle cx="69" cy="298" r="5" fill="#a06b3a"/>
+  <line x1="77" y1="298" x2="148" y2="298" stroke="#a06b3a" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6"/>
+  <text x="152" y="291" font-size="8" fill="#a06b3a" letter-spacing="1.2">UOH · MEDITERRANEO</text>
+  <text x="152" y="303" font-size="17" fill="#1c1917">Rancagua</text>
+  <text x="152" y="316" font-size="9.5" fill="#78716c">Universidad de O'Higgins</text>
+
+  <!-- UFRO · Temuco -->
+  <circle cx="65" cy="370" r="5" fill="#3d6b4f"/>
+  <line x1="73" y1="370" x2="148" y2="370" stroke="#3d6b4f" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6"/>
+  <text x="152" y="363" font-size="8" fill="#3d6b4f" letter-spacing="1.2">UFRO · BOSQUE VALDIVIANO</text>
+  <text x="152" y="375" font-size="17" fill="#1c1917">Temuco</text>
+  <text x="152" y="388" font-size="9.5" fill="#78716c">Universidad de La Frontera</text>
+
+  <!-- UMAG · Punta Arenas -->
+  <circle cx="70" cy="615" r="5" fill="#4a7fa5"/>
+  <line x1="78" y1="615" x2="148" y2="615" stroke="#4a7fa5" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6"/>
+  <text x="152" y="608" font-size="8" fill="#4a7fa5" letter-spacing="1.2">UMAG · PATAGONIA</text>
+  <text x="152" y="620" font-size="17" fill="#1c1917">Punta Arenas</text>
+  <text x="152" y="633" font-size="9.5" fill="#78716c">Universidad de Magallanes</text>
+
+</svg>

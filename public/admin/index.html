@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXER · Panel de Administración</title>
+  </head>
+  <body>
+    <!--
+      Decap CMS — sistema de noticias NEXER
+      ─────────────────────────────────────
+      Sin base de datos. El contenido se guarda como archivos .md
+      en /content/news/ y se versiona con Git.
+
+      Para usar en desarrollo local:
+        1. Descomenta "local_backend: true" en config.yml
+        2. Corre en otra terminal: npx decap-server
+        3. Abre http://localhost:3000/admin/
+
+      Para producción (GitHub OAuth):
+        1. Crea un OAuth App en GitHub → Settings → Developer Settings
+        2. Callback URL: https://tu-dominio.com/admin/
+        3. Coloca el client_id en config.yml → backend.app_id
+    -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </body>
+</html>

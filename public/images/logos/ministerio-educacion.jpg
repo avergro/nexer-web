@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.nexer.cl/xmlrpc.php">
+
+<title>Page not found</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Feed" href="https://www.nexer.cl/feed/" />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Comments Feed" href="https://www.nexer.cl/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.nexer.cl\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='void-grid-main-css'  href='https://www.nexer.cl/wp-content/plugins/void-elementor-post-grid-addon-for-elementor-page-builder/assets/css/main.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='void-grid-bootstrap-css'  href='https://www.nexer.cl/wp-content/plugins/void-elementor-post-grid-addon-for-elementor-page-builder/assets/css/bootstrap.min.css?ver=3.3.7' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://www.nexer.cl/wp-content/themes/talon/css/bootstrap/bootstrap.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.nexer.cl/wp-includes/css/dist/block-library/style.min.css?ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://www.nexer.cl/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.9' type='text/css' media='all' />
+<link rel='stylesheet' id='dpt-style-css'  href='https://www.nexer.cl/wp-content/plugins/display-post-types/frontend/css/style.css?ver=1.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='pgafu-public-style-css'  href='https://www.nexer.cl/wp-content/plugins/post-grid-and-filter-ultimate/assets/css/pgafu-public.css?ver=1.1.5' type='text/css' media='all' />
+<link rel='stylesheet' id='gspostsbootstrap-css-css'  href='https://www.nexer.cl/wp-content/plugins/posts-grid/gs-wpposts-files/assets/css/gswpposts_custom_bootstrap.css?ver=1.1.7' type='text/css' media='all' />
+<link rel='stylesheet' id='gsposts-gswppost-custom-css-css'  href='https://www.nexer.cl/wp-content/plugins/posts-grid/gs-wpposts-files/assets/css/gswpposts_custom.css?ver=1.1.7' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://www.nexer.cl/wp-includes/css/dashicons.min.css?ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='SFSIPLUSmainCss-css'  href='https://www.nexer.cl/wp-content/plugins/ultimate-social-media-plus/css/sfsi-style.css?ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='hfe-style-css'  href='https://www.nexer.cl/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=1.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-css'  href='https://www.nexer.cl/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-animations-css'  href='https://www.nexer.cl/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=2.9.14' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css'  href='https://www.nexer.cl/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.9.14' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-kits-bootstrap-css'  href='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/css/bootstrap.min.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-kits-swiper-css'  href='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/css/swiper.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-kits-themify-icons-css'  href='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/css/themify-icons.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-kits-frontend-style-css'  href='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/css/frontend-style.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-kits-responsive-css'  href='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/css/responsive.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-kits-widget-porfolio-css'  href='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/css/widget-porfolio.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='post-grid-elementor-addon-main-css'  href='https://www.nexer.cl/wp-content/plugins/post-grid-elementor-addon/assets/css/main.css?ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-5-all-css'  href='https://www.nexer.cl/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=2.9.14' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css'  href='https://www.nexer.cl/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=2.9.14' type='text/css' media='all' />
+<link rel='stylesheet' id='elementskit-css-widgetarea-control-editor-css'  href='https://www.nexer.cl/wp-content/plugins/elementskit-lite/modules/controls/assets/css/widgetarea-editor.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-global-css'  href='https://www.nexer.cl/wp-content/uploads/elementor/css/global.css?ver=1620086782' type='text/css' media='all' />
+<link rel='stylesheet' id='talon-style-css'  href='https://www.nexer.cl/wp-content/themes/talon/style.css?ver=5.0' type='text/css' media='all' />
+<style id='talon-style-inline-css' type='text/css'>
+.inner-bar,.lists-box ul li:before,.testimonials-box .slick-dots li.slick-active button::before,.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce input.button.alt:hover,.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,.woocommerce input.button.alt,.woocommerce span.onsale,.woocommerce ul.products li.product .onsale,.check-box-active .checkbox-inner,.tags-links a:hover,.button,button,input[type="button"],input[type="reset"],input[type="submit"],.woocommerce button.single_add_to_cart_button.button,.button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,.woocommerce button.single_add_to_cart_button.button:hover	{ background-color:#0a0303;}
+.team-social a:hover,.portfolio-item h4 a:hover,.woocommerce-message:before { color:#0a0303;}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active,.portfolio-filter ul .active a,.woocommerce-message { border-color:#0a0303;}
+.button:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .woocommerce button.single_add_to_cart_button.button:hover,.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce input.button.alt:hover 
+					{ -webkit-box-shadow: 0px 0px 40px 0px rgba(10,3,3,0.54);
+					  -moz-box-shadow:  0px 0px 40px 0px rgba(10,3,3,0.54);
+					  box-shadow: 0px 0px 40px 0px rgba(10,3,3,0.54);}
+.site-title a,.site-title a:hover { color:#0a0606;}
+.site-description { color:#0a0a0a;}
+.site-header { background-color:#ffffff;}
+.main-navigation li a { color:#0a0a0a;}
+.main-slider-caption h1 { color:#999999;}
+.main-slider-caption p { color:#0a0a0a;}
+.site-footer { background-color:#000000;}
+.site-footer, .site-footer a { color:#ffffff;}
+body { color:#282828;}
+body { font-family:Open Sans;}
+h1,h2,h3,h4,h5,h6,.site-title { font-family:Noto Sans;}
+.site-title { font-size:36px; }
+.site-description { font-size:16px; }
+body { font-size:16px; }
+.main-navigation li { font-size:14px; }
+.so-panel .widget-title { font-size:30px; }
+.post-item .post-content .entry-title { font-size:18px; }
+.single .entry-header .entry-title { font-size:36px; }
+.widget-area .widget-title span { font-size:18px; }
+
+</style>
+<link rel='stylesheet' id='talon-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C600italic%7CNoto+Sans%3A400%2C400italic%2C600%2C600italic&#038;subset=latin%2Clatin-ext%2Ccyrillic' type='text/css' media='all' />
+<link rel='stylesheet' id='talon-icons-css'  href='https://www.nexer.cl/wp-content/themes/talon/icons/icons.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='elementskit-framework-css-frontend-css'  href='https://www.nexer.cl/wp-content/plugins/elementskit-lite/libs/framework/assets/css/frontend-style.min.css?ver=1.5.9' type='text/css' media='all' />
+<link rel='stylesheet' id='zoom-instagram-widget-css'  href='https://www.nexer.cl/wp-content/plugins/instagram-widget-by-wpzoom/css/instagram-widget.css?ver=1.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wptt_front-css'  href='https://www.nexer.cl/wp-content/plugins/wp-twitter-feeds/controller/../css/admin_style.min.css?ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='srpw-style-css'  href='https://www.nexer.cl/wp-content/plugins/smart-recent-posts-widget/assets/css/srpw-frontend.css?ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementskit-vendors-css'  href='https://www.nexer.cl/wp-content/plugins/elementskit-lite/widgets/init/assets/css/vendors.css?ver=1.5.9' type='text/css' media='all' />
+<link rel='stylesheet' id='elementskit-style-css'  href='https://www.nexer.cl/wp-content/plugins/elementskit-lite/widgets/init/assets/css/style.css?ver=1.5.9' type='text/css' media='all' />
+<link rel='stylesheet' id='elementskit-responsive-css'  href='https://www.nexer.cl/wp-content/plugins/elementskit-lite/widgets/init/assets/css/responsive.css?ver=1.5.9' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='myStyleSheets-css'  href='https://www.nexer.cl/wp-content/plugins/wp-latest-posts/css/wplp_front.css?ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='myFonts-css'  href='https://fonts.googleapis.com/css?family=Raleway%3A400%2C500%2C600%2C700%2C800%2C900%7CAlegreya%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CVarela+Round&#038;subset=latin%2Clatin-ext&#038;ver=5.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.nexer.cl/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/easy-twitter-feeds/public/js/widget.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=2.9.14'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/instagram-widget-by-wpzoom/js/jquery.lazy.min.js?ver=1.4.2'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/instagram-widget-by-wpzoom/js/instagram-widget.js?ver=1.6.0'></script>
+<link rel='https://api.w.org/' href='https://www.nexer.cl/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.nexer.cl/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.nexer.cl/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.0" />
+
+	<script>
+		window.addEventListener("sfsi_plus_functions_loaded", function() {
+			var body = document.getElementsByTagName('body')[0];
+			// console.log(body);
+			body.classList.add("sfsi_plus_3.43");
+		})
+		// window.addEventListener('sfsi_plus_functions_loaded',function(e) {
+		// 	jQuery("body").addClass("sfsi_plus_3.43")
+		// });
+		jQuery(document).ready(function(e) {
+			jQuery("body").addClass("sfsi_plus_3.43")
+		});
+
+		function sfsi_plus_processfurther(ref) {
+			var feed_id = 'em1zVjVDaE5ZVVBqRXAwM3pFYjlZT1p3Y3J5eGhxanpKNjZMYmY3U3pKeVFPM2RacmFFWElmUUtZUkd5L1EwTEpXTnpVYXg2TGk4UU9tNW5qTWc1K0xBaE1UWXhiSzdYdmZCTzJBaHdFSEE4UmdtZXgzZmdEQVBMRU1lMGhYanF8WWNEZERmOU90eEdXTjBHWVhJWDBzQVVGVElIZk4zZTJidHRyVVRuMjY4dz0=';
+			var feedtype = 8;
+			var email = jQuery(ref).find('input[name="email"]').val();
+			var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if ((email != "Enter your email") && (filter.test(email))) {
+				if (feedtype == "8") {
+					var url = "https://api.follow.it/subscription-form/" + feed_id + "/" + feedtype;
+					window.open(url, "popupwindow", "scrollbars=yes,width=1080,height=760");
+					return true;
+				}
+			} else {
+				alert("Please enter email address");
+				jQuery(ref).find('input[name="email"]').focus();
+				return false;
+			}
+		}
+	</script>
+	<style>
+		.sfsi_plus_subscribe_Popinner {
+			width: 100% !important;
+			height: auto !important;
+			border: 1px solid #b5b5b5 !important;
+			padding: 18px 0px !important;
+			background-color: #ffffff !important;
+		}
+
+		.sfsi_plus_subscribe_Popinner form {
+			margin: 0 20px !important;
+		}
+
+		.sfsi_plus_subscribe_Popinner h5 {
+			font-family: Helvetica,Arial,sans-serif !important;
+
+			font-weight: bold !important;
+			color: #000000 !important;
+			font-size: 16px !important;
+			text-align: center !important;
+			margin: 0 0 10px !important;
+			padding: 0 !important;
+		}
+
+		.sfsi_plus_subscription_form_field {
+			margin: 5px 0 !important;
+			width: 100% !important;
+			display: inline-flex;
+			display: -webkit-inline-flex;
+		}
+
+		.sfsi_plus_subscription_form_field input {
+			width: 100% !important;
+			padding: 10px 0px !important;
+		}
+
+		.sfsi_plus_subscribe_Popinner input[type=email] {
+			font-family: Helvetica,Arial,sans-serif !important;
+
+			font-style: normal !important;
+			color:  !important;
+			font-size: 14px !important;
+			text-align: center !important;
+		}
+
+		.sfsi_plus_subscribe_Popinner input[type=email]::-webkit-input-placeholder {
+			font-family: Helvetica,Arial,sans-serif !important;
+
+			font-style: normal !important;
+			color:  !important;
+			font-size: 14px !important;
+			text-align: center !important;
+		}
+
+		.sfsi_plus_subscribe_Popinner input[type=email]:-moz-placeholder {
+			/* Firefox 18- */
+			font-family: Helvetica,Arial,sans-serif !important;
+
+			font-style: normal !important;
+			color:  !important;
+			font-size: 14px !important;
+			text-align: center !important;
+		}
+
+		.sfsi_plus_subscribe_Popinner input[type=email]::-moz-placeholder {
+			/* Firefox 19+ */
+			font-family: Helvetica,Arial,sans-serif !important;
+
+			font-style: normal !important;
+			color:  !important;
+			font-size: 14px !important;
+			text-align: center !important;
+		}
+
+		.sfsi_plus_subscribe_Popinner input[type=email]:-ms-input-placeholder {
+			font-family: Helvetica,Arial,sans-serif !important;
+
+			font-style: normal !important;
+			color:  !important;
+			font-size: 14px !important;
+			text-align: center !important;
+		}
+
+		.sfsi_plus_subscribe_Popinner input[type=submit] {
+			font-family: Helvetica,Arial,sans-serif !important;
+
+			font-weight: bold !important;
+			color: #000000 !important;
+			font-size: 16px !important;
+			text-align: center !important;
+			background-color: #dedede !important;
+		}
+	</style>
+	<meta name="follow.it-verification-code-em1zVjVDaE5ZVVBqRXAwM3pFYjlZT1p3Y3J5eGhxanpKNjZMYmY3U3pKeVFPM2RacmFFWElmUUtZUkd5L1EwTEpXTnpVYXg2TGk4UU9tNW5qTWc1K0xBaE1UWXhiSzdYdmZCTzJBaHdFSEE4UmdtZXgzZmdEQVBMRU1lMGhYanF8WWNEZERmOU90eEdXTjBHWVhJWDBzQVVGVElIZk4zZTJidHRyVVRuMjY4dz0=" content="WrdE2FQcLXLu9surzt8N"/><script type='text/javascript'>
+/* <![CDATA[ */
+var VPData = {"__":{"couldnt_retrieve_vp":"Couldn&#039;t retrieve Visual Portfolio ID.","pswp_close":"Close (Esc)","pswp_share":"Share","pswp_fs":"Toggle fullscreen","pswp_zoom":"Zoom in\/out","pswp_prev":"Previous (arrow left)","pswp_next":"Next (arrow right)","pswp_share_fb":"Share on Facebook","pswp_share_tw":"Tweet","pswp_share_pin":"Pin it","fancybox_close":"Close","fancybox_next":"Next","fancybox_prev":"Previous","fancybox_error":"The requested content cannot be loaded. <br \/> Please try again later.","fancybox_play_start":"Start slideshow","fancybox_play_stop":"Pause slideshow","fancybox_full_screen":"Full screen","fancybox_thumbs":"Thumbnails","fancybox_download":"Download","fancybox_share":"Share","fancybox_zoom":"Zoom"},"settingsPopupGallery":{"vendor":"photoswipe","show_arrows":true,"show_counter":true,"show_zoom_button":true,"show_fullscreen_button":true,"show_share_button":true,"show_close_button":true,"show_download_button":false,"show_slideshow":false,"show_thumbs":true},"screenSizes":[320,576,768,992,1200]};
+/* ]]> */
+</script>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+		<style type="text/css" id="wp-custom-css">
+			footer#colophon div.site-info {
+    display: none;
+}
+
+.mobile-branding {
+    background-color: transparent;
+}
+
+[off-canvas] {
+    background-color: white;
+}
+
+.mobile-menu a,
+.btn-submenu {
+    color: #333333;
+}
+
+.footer-widgets {
+    padding: 20px 0;
+}
+.site-footer{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}		</style>
+	</head>
+
+<body class="error404 custom-background wp-custom-logo dpt ehf-template-talon ehf-stylesheet-talon hfeed elementor-default elementor-kit-2981">
+	<div off-canvas="main-menu left shift">			
+		<div class="mobile-branding">
+				<div class="site-branding">
+	<a href="https://www.nexer.cl/" class="custom-logo-link" rel="home" itemprop="url"><img width="200" height="67" src="https://www.nexer.cl/wp-content/uploads/2017/06/cropped-Logo-NEXER-3.jpg" class="custom-logo" alt="" itemprop="logo" /></a>	</div>
+			</div>			
+		<div class="menu-menu-principal-container"><ul id="mobile-menu" class="mobile-menu"><li id="menu-item-395" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-395"><a>About</a>
+<ul class="sub-menu">
+	<li id="menu-item-392" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392"><a href="https://www.nexer.cl/about-nexer/">About NEXER</a></li>
+	<li id="menu-item-393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-393"><a href="https://www.nexer.cl/board-committees/">Board committees</a></li>
+	<li id="menu-item-405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-405"><a href="#">NEXER MEMBERS</a>
+	<ul class="sub-menu">
+		<li id="menu-item-417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-417"><a href="https://www.nexer.cl/investigadores-y-post-doc/">Researchers</a></li>
+		<li id="menu-item-416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-416"><a href="https://www.nexer.cl/estudiantes-de-doctorado-y-tecnicos/">Postgraduate and Undergraduate</a></li>
+		<li id="menu-item-967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-967"><a href="https://www.nexer.cl/technicians/">Technicians</a></li>
+		<li id="menu-item-415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-415"><a href="https://www.nexer.cl/colaboradores-nacionales/">National collaborators</a></li>
+		<li id="menu-item-414" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-414"><a href="https://www.nexer.cl/colaboradores-internacionales/">International collaborators</a></li>
+	</ul>
+</li>
+	<li id="menu-item-402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-402"><a href="https://www.nexer.cl/mission-and-aims/">Mission &#038; Aims</a></li>
+	<li id="menu-item-403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-403"><a href="https://www.nexer.cl/join-us/">Join Us</a></li>
+</ul>
+</li>
+<li id="menu-item-418" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-418"><a>Research</a>
+<ul class="sub-menu">
+	<li id="menu-item-443" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-443"><a href="https://www.nexer.cl/nexer-associated-research-projects/">NEXER official research projects</a></li>
+	<li id="menu-item-3400" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3400"><a href="https://www.nexer.cl/nexer-associated-research-projects-2/">NEXER associated research projects</a></li>
+	<li id="menu-item-441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-441"><a href="https://www.nexer.cl/search-publications/">Search Publications</a></li>
+</ul>
+</li>
+<li id="menu-item-440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-440"><a href="https://www.nexer.cl/news/">NEWS</a></li>
+<li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-419"><a>Training</a>
+<ul class="sub-menu">
+	<li id="menu-item-438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-438"><a href="https://www.nexer.cl/agenda/">AGENDA</a></li>
+	<li id="menu-item-439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-439"><a href="https://www.nexer.cl/nexer-courses/">NEXER courses</a></li>
+</ul>
+</li>
+<li id="menu-item-437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-437"><a href="https://www.nexer.cl/outreach/">OUTREACH</a></li>
+<li id="menu-item-436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-436"><a href="https://www.nexer.cl/galery/">GALLERY</a></li>
+</ul></div>	</div>
+<div canvas="container" id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="header" class="site-header header-sticky">
+		<div class="main-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-12 col-xs-12 branding-container">
+						<div class="menu-btn-toggle">
+						<div class="menu-btn">
+						  <span></span>
+						  <span></span>
+						  <span></span>
+						</div>
+						</div>
+							<div class="site-branding">
+	<a href="https://www.nexer.cl/" class="custom-logo-link" rel="home" itemprop="url"><img width="200" height="67" src="https://www.nexer.cl/wp-content/uploads/2017/06/cropped-Logo-NEXER-3.jpg" class="custom-logo" alt="" itemprop="logo" /></a>	</div>
+						</div>
+					<div class="col-md-8 menu-container">
+						<nav id="site-navigation" class="main-navigation" role="navigation">
+							<div class="menu-menu-principal-container"><ul id="primary-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-395"><a>About</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392"><a href="https://www.nexer.cl/about-nexer/">About NEXER</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-393"><a href="https://www.nexer.cl/board-committees/">Board committees</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-405"><a href="#">NEXER MEMBERS</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-417"><a href="https://www.nexer.cl/investigadores-y-post-doc/">Researchers</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-416"><a href="https://www.nexer.cl/estudiantes-de-doctorado-y-tecnicos/">Postgraduate and Undergraduate</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-967"><a href="https://www.nexer.cl/technicians/">Technicians</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-415"><a href="https://www.nexer.cl/colaboradores-nacionales/">National collaborators</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-414"><a href="https://www.nexer.cl/colaboradores-internacionales/">International collaborators</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-402"><a href="https://www.nexer.cl/mission-and-aims/">Mission &#038; Aims</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-403"><a href="https://www.nexer.cl/join-us/">Join Us</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-418"><a>Research</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-443"><a href="https://www.nexer.cl/nexer-associated-research-projects/">NEXER official research projects</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3400"><a href="https://www.nexer.cl/nexer-associated-research-projects-2/">NEXER associated research projects</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-441"><a href="https://www.nexer.cl/search-publications/">Search Publications</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-440"><a href="https://www.nexer.cl/news/">NEWS</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-419"><a>Training</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-438"><a href="https://www.nexer.cl/agenda/">AGENDA</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-439"><a href="https://www.nexer.cl/nexer-courses/">NEXER courses</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-437"><a href="https://www.nexer.cl/outreach/">OUTREACH</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-436"><a href="https://www.nexer.cl/galery/">GALLERY</a></li>
+</ul></div>						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	
+	<div id="content" class="site-content">
+		<div class="container">
+<div class="row">
+	<div id="primary" class="content-area col-md-8">
+		<main id="main" class="site-main" role="main">
+
+			<section class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="page-title">Oops! That page can&rsquo;t be found.</h1>
+				</header><!-- .page-header -->
+
+				<div class="page-content">
+					<p>It looks like nothing was found at this location. Maybe try one of the links below or a search?</p>
+
+					<form role="search" method="get" class="search-form" action="https://www.nexer.cl/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>		<div class="widget widget_recent_entries">		<h2 class="widgettitle">Recent Posts</h2>		<ul>
+											<li>
+					<a href="https://www.nexer.cl/2023/06/08/red-nexer-presento-avances-en-investigacion-y-plantea-nuevos-objetivos-cientificos-y-de-formacion/">Red NEXER presentó avances en investigación y plantea nuevos objetivos científicos y de formación</a>
+									</li>
+											<li>
+					<a href="https://www.nexer.cl/2022/05/31/abierto-concurso-de-investigaciones-vinculados-al-proyecto-nexer/">Abierto Concurso de Investigaciones Vinculados al Proyecto NEXER</a>
+									</li>
+											<li>
+					<a href="https://www.nexer.cl/2021/08/05/david-moreira/">David Moreira</a>
+									</li>
+											<li>
+					<a href="https://www.nexer.cl/2021/04/22/network-for-extreme-environment-research-awards-two-ecos-anid-grants-for-scientific-collaboration/">Network for Extreme Environment Research awards two ECOS – ANID grants for scientific collaboration</a>
+									</li>
+											<li>
+					<a href="https://www.nexer.cl/2021/01/19/gaia-antarctica-research-center-launches-its-first-newsletter-a-scientific-popularization-product-that-brings-its-research-closer-to-people/">GAIA Antarctica Research Center launches its first &#8220;Newsletter&#8221;, a science outreach product that brings its research closer to people</a>
+									</li>
+					</ul>
+		</div>
+					<div class="widget widget_categories">
+						<h2 class="widget-title">Most Used Categories</h2>
+						<ul>
+							<li class="cat-item cat-item-11"><a href="https://www.nexer.cl/category/researchers/" >Researchers</a> (84)
+</li>
+	<li class="cat-item cat-item-1"><a href="https://www.nexer.cl/category/news/" >News</a> (20)
+</li>
+	<li class="cat-item cat-item-10"><a href="https://www.nexer.cl/category/outreach/" >Outreach</a> (13)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://www.nexer.cl/category/agenda/" >Agenda</a> (6)
+</li>
+	<li class="cat-item cat-item-5"><a href="https://www.nexer.cl/category/cursos/" >Cursos</a> (4)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://www.nexer.cl/category/proyectos-de-investigacion-principales/" >Proyectos de investigación principales</a> (4)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://www.nexer.cl/category/investigacion/" >investigacion</a> (4)
+</li>
+						</ul>
+					</div><!-- .widget -->
+
+					<div class="widget widget_archive"><h2 class="widgettitle">Archives</h2><p>Try looking in the monthly archives. 🙂</p>		<label class="screen-reader-text" for="archives-dropdown--1">Archives</label>
+		<select id="archives-dropdown--1" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Select Month</option>
+				<option value='https://www.nexer.cl/2023/06/'> June 2023 </option>
+	<option value='https://www.nexer.cl/2022/05/'> May 2022 </option>
+	<option value='https://www.nexer.cl/2021/08/'> August 2021 </option>
+	<option value='https://www.nexer.cl/2021/04/'> April 2021 </option>
+	<option value='https://www.nexer.cl/2021/01/'> January 2021 </option>
+	<option value='https://www.nexer.cl/2020/12/'> December 2020 </option>
+	<option value='https://www.nexer.cl/2020/11/'> November 2020 </option>
+	<option value='https://www.nexer.cl/2020/10/'> October 2020 </option>
+	<option value='https://www.nexer.cl/2020/09/'> September 2020 </option>
+	<option value='https://www.nexer.cl/2020/08/'> August 2020 </option>
+	<option value='https://www.nexer.cl/2020/07/'> July 2020 </option>
+	<option value='https://www.nexer.cl/2020/05/'> May 2020 </option>
+	<option value='https://www.nexer.cl/2020/04/'> April 2020 </option>
+	<option value='https://www.nexer.cl/2020/03/'> March 2020 </option>
+	<option value='https://www.nexer.cl/2020/02/'> February 2020 </option>
+	<option value='https://www.nexer.cl/2020/01/'> January 2020 </option>
+	<option value='https://www.nexer.cl/2019/12/'> December 2019 </option>
+	<option value='https://www.nexer.cl/2019/11/'> November 2019 </option>
+	<option value='https://www.nexer.cl/2019/10/'> October 2019 </option>
+	<option value='https://www.nexer.cl/2019/08/'> August 2019 </option>
+	<option value='https://www.nexer.cl/2019/06/'> June 2019 </option>
+	<option value='https://www.nexer.cl/2019/05/'> May 2019 </option>
+	<option value='https://www.nexer.cl/2019/04/'> April 2019 </option>
+	<option value='https://www.nexer.cl/2018/10/'> October 2018 </option>
+	<option value='https://www.nexer.cl/2013/04/'> April 2013 </option>
+
+		</select>
+		</div><div class="widget widget_tag_cloud"><h2 class="widgettitle">Tags</h2><div class="tagcloud"><a href="https://www.nexer.cl/tag/2020/" class="tag-cloud-link tag-link-28 tag-link-position-1" style="font-size: 8pt;" aria-label="2020 (1 item)">2020</a>
+<a href="https://www.nexer.cl/tag/anid/" class="tag-cloud-link tag-link-51 tag-link-position-2" style="font-size: 8pt;" aria-label="ANID (1 item)">ANID</a>
+<a href="https://www.nexer.cl/tag/antartic/" class="tag-cloud-link tag-link-15 tag-link-position-3" style="font-size: 8pt;" aria-label="Antartic (1 item)">Antartic</a>
+<a href="https://www.nexer.cl/tag/atacama/" class="tag-cloud-link tag-link-13 tag-link-position-4" style="font-size: 8pt;" aria-label="Atacama (1 item)">Atacama</a>
+<a href="https://www.nexer.cl/tag/biology/" class="tag-cloud-link tag-link-27 tag-link-position-5" style="font-size: 8pt;" aria-label="BIOLOGY (1 item)">BIOLOGY</a>
+<a href="https://www.nexer.cl/tag/bioren/" class="tag-cloud-link tag-link-22 tag-link-position-6" style="font-size: 8pt;" aria-label="BIOREN (1 item)">BIOREN</a>
+<a href="https://www.nexer.cl/tag/change/" class="tag-cloud-link tag-link-21 tag-link-position-7" style="font-size: 8pt;" aria-label="change (1 item)">change</a>
+<a href="https://www.nexer.cl/tag/ciga/" class="tag-cloud-link tag-link-46 tag-link-position-8" style="font-size: 8pt;" aria-label="CIGA (1 item)">CIGA</a>
+<a href="https://www.nexer.cl/tag/climate/" class="tag-cloud-link tag-link-20 tag-link-position-9" style="font-size: 8pt;" aria-label="climate (1 item)">climate</a>
+<a href="https://www.nexer.cl/tag/conference/" class="tag-cloud-link tag-link-25 tag-link-position-10" style="font-size: 8pt;" aria-label="CONFERENCE (1 item)">CONFERENCE</a>
+<a href="https://www.nexer.cl/tag/desert/" class="tag-cloud-link tag-link-14 tag-link-position-11" style="font-size: 8pt;" aria-label="desert (1 item)">desert</a>
+<a href="https://www.nexer.cl/tag/director/" class="tag-cloud-link tag-link-39 tag-link-position-12" style="font-size: 8pt;" aria-label="DIRECTOR (1 item)">DIRECTOR</a>
+<a href="https://www.nexer.cl/tag/ecos/" class="tag-cloud-link tag-link-50 tag-link-position-13" style="font-size: 8pt;" aria-label="ECOS (1 item)">ECOS</a>
+<a href="https://www.nexer.cl/tag/environment/" class="tag-cloud-link tag-link-43 tag-link-position-14" style="font-size: 8pt;" aria-label="ENVIRONMENT (1 item)">ENVIRONMENT</a>
+<a href="https://www.nexer.cl/tag/extreme/" class="tag-cloud-link tag-link-42 tag-link-position-15" style="font-size: 8pt;" aria-label="EXTREME (1 item)">EXTREME</a>
+<a href="https://www.nexer.cl/tag/extreme-enviroment/" class="tag-cloud-link tag-link-32 tag-link-position-16" style="font-size: 8pt;" aria-label="EXTREME ENVIROMENT (1 item)">EXTREME ENVIROMENT</a>
+<a href="https://www.nexer.cl/tag/grant/" class="tag-cloud-link tag-link-49 tag-link-position-17" style="font-size: 8pt;" aria-label="GRANT (1 item)">GRANT</a>
+<a href="https://www.nexer.cl/tag/instagram/" class="tag-cloud-link tag-link-34 tag-link-position-18" style="font-size: 11.111111111111pt;" aria-label="INSTAGRAM (2 items)">INSTAGRAM</a>
+<a href="https://www.nexer.cl/tag/instalive/" class="tag-cloud-link tag-link-40 tag-link-position-19" style="font-size: 8pt;" aria-label="instalive (1 item)">instalive</a>
+<a href="https://www.nexer.cl/tag/interview/" class="tag-cloud-link tag-link-29 tag-link-position-20" style="font-size: 8pt;" aria-label="interview (1 item)">interview</a>
+<a href="https://www.nexer.cl/tag/live/" class="tag-cloud-link tag-link-38 tag-link-position-21" style="font-size: 11.111111111111pt;" aria-label="LIVE (2 items)">LIVE</a>
+<a href="https://www.nexer.cl/tag/microorganisms/" class="tag-cloud-link tag-link-12 tag-link-position-22" style="font-size: 8pt;" aria-label="microorganisms (1 item)">microorganisms</a>
+<a href="https://www.nexer.cl/tag/news/" class="tag-cloud-link tag-link-36 tag-link-position-23" style="font-size: 8pt;" aria-label="NEWS (1 item)">NEWS</a>
+<a href="https://www.nexer.cl/tag/newsletter/" class="tag-cloud-link tag-link-48 tag-link-position-24" style="font-size: 8pt;" aria-label="NEWSLETTER (1 item)">NEWSLETTER</a>
+<a href="https://www.nexer.cl/tag/nexer/" class="tag-cloud-link tag-link-16 tag-link-position-25" style="font-size: 22pt;" aria-label="NEXER (12 items)">NEXER</a>
+<a href="https://www.nexer.cl/tag/plant/" class="tag-cloud-link tag-link-26 tag-link-position-26" style="font-size: 8pt;" aria-label="PLANT (1 item)">PLANT</a>
+<a href="https://www.nexer.cl/tag/research/" class="tag-cloud-link tag-link-44 tag-link-position-27" style="font-size: 8pt;" aria-label="RESEARCH (1 item)">RESEARCH</a>
+<a href="https://www.nexer.cl/tag/researchers/" class="tag-cloud-link tag-link-37 tag-link-position-28" style="font-size: 8pt;" aria-label="researchers (1 item)">researchers</a>
+<a href="https://www.nexer.cl/tag/science/" class="tag-cloud-link tag-link-31 tag-link-position-29" style="font-size: 8pt;" aria-label="SCIENCE (1 item)">SCIENCE</a>
+<a href="https://www.nexer.cl/tag/social-media/" class="tag-cloud-link tag-link-35 tag-link-position-30" style="font-size: 8pt;" aria-label="SOCIAL MEDIA (1 item)">SOCIAL MEDIA</a>
+<a href="https://www.nexer.cl/tag/talk/" class="tag-cloud-link tag-link-33 tag-link-position-31" style="font-size: 8pt;" aria-label="TALK (1 item)">TALK</a>
+<a href="https://www.nexer.cl/tag/ufro/" class="tag-cloud-link tag-link-23 tag-link-position-32" style="font-size: 11.111111111111pt;" aria-label="UFRO (2 items)">UFRO</a>
+<a href="https://www.nexer.cl/tag/umag/" class="tag-cloud-link tag-link-47 tag-link-position-33" style="font-size: 8pt;" aria-label="UMAG (1 item)">UMAG</a>
+<a href="https://www.nexer.cl/tag/university/" class="tag-cloud-link tag-link-45 tag-link-position-34" style="font-size: 8pt;" aria-label="UNIVERSITY (1 item)">UNIVERSITY</a>
+<a href="https://www.nexer.cl/tag/webinar/" class="tag-cloud-link tag-link-41 tag-link-position-35" style="font-size: 14.913580246914pt;" aria-label="webinar (4 items)">webinar</a>
+<a href="https://www.nexer.cl/tag/worldwide/" class="tag-cloud-link tag-link-24 tag-link-position-36" style="font-size: 8pt;" aria-label="WORLDWIDE (1 item)">WORLDWIDE</a></div>
+</div>
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+</div>
+
+		</div>
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="container">
+			<div class="row">	
+					<div class="site-info col-md-6">
+			<a href="https://wordpress.org/" rel="nofollow">Powered by WordPress</a>
+			<span class="sep"> | </span>
+			Theme: <a href="//athemes.com/theme/talon" rel="nofollow">Talon</a> by aThemes.		</div><!-- .site-info -->
+			<nav id="footer-navigation" class="footer-navigation col-md-6" role="navigation">
+					</nav>
+				</div>
+		</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+		<!--facebook like and share js -->
+		<div id="fb-root"></div>
+
+		<script>
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+	<script>
+	window.addEventListener('sfsi_plus_functions_loaded', function() {
+		if (typeof sfsi_plus_responsive_toggle == 'function') {
+			sfsi_plus_responsive_toggle(0);
+			// console.log('sfsi_plus_responsive_toggle');
+		}
+	})
+</script>
+
+	<script>
+	window.addEventListener('sfsi_plus_functions_loaded', function() {
+	    if (typeof sfsi_plus_widget_set == 'function') {
+	        sfsi_plus_widget_set();
+	    }
+	})
+	</script>
+	<div class="sfsiplus_norm_row sfsi_plus_wDiv" id="sfsi_plus_floater"  style="z-index: 9999;width:225px;text-align:left;position:absolute;position:absolute;right:30px;top:50%"></div ><input type='hidden' id='sfsi_plus_floater_sec' value='center-right' /><script>window.addEventListener('sfsi_plus_functions_loaded',function( totwith=0 )
+					  {
+						var topalign = ( jQuery(window).height() - jQuery('#sfsi_plus_floater').height() ) / 2;
+						jQuery('#sfsi_plus_floater').css('top',topalign);
+					  	sfsi_plus_float_widget('center');
+					  });</script></div><script type='text/javascript'>
+/* <![CDATA[ */
+var ekit_site_url = {"siteurl":"http:\/\/www.nexer.cl"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/elementskit-lite/widgets/mail-chimp/assets/js/mail-chimp.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/js/main-script.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/js/swiper.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/js/jquery.filterizr.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/post-kits-for-elementor/assets/js/alith-filterizr.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/void-elementor-post-grid-addon-for-elementor-page-builder/assets/js/jquery.matchHeight-min.js?ver=3.3.7'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/void-elementor-post-grid-addon-for-elementor-page-builder/assets/js/custom.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.nexer.cl\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.9'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/display-post-types/frontend/js/bricklayer.build.js?ver=1.6.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/display-post-types/frontend/js/flickity.pkgd.min.js?ver=1.6.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/display-post-types/frontend/js/scripts.build.js?ver=1.6.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/ultimate-social-media-plus/js/shuffle/modernizr.custom.min.js?ver=5.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sfsi_plus_ajax_object = {"ajax_url":"https:\/\/www.nexer.cl\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/www.nexer.cl\/wp-content\/plugins\/ultimate-social-media-plus\/","rest_url":"https:\/\/www.nexer.cl\/wp-json\/"};
+var sfsi_plus_links = {"admin_url":"https:\/\/www.nexer.cl\/wp-admin\/","plugin_dir_url":"https:\/\/www.nexer.cl\/wp-content\/plugins\/ultimate-social-media-plus\/","rest_url":"https:\/\/www.nexer.cl\/wp-json\/","pretty_perma":"yes"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/ultimate-social-media-plus/js/custom.js?ver=5.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/themes/talon/js/skip-link-focus-fix.js?ver=20151215'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/themes/talon/js/scripts.min.js?ver=5.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/themes/talon/js/main.js?ver=5.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-includes/js/imagesloaded.min.js?ver=3.2.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-includes/js/masonry.min.js?ver=3.3.2'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/themes/talon/js/html5shiv.js?ver=5.0'></script>
+<![endif]-->
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/elementskit-lite/libs/framework/assets/js/frontend-script.js?ver=1.5.9'></script>
+<script type='text/javascript'>
+        //console.log(window.elementskit);
+
+		var elementskit = {
+            resturl: 'https://www.nexer.cl/wp-json/elementskit/v1/',
+        }
+
+        //console.log(window.elementskit);
+		
+</script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/elementskit-lite/widgets/init/assets/js/nav-menu.js?ver=5.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-content/plugins/elementskit-lite/widgets/init/assets/js/ui-slim.min.js?ver=5.0'></script>
+<script type='text/javascript' src='https://www.nexer.cl/wp-includes/js/wp-embed.min.js?ver=5.0'></script>
+<script>var css = "#sfsi_plus_floater { margin-right:0px; }",
+				    head = document.head || document.getElementsByTagName("head")[0],
+				    style = document.createElement("style");
+
+				head.appendChild(style);
+				if (style.styleSheet){
+				  // This is required for IE8 and below.
+				  style.styleSheet.cssText = css;
+				} else {
+				  style.appendChild(document.createTextNode(css));
+				}</script>
+</body>
+</html>

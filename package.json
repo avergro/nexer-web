@@ -6,9 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:export": "mv src/app/api src/app/_api && mv src/app/admin src/app/_admin && NEXT_PUBLIC_BASE_PATH=/nexer next build; mv src/app/_api src/app/api; mv src/app/_admin src/app/admin"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.13",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.9.0",
+    "framer-motion": "^12.38.0",
+    "gray-matter": "^4.0.3",
+    "jose": "^6.2.3",
+    "lucide-react": "^1.14.0",
+    "marked": "^12.0.2",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -18,6 +28,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "d3-geo": "^3.1.1",
+    "d3-path": "^3.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
