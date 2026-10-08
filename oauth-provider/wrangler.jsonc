@@ -1,0 +1,9 @@
+{
+  "name": "nexer-oauth",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-08",
+  "vars": {
+    "OAUTH_CLIENT_ID": "Ov23linYHErvEpcrPTi2",
+    "ORIGINS": "avergro.github.io"
+  }
+}

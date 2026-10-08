@@ -9,19 +9,16 @@
 #   1. En una terminal corre:  npx decap-server
 #   2. Abre  http://localhost:3000/admin/  (o /nexer/admin/ según basePath)
 #
-# ── MODO PRODUCCIÓN (GitHub OAuth) ──────────────────────────────────────────
-#   1. Crea un OAuth App en https://github.com/settings/developers
-#      - Homepage URL:  https://avergro.github.io/nexer-web
-#      - Callback URL:  https://avergro.github.io/nexer-web/admin/
-#   2. Reemplaza `app_id` abajo con el client_id del OAuth App.
-#   3. Si luego usas un dominio propio (nexer.cl), cambia callback a ese dominio.
+# ── MODO PRODUCCIÓN (GitHub OAuth vía Cloudflare Worker) ────────────────────
+#   El worker (oauth-provider/) hace el intercambio de token en el servidor.
+#   Redirect URI registrada en la OAuth App de GitHub:
+#     https://nexer-oauth.avergro.workers.dev/callback
 #
 backend:
   name: github
   repo: avergro/nexer-web
   branch: main
-  auth_type: pkce                   # OAuth sin servidor proxy
-  app_id: Ov23linYHErvEpcrPTi2
+  base_url: https://nexer-oauth.avergro.workers.dev
 
 # Descomentar SOLO para desarrollo local (corre `npx decap-server`):
 # local_backend: true
