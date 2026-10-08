@@ -39,7 +39,7 @@ export default async function NoticiaDetallePage({ params }: Props) {
     <>
       <article className="max-w-3xl mx-auto px-6 pt-16 pb-2">
         <a
-          href={`/${lang}/noticias`}
+          href={asset(`/${lang}/noticias`)}
           className="text-sm text-muted hover:text-foreground transition-colors"
         >
           ← {dict.news.title}
