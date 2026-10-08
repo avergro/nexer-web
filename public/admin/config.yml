@@ -21,7 +21,7 @@ backend:
   repo: avergro/nexer-web
   branch: main
   auth_type: pkce                   # OAuth sin servidor proxy
-  app_id: TU_GITHUB_APP_ID         # ← reemplazar con el client_id del OAuth App
+  app_id: Ov23linYHErvEpcrPTi2
 
 # Descomentar SOLO para desarrollo local (corre `npx decap-server`):
 # local_backend: true
