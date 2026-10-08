@@ -191,7 +191,7 @@ export default function NewsFeed({
     excerpt: p.excerpt,
     dateISO: p.dateISO,
     image: p.image || undefined,
-    href: `/${lang}/noticias/${p.slug}`,
+    href: asset(`/${lang}/noticias/${p.slug}`),
     zone: p.zone,
     category: p.category,
     author: p.author,
@@ -262,7 +262,7 @@ export default function NewsFeed({
         {limit && (
           <div className="mt-10 flex justify-center">
             <a
-              href={`/${lang}/noticias`}
+              href={asset(`/${lang}/noticias`)}
               className="group inline-flex items-center gap-2 text-sm font-medium text-foreground border-b border-foreground/20 pb-0.5 hover:border-foreground transition-colors duration-200"
             >
               {t.allNews}
