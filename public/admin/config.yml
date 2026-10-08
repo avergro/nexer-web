@@ -1,0 +1,105 @@
+# ─── NEXER · Configuración de Decap CMS ──────────────────────────────────────
+#
+# CMS externo (git-based) para editar noticias sin SSH, desde el navegador.
+# Las noticias se guardan como archivos .md en /content/news/ y se versionan
+# con Git. GitHub Actions recompila y publica en GitHub Pages automáticamente.
+#
+# ── MODO DESARROLLO LOCAL (sin GitHub) ─────────────────────────────────────
+# Con `local_backend: true` puedes probar el panel en tu máquina:
+#   1. En una terminal corre:  npx decap-server
+#   2. Abre  http://localhost:3000/admin/  (o /nexer/admin/ según basePath)
+#
+# ── MODO PRODUCCIÓN (GitHub OAuth) ──────────────────────────────────────────
+#   1. Crea un OAuth App en https://github.com/settings/developers
+#      - Homepage URL:  https://avergro.github.io/nexer-web
+#      - Callback URL:  https://avergro.github.io/nexer-web/admin/
+#   2. Reemplaza `app_id` abajo con el client_id del OAuth App.
+#   3. Si luego usas un dominio propio (nexer.cl), cambia callback a ese dominio.
+#
+backend:
+  name: github
+  repo: avergro/nexer-web
+  branch: main
+  auth_type: pkce                   # OAuth sin servidor proxy
+  app_id: TU_GITHUB_APP_ID         # ← reemplazar con el client_id del OAuth App
+
+# Descomentar SOLO para desarrollo local (corre `npx decap-server`):
+# local_backend: true
+
+# ─── Archivos multimedia ──────────────────────────────────────────────────────
+media_folder: "public/images/news"
+public_folder: "/images/news"
+
+# ─── Idioma del panel ─────────────────────────────────────────────────────────
+locale: es
+
+# ─── Colecciones de contenido ─────────────────────────────────────────────────
+collections:
+  - name: "noticias"
+    label: "Noticias"
+    label_singular: "Noticia"
+    folder: "content/news"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields:
+      - date
+      - title
+      - zone
+    preview_path: "/nexer-web/es/noticias/{{slug}}"
+
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+
+      - label: "Fecha de publicación"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+
+      - label: "Nodo"
+        name: "zone"
+        widget: "select"
+        options:
+          - { label: "General NEXER",              value: "general"  }
+          - { label: "Norte — UA / Antofagasta",   value: "norte"    }
+          - { label: "O'Higgins — UOH / Rancagua", value: "ohiggins" }
+          - { label: "Centro — UFRO / Temuco",     value: "centro"   }
+          - { label: "Sur — UMAG / Punta Arenas",  value: "sur"      }
+        default: "general"
+
+      - label: "Categoría"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Investigación", value: "investigación" }
+          - { label: "Divulgación",   value: "divulgación"   }
+          - { label: "Institucional", value: "institucional" }
+          - { label: "Convocatoria",  value: "convocatoria"  }
+          - { label: "Anuncio",       value: "anuncio"       }
+        default: "anuncio"
+
+      - label: "Extracto"
+        name: "excerpt"
+        widget: "text"
+        hint: "Descripción corta para tarjetas (1-2 oraciones)"
+
+      - label: "Imagen destacada"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Si no hay imagen se muestra un fondo de color según el nodo"
+
+      - label: "Autor / Autora"
+        name: "author"
+        widget: "string"
+        required: false
+
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+        hint: "Redacta el artículo con la barra de formato (títulos, listas, enlaces…)."
