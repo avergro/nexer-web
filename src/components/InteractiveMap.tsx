@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   motion, AnimatePresence,
   useMotionValue, useSpring, useTransform,
@@ -20,20 +20,49 @@ const CHILOE_PATH = "M58.146,431.377L57.139,431.762L56.2,431.858L55.245,431.575L
 function ChileSVG({
   selected,
   onSelect,
+  onMouseMove,
   lang,
 }: {
   selected: string | null;
   onSelect: (id: string) => void;
+  onMouseMove: (e: React.MouseEvent<SVGSVGElement>) => void;
   lang: Lang;
 }) {
+  const chilePathRef = useRef<SVGPathElement>(null);
+
+  // Draw-in: el contorno de Chile se traza al entrar en vista
+  useEffect(() => {
+    const path = chilePathRef.current;
+    if (!path) return;
+    const len = path.getTotalLength();
+    path.style.strokeDasharray = `${len}`;
+    path.style.strokeDashoffset = `${len}`;
+    path.style.transition = "stroke-dashoffset 1.8s cubic-bezier(.4,0,.2,1)";
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            path.style.strokeDashoffset = "0";
+            obs.disconnect();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    obs.observe(path);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <svg
       viewBox="0 0 460 670"
       style={{ width: "100%", maxWidth: "460px", height: "auto" }}
-      aria-label="Mapa interactivo de Chile — selecciona un nodo para ver la zona"
+      aria-label="Mapa interactivo de Chile — mueve el cursor para explorar los nodos"
+      onMouseMove={onMouseMove}
     >
       {/* Chile mainland silhouette */}
       <path
+        ref={chilePathRef}
         d={CHILE_PATH}
         fill="#e8e4dc"
         stroke="#1c1917"
@@ -78,6 +107,19 @@ function ChileSVG({
             whileHover="hovered"
             initial="idle"
           >
+            {/* Halo spotlight — visible when selected/hovered */}
+            <motion.circle
+              cx={zone.mapX}
+              cy={zone.mapY}
+              fill={zone.accentColor}
+              variants={{
+                idle:     { r: 10, opacity: 0 },
+                hovered:  { r: 24, opacity: 0.16 },
+                selected: { r: 34, opacity: 0.22 },
+              }}
+              transition={{ duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
+            />
+
             {/* Outer ring — visible when selected */}
             <motion.circle
               cx={zone.mapX}
@@ -87,8 +129,8 @@ function ChileSVG({
               strokeWidth="1.5"
               variants={{
                 idle:     { r: 8,  opacity: 0 },
-                hovered:  { r: 10, opacity: 0.4 },
-                selected: { r: 13, opacity: 1 },
+                hovered:  { r: 12, opacity: 0.5 },
+                selected: { r: 16, opacity: 1 },
               }}
               transition={{ duration: 0.2 }}
             />
@@ -264,7 +306,25 @@ export default function InteractiveMap({ dict, lang }: { dict: Dict; lang: Lang 
   }
 
   function handleSelect(id: string) {
-    setSelectedId((prev) => (prev === id ? null : id));
+    setSelectedId(id);
+  }
+
+  // Proximidad: al mover el cursor por el mapa se selecciona el nodo más cercano
+  function handleMapMouseMove(e: React.MouseEvent<SVGSVGElement>) {
+    const svg = e.currentTarget;
+    const ctm = svg.getScreenCTM();
+    if (!ctm) return;
+    const p = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm.inverse());
+    let nearestId: string | null = null;
+    let minDist = Infinity;
+    ZONES.forEach((z) => {
+      const d = Math.hypot(z.mapX - p.x, z.mapY - p.y);
+      if (d < minDist) {
+        minDist = d;
+        nearestId = z.id;
+      }
+    });
+    if (nearestId && nearestId !== selectedId) setSelectedId(nearestId);
   }
 
   return (
@@ -302,7 +362,7 @@ export default function InteractiveMap({ dict, lang }: { dict: Dict; lang: Lang 
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
               >
-                <ChileSVG selected={selectedId} onSelect={handleSelect} lang={lang} />
+                <ChileSVG selected={selectedId} onSelect={handleSelect} onMouseMove={handleMapMouseMove} lang={lang} />
               </motion.div>
             </motion.div>
           </div>
