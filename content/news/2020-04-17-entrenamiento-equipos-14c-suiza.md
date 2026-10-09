@@ -5,7 +5,7 @@ category: "investigación"
 zone: "sur"
 excerpt: "Investigadores de la UMAG se capacitaron en Zúrich en el uso de nuevos equipos para medir ¹⁴C, adquiridos por el laboratorio CronoAustral."
 author: "Dr. Ricardo De Pol Holz · UMAG"
-image: "/images/news/2020-suiza-14c.jpg"
+image: "/images/news/2020-suiza-14c.webp"
 ---
 
 El pasado 29 de febrero los investigadores Dr. Ricardo De Pol Holz y Dr. Armando Sepúlveda, pertenecientes a la Universidad de Magallanes (UMAG) y parte de la Red NEXER, viajaron a la ciudad de Zúrich. En Suiza estuvieron en las dependencias de IONPLUS, empresa comercial que fabrica instrumentos científicos de alta calidad. Esta visita se realizó con el objetivo de hacer una capacitación para el uso de los nuevos equipos adquiridos por el laboratorio CronoAustral de la UMAG, bajo el marco del proyecto **FONDECYT 1201810** y la continuidad de GAIA-Antártica, convenio de desempeño con el ministerio de educación con el cual se logró la formación del actual Centro de Investigación GAIA-Antártica (CIGA), centro al cual pertenece CronoAustral.

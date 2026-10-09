@@ -5,7 +5,7 @@ category: "institucional"
 zone: "general"
 excerpt: "La red amplía sus líneas de investigación hacia las ciencias sociales y fortalece la formación doctoral y postdoctoral en sus nodos."
 author: "NEXER"
-image: "/images/news/2023-seminario-nexer.jpg"
+image: "/images/news/2023-seminario-nexer.webp"
 ---
 
 La Red de Ambientes Extremos (NEXER) presentó recientemente sus avances en investigación científica y planteó nuevos objetivos para el período venidero, ampliando el alcance de sus actividades hacia las ciencias sociales, incluyendo sociología y antropología.

@@ -5,7 +5,7 @@ category: "divulgación"
 zone: "general"
 excerpt: "La red continúa su serie de webinars con investigadores destacados, acercando la ciencia de los ambientes extremos a públicos amplios desde 2016."
 author: "NEXER"
-image: "/images/outreach/webinar-nexer-1.jpg"
+image: "/images/outreach/webinar-nexer-1.webp"
 ---
 
 La Red de Ambientes Extremos (NEXER) continúa con su programa de divulgación científica mediante webinars en streaming, una iniciativa que comenzó en 2016 y que ha permitido conectar a la comunidad científica con el público general a lo largo de Chile y el mundo.

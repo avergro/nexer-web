@@ -5,7 +5,7 @@ category: "convocatoria"
 zone: "general"
 excerpt: "NEXER abre concurso para promover investigaciones interdisciplinarias en ambientes extremos, abierto a investigadores de las universidades socias UFRO, UA y UMAG."
 author: "NEXER"
-image: "/images/news/2022-banner-nexer.jpg"
+image: "/images/news/2022-banner-nexer.webp"
 ---
 
 La Red de Ambientes Extremos (NEXER) anuncia la apertura del Concurso de Investigaciones Vinculados al Proyecto NEXER, una convocatoria destinada a fomentar el trabajo científico interdisciplinario en ambientes poliextremos a lo largo de Chile.

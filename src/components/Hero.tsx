@@ -8,8 +8,8 @@ import type { Dict, Lang } from "@/i18n/dictionaries";
 import LangSwitcher from "./LangSwitcher";
 
 const SLIDES = [
-  { src: asset("/images/gallery/atacama-desierto.jpg"), alt: "Desierto de Atacama · Nodo Norte" },
-  { src: asset("/images/gallery/outreach-04.jpg"), alt: "Vinculación con la comunidad · Red NEXER" },
+  { src: asset("/images/gallery/atacama-desierto.webp"), alt: "Desierto de Atacama · Nodo Norte" },
+  { src: asset("/images/gallery/outreach-04.webp"), alt: "Vinculación con la comunidad · Red NEXER" },
 ];
 
 const INTERVAL = 6000;

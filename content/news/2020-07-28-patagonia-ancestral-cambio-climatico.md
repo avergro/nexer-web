@@ -5,7 +5,7 @@ category: "investigación"
 zone: "sur"
 excerpt: "Estudio sobre prácticas de pesca de comunidades prehistóricas del Estrecho de Magallanes revela estrategias adaptativas al cambio ambiental con 2.500 años de antigüedad."
 author: "Investigadores UMAG"
-image: "/images/news/2020-patagonia-ancestral.jpg"
+image: "/images/news/2020-patagonia-ancestral.webp"
 ---
 
 Un estudio sobre las prácticas de pesca de comunidades cazadoras-recolectoras prehistóricas del Estrecho de Magallanes revela importantes estrategias de adaptación al cambio ambiental, con implicancias para entender la resiliencia humana y ecológica ante los desafíos climáticos actuales.

@@ -6,72 +6,72 @@ type Props = { params: Promise<{ lang: string }> };
 
 const GALLERY_IMAGES = [
   {
-    src: asset("/images/gallery/outreach-01.jpg"),
+    src: asset("/images/gallery/outreach-01.webp"),
     alt: "Actividad de difusión NEXER",
     caption: "Actividades de difusión",
   },
   {
-    src: asset("/images/gallery/outreach-02.jpg"),
+    src: asset("/images/gallery/outreach-02.webp"),
     alt: "Evento de divulgación científica",
     caption: "Divulgación científica",
   },
   {
-    src: asset("/images/gallery/outreach-03.jpg"),
+    src: asset("/images/gallery/outreach-03.webp"),
     alt: "Feria científica NEXER",
     caption: "Feria científica",
   },
   {
-    src: asset("/images/gallery/outreach-04.jpg"),
+    src: asset("/images/gallery/outreach-04.webp"),
     alt: "Actividad comunitaria",
     caption: "Vinculación con la comunidad",
   },
   {
-    src: asset("/images/gallery/outreach-05.jpg"),
+    src: asset("/images/gallery/outreach-05.webp"),
     alt: "Evento educativo NEXER",
     caption: "Educación científica",
   },
   {
-    src: asset("/images/gallery/outreach-06.jpg"),
+    src: asset("/images/gallery/outreach-06.webp"),
     alt: "Actividad de campo",
     caption: "Trabajo de campo",
   },
   {
-    src: asset("/images/gallery/atacama-desierto.jpg"),
+    src: asset("/images/gallery/atacama-desierto.webp"),
     alt: "Desierto de Atacama",
     caption: "Desierto de Atacama · Nodo Norte",
   },
   {
-    src: asset("/images/gallery/co2-navarino.jpg"),
+    src: asset("/images/gallery/co2-navarino.webp"),
     alt: "Muestra de CO₂ en Navarino",
     caption: "Medición de CO₂ · Isla Navarino",
   },
   {
-    src: asset("/images/gallery/event-2019-01.jpg"),
+    src: asset("/images/gallery/event-2019-01.webp"),
     alt: "Evento NEXER 2019",
     caption: "NEXER 2019",
   },
   {
-    src: asset("/images/gallery/event-umag-2019.jpg"),
+    src: asset("/images/gallery/event-umag-2019.webp"),
     alt: "Evento UMAG 2019",
     caption: "Universidad de Magallanes",
   },
   {
-    src: asset("/images/gallery/event-2020-01.jpg"),
+    src: asset("/images/gallery/event-2020-01.webp"),
     alt: "Evento NEXER 2020",
     caption: "NEXER 2020",
   },
   {
-    src: asset("/images/gallery/conference-2020.jpg"),
+    src: asset("/images/gallery/conference-2020.webp"),
     alt: "Conferencia internacional 2020",
     caption: "Conferencia internacional",
   },
   {
-    src: asset("/images/gallery/institutional-01.jpg"),
+    src: asset("/images/gallery/institutional-01.webp"),
     alt: "Imagen institucional NEXER",
     caption: "Red NEXER",
   },
   {
-    src: asset("/images/gallery/umagtv.jpg"),
+    src: asset("/images/gallery/umagtv.webp"),
     alt: "Cobertura televisiva UMAG",
     caption: "UMAG TV",
   },
@@ -134,27 +134,27 @@ export default async function GaleriaPage({ params }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                src: asset("/images/outreach/webinar-francisco-matus.jpg"),
+                src: asset("/images/outreach/webinar-francisco-matus.webp"),
                 label: "Dr. Francisco Matus",
               },
               {
-                src: asset("/images/outreach/webinar-nexer-1.jpg"),
+                src: asset("/images/outreach/webinar-nexer-1.webp"),
                 label: "Webinar NEXER",
               },
               {
-                src: asset("/images/outreach/entrevista-leon-bravo.jpg"),
+                src: asset("/images/outreach/entrevista-leon-bravo.webp"),
                 label: "Dr. León Bravo",
               },
               {
-                src: asset("/images/outreach/entrevista-leticia-barrientos.jpg"),
+                src: asset("/images/outreach/entrevista-leticia-barrientos.webp"),
                 label: "Dra. Leticia Barrientos",
               },
               {
-                src: asset("/images/outreach/entrevista-pedro-zamorano.jpg"),
+                src: asset("/images/outreach/entrevista-pedro-zamorano.webp"),
                 label: "Dr. Pedro Zamorano",
               },
               {
-                src: asset("/images/outreach/entrevista-maria-luz-mora.jpg"),
+                src: asset("/images/outreach/entrevista-maria-luz-mora.webp"),
                 label: "Dra. María de la Luz Mora",
               },
             ].map((poster, i) => (

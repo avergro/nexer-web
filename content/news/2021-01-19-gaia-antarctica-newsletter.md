@@ -5,7 +5,7 @@ category: "divulgación"
 zone: "sur"
 excerpt: "El Centro de Investigación GAIA Antártida de la Universidad de Magallanes lanza su primer boletín de divulgación para acercar la ciencia antártica a la ciudadanía."
 author: "GAIA Antártida · UMAG"
-image: "/images/news/2021-gaia-antarctica.jpg"
+image: "/images/news/2021-gaia-antarctica.webp"
 ---
 
 El Centro de Investigación GAIA Antártida, dependiente de la Universidad de Magallanes (UMAG), lanzó su primer Newsletter, un producto de divulgación científica diseñado para acercar los resultados de la investigación antártica a la ciudadanía general.

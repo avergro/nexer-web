@@ -12,12 +12,12 @@ interface Slide {
 
 const SLIDES: Slide[] = [
   {
-    src: asset("/images/gallery/atacama-desierto.jpg"),
+    src: asset("/images/gallery/atacama-desierto.webp"),
     caption: "Desierto de Atacama",
     zone: "Nodo Norte · UA",
   },
   {
-    src: asset("/images/gallery/outreach-04.jpg"),
+    src: asset("/images/gallery/outreach-04.webp"),
     caption: "Vinculación con la comunidad",
     zone: "Red NEXER",
   },

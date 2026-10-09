@@ -5,7 +5,7 @@ category: "investigación"
 zone: "general"
 excerpt: "La red obtiene financiamiento del programa de cooperación científica del gobierno francés para dos proyectos liderados por investigadoras de UFRO y UA."
 author: "NEXER"
-image: "/images/news/2021-ecos-anid.jpg"
+image: "/images/news/2021-ecos-anid.webp"
 ---
 
 La Red de Ambientes Extremos (NEXER) fue beneficiada con dos fondos ECOS–ANID, financiados por el programa de cooperación científica internacional (PCI) del gobierno francés, que permitirán desarrollar colaboraciones de alto nivel entre Chile y Francia.

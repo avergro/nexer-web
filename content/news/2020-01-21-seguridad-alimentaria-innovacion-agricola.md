@@ -5,7 +5,7 @@ category: "divulgación"
 zone: "centro"
 excerpt: "BIOREN-UFRO reunió a empresas agroalimentarias e investigadores NEXER para fortalecer la relación ciencia-industria en seguridad alimentaria."
 author: "BIOREN · UFRO"
-image: "/images/news/2020-food-security.jpg"
+image: "/images/news/2020-food-security.webp"
 ---
 
 On Wednesday January 15th, a meeting conference entitled “Food Security and Agriculture Innovation” was held in the idea room of La Universidad de La Frontera and organized by Dr. Paula Aguilera, researcher of the scientific and technological nucleus in bioresources (BIOREN). Under the framework of the Fondecyt 11170641 project and MEC projects, the speakers Dr. Abad Chabbi and Dr. Cornelia Rumpel, researchers from the NEXER network, presented the importance of developing sustainable strategies in the conservation of soils by companies with agricultural base. Also in this opportunity, Dr. Miroslav Vosatka from INRAE presented the role and potential of mycorrhizal fungi in agricultural production in the face of recognized climate change.
