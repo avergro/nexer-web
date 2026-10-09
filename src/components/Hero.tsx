@@ -71,7 +71,7 @@ export default function Hero({ dict, lang }: { dict: Dict; lang: Lang }) {
 
       {/* -- Lang switcher -- */}
       <div className="absolute top-6 right-6 z-20">
-        <LangSwitcher lang={lang} />
+        <LangSwitcher lang={lang} light />
       </div>
 
       {/* -- Content -- */}
