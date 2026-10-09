@@ -82,8 +82,8 @@
   @media(max-width:820px){.zl{grid-template-columns:1fr}}
   .chile svg{width:100%;height:auto;display:block}
   .node-dot{cursor:pointer}
-  .node-label{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;fill:var(--muted);cursor:pointer;transition:fill .2s}
-  .node-label.on{fill:var(--ink)}
+  .node-label{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;fill:var(--muted);cursor:pointer;transition:fill .25s,font-size .25s,font-weight .25s}
+  .node-label.on{fill:var(--ink);font-weight:600}
   .ucard{border:1px solid var(--border);background:var(--paper);border-radius:14px;padding:40px;box-shadow:0 10px 40px rgba(28,25,23,.06)}
   .ucard.preview{border-style:dashed;border-color:var(--muted)}
   .ucard .uh{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
@@ -100,14 +100,15 @@
   .chile{perspective:1400px}
   #chileSvg{transform-style:preserve-3d;will-change:transform}
   #chileOutline{stroke-dasharray:0;stroke-dashoffset:0}
-  .pulse{transform-box:fill-box;transform-origin:center;animation:rpulse 3s cubic-bezier(.16,1,.3,1) infinite}
-  @keyframes rpulse{0%{transform:scale(.35);opacity:.55}70%{opacity:.15}100%{transform:scale(3.6);opacity:0}}
-  .ndot{transform-box:fill-box;transform-origin:center;transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
-  .node-dot:hover .ndot{transform:scale(1.4)}
-  .node-dot.sel .ndot{transform:scale(1.55)}
-  .nring{transition:r .3s cubic-bezier(.34,1.56,.64,1),opacity .3s ease}
-  .clink{transition:opacity .3s ease}
-  .card-el{opacity:0;transform:translateY(16px) scale(.98);animation:crd .6s cubic-bezier(.34,1.4,.64,1) forwards}
+  .halo{transition:r .45s cubic-bezier(.34,1.56,.64,1),opacity .45s ease}
+  .pulse{transform-box:fill-box;transform-origin:center;animation:rpulse 2.2s cubic-bezier(.16,1,.3,1) infinite}
+  @keyframes rpulse{0%{transform:scale(.3);opacity:.85}100%{transform:scale(4.4);opacity:0}}
+  .ndot{transform-box:fill-box;transform-origin:center;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+  .node-dot:hover .ndot{transform:scale(2.1)}
+  .node-dot.sel .ndot{transform:scale(2.3)}
+  .nring{transition:r .35s cubic-bezier(.34,1.56,.64,1),opacity .35s ease}
+  .clink{transition:opacity .3s ease,stroke-width .3s ease}
+  .card-el{opacity:0;transform:translateY(22px) scale(.95);animation:crd .55s cubic-bezier(.34,1.4,.64,1) forwards}
   @keyframes crd{to{opacity:1;transform:translateY(0) scale(1)}}
 
   /* news */
@@ -293,20 +294,22 @@ function renderMap(){
   NODES.forEach(n=>{
     const active=(sel===n.id||hover===n.id);
     const g=document.createElementNS(NS,'g');g.setAttribute('class','node-dot'+(active?' sel':''));
+    // halo (spotlight detrás del nodo activo)
+    const halo=document.createElementNS(NS,'circle');halo.setAttribute('class','halo');halo.setAttribute('cx',n.x);halo.setAttribute('cy',n.y);halo.setAttribute('r',active?34:10);halo.setAttribute('fill',n.color);halo.setAttribute('opacity',active?.22:0);
     // pulse radar (solo activo en el activo)
-    const pulse=document.createElementNS(NS,'circle');pulse.setAttribute('class','pulse');pulse.setAttribute('cx',n.x);pulse.setAttribute('cy',n.y);pulse.setAttribute('r',6);pulse.setAttribute('fill','none');pulse.setAttribute('stroke',n.color);pulse.setAttribute('stroke-width','1.5');
+    const pulse=document.createElementNS(NS,'circle');pulse.setAttribute('class','pulse');pulse.setAttribute('cx',n.x);pulse.setAttribute('cy',n.y);pulse.setAttribute('r',6);pulse.setAttribute('fill','none');pulse.setAttribute('stroke',n.color);pulse.setAttribute('stroke-width','2');
     if(!active)pulse.style.animation='none';
     // anillo de selección (spring)
-    const ring=document.createElementNS(NS,'circle');ring.setAttribute('class','nring');ring.setAttribute('cx',n.x);ring.setAttribute('cy',n.y);ring.setAttribute('r',active?17:8);ring.setAttribute('fill','none');ring.setAttribute('stroke',n.color);ring.setAttribute('stroke-width',active?1.8:0.8);ring.setAttribute('opacity',active?1:.35);
+    const ring=document.createElementNS(NS,'circle');ring.setAttribute('class','nring');ring.setAttribute('cx',n.x);ring.setAttribute('cy',n.y);ring.setAttribute('r',active?20:8);ring.setAttribute('fill','none');ring.setAttribute('stroke',n.color);ring.setAttribute('stroke-width',active?2.2:0.8);ring.setAttribute('opacity',active?1:.35);
     // conector (aparece al activar)
-    const cl=document.createElementNS(NS,'line');cl.setAttribute('class','clink');cl.setAttribute('x1',n.x+9);cl.setAttribute('y1',n.y);cl.setAttribute('x2',150);cl.setAttribute('y2',n.y);cl.setAttribute('stroke',n.color);cl.setAttribute('stroke-width',active?1:.7);cl.setAttribute('stroke-dasharray','3 3');cl.setAttribute('opacity',active?.85:.3);
+    const cl=document.createElementNS(NS,'line');cl.setAttribute('class','clink');cl.setAttribute('x1',n.x+9);cl.setAttribute('y1',n.y);cl.setAttribute('x2',150);cl.setAttribute('y2',n.y);cl.setAttribute('stroke',n.color);cl.setAttribute('stroke-width',active?1.4:.7);cl.setAttribute('stroke-dasharray','3 3');cl.setAttribute('opacity',active?.9:.3);
     // dot principal (spring)
     const dot=document.createElementNS(NS,'circle');dot.setAttribute('class','ndot');dot.setAttribute('cx',n.x);dot.setAttribute('cy',n.y);dot.setAttribute('r',6);dot.setAttribute('fill',n.color);dot.setAttribute('stroke','#f9f7f2');dot.setAttribute('stroke-width','1.5');
-    // etiqueta (a la derecha, como el sitio original)
-    const lbl=document.createElementNS(NS,'text');lbl.setAttribute('x',158);lbl.setAttribute('y',n.y+4);lbl.setAttribute('class','node-label'+(active?' on':''));lbl.textContent=n.short+' · '+n.city;
+    // etiqueta (a la derecha, como el sitio original) — se agranda y colorea al activar
+    const lbl=document.createElementNS(NS,'text');lbl.setAttribute('x',158);lbl.setAttribute('y',n.y+4);lbl.setAttribute('class','node-label'+(active?' on':''));lbl.textContent=n.short+' · '+n.city;lbl.style.fill=active?n.color:'';lbl.style.fontSize=active?'12px':'';
     // hit area
     const hit=document.createElementNS(NS,'circle');hit.setAttribute('cx',n.x);hit.setAttribute('cy',n.y);hit.setAttribute('r',28);hit.setAttribute('fill','transparent');hit.style.cursor='pointer';
-    g.appendChild(pulse);g.appendChild(ring);g.appendChild(cl);g.appendChild(dot);g.appendChild(lbl);g.appendChild(hit);
+    g.appendChild(halo);g.appendChild(pulse);g.appendChild(ring);g.appendChild(cl);g.appendChild(dot);g.appendChild(lbl);g.appendChild(hit);
     g.addEventListener('click',()=>{sel=n.id;hover=null;renderMap();showCard(n,true);});
     svg.appendChild(g);
   });
