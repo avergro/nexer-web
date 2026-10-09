@@ -81,15 +81,28 @@
   .node-label{transition:opacity .25s ease,font-weight .25s ease}
 
   /* university card */
-  .ucard{min-height:360px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);border-radius:2px;padding:44px;position:relative;overflow:hidden}
-  .ucard::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--uc,var(--accent));transition:background .3s ease}
-  .ucard .uc-head{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
-  .ucard .uc-city{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(34px,5vw,52px);line-height:1;margin-top:18px;letter-spacing:-.02em}
-  .ucard .uc-uni{color:var(--muted);margin-top:10px;font-size:16px}
-  .ucard .uc-tag{margin-top:22px;font-family:"Fraunces",serif;font-style:italic;font-size:clamp(19px,2.4vw,26px);color:var(--text)}
-  .ucard .uc-desc{margin-top:18px;color:var(--muted);line-height:1.65;font-size:14px}
-  .ucard .uc-env{margin-top:22px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--faint);text-transform:uppercase}
-  .ucard .uc-link{margin-top:26px;font-size:13px;letter-spacing:.06em;color:var(--text);text-decoration:none;border-bottom:1px solid var(--accent);align-self:flex-start;padding-bottom:4px}
+  .ucard{position:relative;min-height:380px;border:1px solid var(--line);border-radius:14px;overflow:hidden;transform-style:preserve-3d;perspective:1000px;will-change:transform;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+  .uc-glare{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .3s ease;background:radial-gradient(circle at 50% 50%, rgba(255,255,255,.14) 0%, transparent 60%)}
+  .ucard:hover .uc-glare{opacity:1}
+  .uc-band{height:6px;width:100%;background:var(--uc,var(--accent));transition:background .3s ease}
+  .uc-inner{padding:34px 40px;transform:translateZ(24px);will-change:transform;display:flex;flex-direction:column}
+  .uc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+  .uc-label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--uc,var(--accent))}
+  .uc-city{font-family:"Fraunces",serif;font-size:clamp(32px,4vw,44px);line-height:1.05;margin-top:6px;color:var(--text)}
+  .uc-pin{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(217,142,74,.15);margin-top:2px}
+  .uc-pin svg{width:18px;height:18px;stroke:var(--uc,var(--accent))}
+  .uc-div{height:1px;width:100%;background:var(--line);margin:20px 0}
+  .uc-envrow{display:flex;align-items:center;gap:10px}
+  .uc-envrow svg{width:15px;height:15px;stroke:var(--muted);flex-shrink:0}
+  .uc-env{font-size:13px;color:var(--muted);font-weight:500}
+  .uc-tag{margin-top:16px;font-family:"Fraunces",serif;font-style:italic;font-size:clamp(18px,2vw,22px);color:var(--text);line-height:1.35}
+  .uc-desc{margin-top:14px;color:var(--muted);line-height:1.65;font-size:14px}
+  .uc-foot{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+  .uc-foot .u{color:var(--muted);font-size:12px;text-decoration:none;transition:color .2s}
+  .uc-foot .u:hover{color:var(--text)}
+  .uc-foot .s{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--uc,var(--accent))}
+  .uc-empty{min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;color:var(--muted);gap:14px}
+  .uc-empty svg{width:44px;height:44px;stroke:var(--muted);stroke-width:1.2}
   .fade-in{animation:fadein .5s cubic-bezier(.16,1,.3,1)}
   @keyframes fadein{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
@@ -165,12 +178,14 @@
     </div>
 
     <div class="ucard" id="ucard">
-      <div class="uc-head">Zona · Nodo</div>
-      <div class="uc-city">Red NEXER</div>
-      <div class="uc-uni">Selecciona un nodo en el mapa</div>
-      <div class="uc-tag serif-it">Cinco universidades, un territorio extremo</div>
-      <div class="uc-desc">Cada nodo investiga un ambiente extremo distinto, desde el desierto más árido del mundo hasta la Antártica.</div>
-      <div class="uc-env">17°S — 56°S · CHILE</div>
+      <div class="uc-glare" id="ucGlare"></div>
+      <div class="uc-band" id="ucBand"></div>
+      <div class="uc-inner" id="ucInner">
+        <div class="uc-empty">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <p style="max-width:220px;line-height:1.5;font-size:14px">Selecciona un nodo del mapa para ver los detalles de la zona</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -204,23 +219,23 @@
 
 <script>
 const NODES = [
-  {id:'norte', short:'UA', city:'Antofagasta', uni:'Universidad de Antofagasta', color:'#c4a04a', x:103, y:112, url:'https://www.uantof.cl',
+  {id:'norte', short:'UA', city:'Antofagasta', uni:'Universidad de Antofagasta', color:'#c4a04a', x:103, y:112, label:'Zona Norte · I', url:'https://www.uantof.cl',
    tag:'Vida al límite del desierto más árido del mundo',
    desc:'En el Desierto de Atacama, los organismos han desarrollado estrategias únicas para sobrevivir a la radiación extrema, la escasez hídrica y la salinidad. El nodo norte investiga estos mecanismos a nivel molecular y celular.',
    env:'Desierto de Atacama · Ambientes Poliextremos'},
-  {id:'usach', short:'USACH', city:'Santiago', uni:'Universidad de Santiago de Chile', color:'#6b5f8e', x:100, y:262, labelY:238, url:'https://www.usach.cl',
+  {id:'usach', short:'USACH', city:'Santiago', uni:'Universidad de Santiago de Chile', color:'#6b5f8e', x:100, y:262, labelY:238, label:'Zona Metropolitana · II', url:'https://www.usach.cl',
    tag:'Ciencia aplicada en el corazón de Chile',
    desc:'La USACH aporta capacidades únicas en ecología urbana, química ambiental y biotecnología, estudiando la interfaz entre los ecosistemas andinos y el entorno metropolitano.',
    env:'Cuencas Andinas · Interfaz Urbano-Natural'},
-  {id:'ohiggins', short:'UOH', city:'Rancagua', uni:"Universidad de O'Higgins", color:'#a06b3a', x:99, y:273, labelY:300, url:'https://www.uoh.cl',
+  {id:'ohiggins', short:'UOH', city:'Rancagua', uni:"Universidad de O'Higgins", color:'#a06b3a', x:99, y:273, labelY:300, label:"Zona O'Higgins · III", url:'https://www.uoh.cl',
    tag:'Ecosistemas mediterráneos en el umbral del cambio',
    desc:"O'Higgins es la principal zona agrícola de Chile. La sequía, las heladas tardías y las olas de calor someten estos cultivos a un estrés ambiental sin precedentes. El nodo UOH conecta ciencia de ambientes extremos con la seguridad alimentaria del país.",
    env:'Agricultura Mediterránea · Estrés Hídrico y Térmico'},
-  {id:'centro', short:'UFRO', city:'Temuco', uni:'Universidad de La Frontera', color:'#3d6b4f', x:74, y:349, url:'https://www.ufro.cl',
+  {id:'centro', short:'UFRO', city:'Temuco', uni:'Universidad de La Frontera', color:'#3d6b4f', x:74, y:349, label:'Zona Araucanía · IV', url:'https://www.ufro.cl',
    tag:'Carbono, suelos y la memoria del bosque templado',
    desc:'Los suelos volcánicos del sur de Chile almacenan vastas reservas de carbono. La sede coordinadora UFRO estudia la secuestración de carbono en suelos extremos, la tolerancia al estrés en plantas y los ciclos biogeoquímicos.',
    env:'Bosque Valdiviano · Suelos Volcánicos Andosoles'},
-  {id:'sur', short:'UMAG', city:'Punta Arenas', uni:'Universidad de Magallanes', color:'#4a7fa5', x:97, y:630, url:'https://www.umag.cl',
+  {id:'sur', short:'UMAG', city:'Punta Arenas', uni:'Universidad de Magallanes', color:'#4a7fa5', x:97, y:630, label:'Zona Sur · V', url:'https://www.umag.cl',
    tag:'Dinámica del carbono en el fin del mundo',
    desc:'La Patagonia y sus ecosistemas subantárticos representan uno de los últimos grandes sumideros de carbono del planeta. El nodo austral estudia la dinámica del carbono en el Antropoceno.',
    env:'Patagonia · Ecosistemas Subantárticos'},
@@ -229,6 +244,9 @@ const NODES = [
 const svg = document.querySelector('#nodes');
 const NS = 'http://www.w3.org/2000/svg';
 const card = document.getElementById('ucard');
+const ucGlare = document.getElementById('ucGlare');
+const ucBand = document.getElementById('ucBand');
+const ucInner = document.getElementById('ucInner');
 const mapSvg = document.querySelector('.chile svg');
 const chileBox = document.getElementById('chileMap');
 const tiltEl = document.querySelector('.map-tilt');
@@ -255,6 +273,27 @@ chileBox.addEventListener('mousemove', function(e){
   tRotX = -36 * ry;   // rotateX: -18..18deg
 });
 chileBox.addEventListener('mouseleave', function(){ tRotX = 0; tRotY = 0; });
+
+// --- Tilt 3D + glare de la tarjeta (como EditorialCard) ---
+let cRotX = 0, cRotY = 0, ctRotX = 0, ctRotY = 0, cVelX = 0, cVelY = 0;
+(function cardLoop(){
+  const k = 0.18, damp = 0.75;
+  cVelX += (ctRotX - cRotX) * k; cVelY += (ctRotY - cRotY) * k;
+  cVelX *= damp; cVelY *= damp;
+  cRotX += cVelX; cRotY += cVelY;
+  card.style.transform = 'rotateX('+cRotX.toFixed(3)+'deg) rotateY('+cRotY.toFixed(3)+'deg)';
+  requestAnimationFrame(cardLoop);
+})();
+card.addEventListener('mousemove', function(e){
+  const r = card.getBoundingClientRect();
+  if (!r.width || !r.height) return;
+  const rx = (e.clientX - r.left)/r.width - 0.5;
+  const ry = (e.clientY - r.top)/r.height - 0.5;
+  ctRotY = 16 * rx;    // rotateY ±8deg
+  ctRotX = -16 * ry;   // rotateX ±8deg
+  ucGlare.style.background = 'radial-gradient(circle at '+((rx+0.5)*100).toFixed(1)+'% '+((ry+0.5)*100).toFixed(1)+'%, rgba(255,255,255,.14) 0%, transparent 60%)';
+});
+card.addEventListener('mouseleave', function(){ ctRotX = 0; ctRotY = 0; });
 
 function buildNodes(){
   NODES.forEach(n => {
@@ -357,19 +396,30 @@ function applyState(){
   });
 }
 
+function renderCard(n){
+  if (!n){
+    card.style.setProperty('--uc', '#d98e4a');
+    ucInner.innerHTML = '<div class="uc-empty"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><p style="max-width:220px;line-height:1.5;font-size:14px">Selecciona un nodo del mapa para ver los detalles de la zona</p></div>';
+    return;
+  }
+  card.style.setProperty('--uc', n.color);
+  var pin = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+  var flask = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2v6L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8V2"/><path d="M8 2h8"/></svg>';
+  function d(i){ return ' style="animation-delay:'+(i*50)+'ms"'; }
+  ucInner.innerHTML =
+    '<div class="uc-head fade-in"'+d(0)+'><div><div class="uc-label">'+n.label+'</div><div class="uc-city">'+n.city+'</div></div><div class="uc-pin" style="background:'+n.color+'22">'+pin+'</div></div>'+
+    '<div class="uc-div fade-in"'+d(1)+'></div>'+
+    '<div class="uc-envrow fade-in"'+d(2)+'>'+flask+'<span class="uc-env">'+n.env+'</span></div>'+
+    '<p class="uc-tag fade-in"'+d(3)+'>&ldquo;'+n.tag+'&rdquo;</p>'+
+    '<p class="uc-desc fade-in"'+d(4)+'>'+n.desc+'</p>'+
+    '<div class="uc-foot fade-in"'+d(5)+'><a class="u" href="'+n.url+'" target="_blank" rel="noopener">'+n.uni+'</a><span class="s">'+n.short+'</span></div>';
+}
+
 function select(n){
   if (selected === n.id) return;
   selected = n.id;
   applyState();
-  card.style.setProperty('--uc', n.color);
-  card.innerHTML =
-    '<div class="uc-head fade-in">Nodo · '+n.short+'</div>'+
-    '<div class="uc-city fade-in">'+n.city+'</div>'+
-    '<div class="uc-uni fade-in">'+n.uni+'</div>'+
-    '<div class="uc-tag serif-it fade-in">'+n.tag+'</div>'+
-    '<div class="uc-desc fade-in">'+n.desc+'</div>'+
-    '<div class="uc-env fade-in">'+n.env+'</div>'+
-    '<a class="uc-link fade-in" href="'+n.url+'" target="_blank" rel="noopener">Visitar '+n.short+' →</a>';
+  renderCard(n);
 }
 
 // Proximidad: al mover el cursor por el mapa se selecciona el nodo más cercano
