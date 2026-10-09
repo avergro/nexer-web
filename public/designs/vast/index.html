@@ -67,18 +67,18 @@
   @media(max-width:820px){.map-layout{grid-template-columns:1fr;gap:40px}}
 
   .chile{width:100%;max-width:440px;margin:0 auto;perspective:1400px}
-  .map-entry{transform-style:preserve-3d;transform:rotateY(-88deg);transition:transform 2.2s cubic-bezier(.12,.8,.18,1)}
-  .map-entry.in{transform:rotateY(0deg)}
+  .map-entry{transform-style:preserve-3d;opacity:0;transform:rotateY(-85deg);transition:opacity 1s ease,transform 2.4s cubic-bezier(.12,.8,.18,1)}
+  .map-entry.in{opacity:1;transform:rotateY(0deg)}
   .map-tilt{transform-style:preserve-3d;will-change:transform}
   .chile svg{width:100%;height:auto;display:block}
   .node-dot{cursor:pointer}
-  .node-dot .ring{transition:r .35s cubic-bezier(.34,1.56,.64,1),opacity .35s ease,stroke-width .35s ease}
-  .node-halo{transition:r .45s cubic-bezier(.34,1.56,.64,1),opacity .45s ease}
-  .node-core{transition:r .15s ease}
+  .node-halo{transition:r .5s cubic-bezier(.34,1.56,.64,1),opacity .5s ease}
+  .node-ring{transition:r .4s cubic-bezier(.34,1.56,.64,1),opacity .4s ease,stroke-width .4s ease}
+  .node-core{transform-box:fill-box;transform-origin:center;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
   .node-pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.2s ease-out infinite}
-  @keyframes pulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(4.4);opacity:0}}
-  .node-label{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;fill:var(--muted);transition:all .25s ease;cursor:pointer}
-  .node-label.on{fill:var(--text)}
+  @keyframes pulse{0%{transform:scale(.35);opacity:.6}100%{transform:scale(4.2);opacity:0}}
+  .node-clink{transition:opacity .3s ease,stroke-width .3s ease}
+  .node-label{transition:opacity .25s ease,font-weight .25s ease}
 
   /* university card */
   .ucard{min-height:360px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);border-radius:2px;padding:44px;position:relative;overflow:hidden}
@@ -208,11 +208,11 @@ const NODES = [
    tag:'Vida al límite del desierto más árido del mundo',
    desc:'En el Desierto de Atacama, los organismos han desarrollado estrategias únicas para sobrevivir a la radiación extrema, la escasez hídrica y la salinidad. El nodo norte investiga estos mecanismos a nivel molecular y celular.',
    env:'Desierto de Atacama · Ambientes Poliextremos'},
-  {id:'usach', short:'USACH', city:'Santiago', uni:'Universidad de Santiago de Chile', color:'#6b5f8e', x:100, y:262, url:'https://www.usach.cl',
+  {id:'usach', short:'USACH', city:'Santiago', uni:'Universidad de Santiago de Chile', color:'#6b5f8e', x:100, y:262, labelY:238, url:'https://www.usach.cl',
    tag:'Ciencia aplicada en el corazón de Chile',
    desc:'La USACH aporta capacidades únicas en ecología urbana, química ambiental y biotecnología, estudiando la interfaz entre los ecosistemas andinos y el entorno metropolitano.',
    env:'Cuencas Andinas · Interfaz Urbano-Natural'},
-  {id:'ohiggins', short:'UOH', city:'Rancagua', uni:"Universidad de O'Higgins", color:'#a06b3a', x:99, y:273, url:'https://www.uoh.cl',
+  {id:'ohiggins', short:'UOH', city:'Rancagua', uni:"Universidad de O'Higgins", color:'#a06b3a', x:99, y:273, labelY:300, url:'https://www.uoh.cl',
    tag:'Ecosistemas mediterráneos en el umbral del cambio',
    desc:"O'Higgins es la principal zona agrícola de Chile. La sequía, las heladas tardías y las olas de calor someten estos cultivos a un estrés ambiental sin precedentes. El nodo UOH conecta ciencia de ambientes extremos con la seguridad alimentaria del país.",
    env:'Agricultura Mediterránea · Estrés Hídrico y Térmico'},
@@ -235,11 +235,13 @@ const tiltEl = document.querySelector('.map-tilt');
 let selected = null;
 const nodeEls = {};
 
-// --- Tilt 3D (suavizado tipo spring) ---
-let rotX = 0, rotY = 0, tRotX = 0, tRotY = 0;
+// --- Tilt 3D (spring con rebote, como la página actual) ---
+let rotX = 0, rotY = 0, tRotX = 0, tRotY = 0, velX = 0, velY = 0;
 (function tiltLoop(){
-  rotX += (tRotX - rotX) * 0.10;
-  rotY += (tRotY - rotY) * 0.10;
+  const k = 0.14, damp = 0.80;
+  velX += (tRotX - rotX) * k; velY += (tRotY - rotY) * k;
+  velX *= damp; velY *= damp;
+  rotX += velX; rotY += velY;
   if (tiltEl) tiltEl.style.transform = 'rotateX('+rotX.toFixed(3)+'deg) rotateY('+rotY.toFixed(3)+'deg)';
   requestAnimationFrame(tiltLoop);
 })();
@@ -256,6 +258,7 @@ chileBox.addEventListener('mouseleave', function(){ tRotX = 0; tRotY = 0; });
 
 function buildNodes(){
   NODES.forEach(n => {
+    const labelY = n.labelY || n.y;
     const g = document.createElementNS(NS,'g');
     g.setAttribute('class','node-dot');
     g.style.cursor = 'pointer';
@@ -269,18 +272,19 @@ function buildNodes(){
     ring.setAttribute('cx', n.x); ring.setAttribute('cy', n.y);
     ring.setAttribute('fill','none');
     ring.setAttribute('stroke', n.color);
-    ring.setAttribute('class','ring');
+    ring.setAttribute('class','node-ring');
 
     const pulse = document.createElementNS(NS,'circle');
     pulse.setAttribute('cx', n.x); pulse.setAttribute('cy', n.y);
     pulse.setAttribute('r', 5);
     pulse.setAttribute('fill','none');
     pulse.setAttribute('stroke', n.color);
-    pulse.setAttribute('stroke-width', 1);
+    pulse.setAttribute('stroke-width', 1.5);
     pulse.setAttribute('class','node-pulse');
 
     const dot = document.createElementNS(NS,'circle');
     dot.setAttribute('cx', n.x); dot.setAttribute('cy', n.y);
+    dot.setAttribute('r', 5);
     dot.setAttribute('fill', n.color);
     dot.setAttribute('stroke','#0a0a09');
     dot.setAttribute('stroke-width','1.5');
@@ -290,15 +294,43 @@ function buildNodes(){
     hit.setAttribute('cx', n.x); hit.setAttribute('cy', n.y);
     hit.setAttribute('r', 24); hit.setAttribute('fill','transparent');
 
-    const lbl = document.createElementNS(NS,'text');
-    lbl.setAttribute('x', n.x + 16); lbl.setAttribute('y', n.y + 3.5);
-    lbl.setAttribute('class','node-label');
-    lbl.textContent = n.short + ' · ' + n.city;
+    const clink = document.createElementNS(NS,'line');
+    clink.setAttribute('x1', n.x + 8); clink.setAttribute('y1', n.y);
+    clink.setAttribute('x2', 150); clink.setAttribute('y2', labelY);
+    clink.setAttribute('stroke', n.color);
+    clink.setAttribute('stroke-width', 0.7);
+    clink.setAttribute('stroke-dasharray', '3 3');
+    clink.setAttribute('opacity', 0.4);
+    clink.setAttribute('class','node-clink');
 
-    g.appendChild(halo); g.appendChild(ring); g.appendChild(pulse); g.appendChild(dot); g.appendChild(hit); g.appendChild(lbl);
+    const over = document.createElementNS(NS,'text');
+    over.setAttribute('x', 158); over.setAttribute('y', labelY - 9);
+    over.setAttribute('font-size', 8.5);
+    over.setAttribute('fill', n.color);
+    over.setAttribute('style','font-family:"IBM Plex Mono",monospace;letter-spacing:.12em');
+    over.setAttribute('class','node-label');
+    over.textContent = n.short.toUpperCase() + ' · ' + (n.env.split(' · ')[0]).toUpperCase();
+
+    const city = document.createElementNS(NS,'text');
+    city.setAttribute('x', 158); city.setAttribute('y', labelY + 5);
+    city.setAttribute('font-size', 18);
+    city.setAttribute('fill', '#f3efe8');
+    city.setAttribute('style','font-family:"Fraunces",serif');
+    city.setAttribute('class','node-label');
+    city.textContent = n.city;
+
+    const uni = document.createElementNS(NS,'text');
+    uni.setAttribute('x', 158); uni.setAttribute('y', labelY + 19);
+    uni.setAttribute('font-size', 10);
+    uni.setAttribute('fill', '#9c958b');
+    uni.setAttribute('style','font-family:"Inter",sans-serif');
+    uni.setAttribute('class','node-label');
+    uni.textContent = n.uni;
+
+    g.appendChild(halo); g.appendChild(ring); g.appendChild(pulse); g.appendChild(clink); g.appendChild(dot); g.appendChild(hit); g.appendChild(over); g.appendChild(city); g.appendChild(uni);
     g.addEventListener('click', function(){ select(n); });
     svg.appendChild(g);
-    nodeEls[n.id] = { halo, ring, pulse, dot, lbl };
+    nodeEls[n.id] = { halo, ring, pulse, dot, clink, over, city, uni };
   });
 }
 
@@ -308,12 +340,20 @@ function applyState(){
     const el = nodeEls[n.id];
     el.halo.setAttribute('r', isSel ? 34 : 10);
     el.halo.setAttribute('opacity', isSel ? 0.22 : 0);
-    el.ring.setAttribute('r', isSel ? 16 : 9);
-    el.ring.setAttribute('opacity', isSel ? 1 : 0.4);
+    el.ring.setAttribute('r', isSel ? 16 : 8);
+    el.ring.setAttribute('opacity', isSel ? 1 : 0);
     el.ring.setAttribute('stroke-width', isSel ? 1.5 : 1);
-    el.dot.setAttribute('r', isSel ? 7 : 5);
+    el.dot.style.transform = isSel ? 'scale(1.5)' : 'scale(1)';
     el.pulse.style.display = isSel ? '' : 'none';
-    el.lbl.setAttribute('class', 'node-label' + (isSel ? ' on' : ''));
+    el.clink.setAttribute('stroke-width', isSel ? 1.2 : 0.7);
+    el.clink.setAttribute('opacity', isSel ? 0.9 : 0.4);
+    el.over.setAttribute('opacity', isSel ? 1 : 0.55);
+    el.over.setAttribute('font-weight', isSel ? '600' : '400');
+    el.city.setAttribute('opacity', isSel ? 1 : 0.55);
+    el.city.setAttribute('font-weight', isSel ? '600' : '400');
+    el.city.setAttribute('fill', isSel ? '#ffffff' : '#f3efe8');
+    el.uni.setAttribute('opacity', isSel ? 1 : 0.55);
+    el.uni.setAttribute('fill', isSel ? '#c8c3bb' : '#9c958b');
   });
 }
 
