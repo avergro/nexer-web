@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEXER — Red de Ambientes Extremos · Prototipo "Extremo Inmersivo" + Mapa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:#0a0a09; --bg-2:#11110f; --text:#f3efe8; --muted:#9c958b; --faint:#6b655d;
+    --accent:#d98e4a; --line:rgba(243,239,232,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:"Inter",sans-serif;line-height:1.5;font-size:15px;-webkit-font-smoothing:antialiased}
+  .serif-it{font-family:"Fraunces",serif;font-style:italic}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .img{background-size:cover;background-position:center}
+  .d1{background-image:url("../../images/gallery/atacama-desierto.jpg")}
+  .d2{background-image:url("../../images/news/2019-antartica-plantas.jpg")}
+  .d3{background-image:url("../../images/news/2020-patagonia-ancestral.jpg")}
+  .d4{background-image:url("../../images/news/2020-alturas-andinas.jpg")}
+  .d5{background-image:url("../../images/news/2019-salar-atacama.jpg")}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px 36px;mix-blend-mode:difference;color:#fff}
+  nav .logo{font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:.06em;font-size:16px}
+  nav .links{display:flex;gap:26px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+  nav .links a{color:inherit;text-decoration:none;transition:opacity .2s}
+  nav .links a:hover{opacity:.6}
+  @media(max-width:720px){nav .links{display:none}}
+
+  .hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:flex-end;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.06);animation:kenburns 18s ease-in-out infinite alternate}
+  @keyframes kenburns{from{transform:scale(1.06) translateY(0)}to{transform:scale(1.16) translateY(-2%)}}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,9,.35),rgba(10,10,9,.1) 40%,rgba(10,10,9,.9))}
+  .hero .inner{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 36px 72px}
+  .hero .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,239,232,.7);margin-bottom:20px}
+  .hero h1{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(88px,22vw,300px);line-height:.82;letter-spacing:-.03em;text-transform:uppercase}
+  .hero h1 .it{font-family:"Fraunces",serif;font-style:italic;font-weight:400;text-transform:none}
+  .hero .sub{margin-top:24px;font-family:"Fraunces",serif;font-style:italic;font-size:clamp(20px,2.4vw,30px);color:rgba(243,239,232,.85);max-width:34ch}
+  .hero .cta{margin-top:40px;display:inline-flex;gap:12px;align-items:center;font-size:13px;letter-spacing:.06em;border-bottom:1px solid rgba(243,239,232,.5);padding-bottom:6px}
+  .scrollcue{position:absolute;right:36px;bottom:40px;z-index:3;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.2em;writing-mode:vertical-rl;color:rgba(243,239,232,.5)}
+
+  .manifesto{padding:160px 36px;max-width:1100px;margin:0 auto}
+  .manifesto .kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:40px}
+  .manifesto p{font-family:"Archivo",sans-serif;font-weight:600;font-size:clamp(28px,4.6vw,58px);line-height:1.12;letter-spacing:-.02em}
+  .manifesto p .it{font-family:"Fraunces",serif;font-style:italic;font-weight:300;color:var(--accent)}
+
+  .chapter{position:relative;height:92vh;min-height:520px;display:flex;align-items:flex-end}
+  .chapter .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+  .chapter .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,9,.15),rgba(10,10,9,.78))}
+  .chapter .cap{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 36px 64px}
+  .chapter .no{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;color:rgba(243,239,232,.6);margin-bottom:14px}
+  .chapter h2{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(40px,7vw,96px);line-height:.95;letter-spacing:-.02em}
+  .chapter .loc{margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;color:rgba(243,239,232,.55)}
+
+  /* ---- MAP SECTION ---- */
+  .map-sec{padding:140px 36px;background:var(--bg-2)}
+  .map-sec .head{max-width:1100px;margin:0 auto 64px}
+  .map-sec .head .kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .map-sec .head h2{margin-top:20px;font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);letter-spacing:-.02em}
+  .map-sec .head .sub{margin-top:14px;color:var(--muted);max-width:56ch}
+
+  .map-layout{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(300px,440px) 1fr;gap:64px;align-items:center}
+  @media(max-width:820px){.map-layout{grid-template-columns:1fr;gap:40px}}
+
+  .chile{width:100%;max-width:440px;margin:0 auto}
+  .chile svg{width:100%;height:auto;display:block}
+  .node-dot{cursor:pointer}
+  .node-dot .ring{transition:all .25s ease}
+  .node-label{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;fill:var(--muted);transition:all .25s ease;cursor:pointer}
+  .node-label.on{fill:var(--text)}
+
+  /* university card */
+  .ucard{min-height:360px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);border-radius:2px;padding:44px;position:relative;overflow:hidden}
+  .ucard::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--uc,var(--accent));transition:background .3s ease}
+  .ucard .uc-head{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+  .ucard .uc-city{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(34px,5vw,52px);line-height:1;margin-top:18px;letter-spacing:-.02em}
+  .ucard .uc-uni{color:var(--muted);margin-top:10px;font-size:16px}
+  .ucard .uc-tag{margin-top:22px;font-family:"Fraunces",serif;font-style:italic;font-size:clamp(19px,2.4vw,26px);color:var(--text)}
+  .ucard .uc-desc{margin-top:18px;color:var(--muted);line-height:1.65;font-size:14px}
+  .ucard .uc-env{margin-top:22px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--faint);text-transform:uppercase}
+  .ucard .uc-link{margin-top:26px;font-size:13px;letter-spacing:.06em;color:var(--text);text-decoration:none;border-bottom:1px solid var(--accent);align-self:flex-start;padding-bottom:4px}
+  .fade-in{animation:fadein .5s cubic-bezier(.16,1,.3,1)}
+  @keyframes fadein{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+  .news{padding:120px 36px 160px}
+  .news .head{max-width:1100px;margin:0 auto 48px}
+  .news .head .kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .news .head h2{margin-top:20px;font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px)}
+  .nlist{max-width:1100px;margin:0 auto}
+  .nitem{display:grid;grid-template-columns:90px 1fr auto;gap:24px;align-items:baseline;padding:22px 0;border-top:1px solid var(--line)}
+  .nitem .d{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--faint)}
+  .nitem .t{font-size:18px;font-weight:500}
+  .nitem .z{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+  @media(max-width:640px){.nitem{grid-template-columns:1fr;gap:6px}}
+
+  footer{padding:72px 36px 56px;border-top:1px solid var(--line)}
+  footer .in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  footer .logo{font-family:"Archivo",sans-serif;font-weight:800;font-size:28px}
+  footer .meta{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint);line-height:1.9}
+  .logos{max-width:1100px;margin:48px auto 0;padding-top:40px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px}
+  .logos a{opacity:.5;transition:opacity .2s ease;display:flex;align-items:center}
+  .logos a:hover{opacity:.85}
+  .logos img{height:var(--h);width:auto;display:block}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+  .reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#top" style="color:#fff;text-decoration:none">NEXER</a>
+  <div class="links"><a href="#mision">Red</a><a href="#zonas">Zonas</a><a href="#noticias">Noticias</a></div>
+</nav>
+
+<section class="hero">
+  <div class="bg d1"></div><div class="scrim"></div><div class="scrollcue">DESPLAZAR</div>
+  <div class="inner">
+    <div class="tag">Red de Investigación · Chile</div>
+    <h1>NEX<span class="it">ER</span></h1>
+    <div class="sub">Red de Ambientes Extremos — comprendiendo los límites de la vida en un mundo cambiante.</div>
+    <a class="cta" href="#zonas" style="color:inherit;text-decoration:none">EXPLORAR LOS NODOS <span>↓</span></a>
+  </div>
+</section>
+
+<section class="manifesto" id="mision">
+  <div class="kicker reveal">01 — Misión</div>
+  <p class="reveal">Investigamos los mecanismos de adaptación en ambientes poliextremos a lo largo de Chile — desde el nivel molecular hasta el paisaje — y su relación con las <span class="it">dinámicas de carbono</span> en el Antropoceno.</p>
+</section>
+
+<section class="chapter"><div class="bg d4"></div><div class="scrim"></div><div class="cap reveal"><div class="no">02 · ALTIPLANO</div><h2>Los Andes</h2><div class="loc">VOLCÁN LLULLAILLACO · 6.739 M</div></div></section>
+<section class="chapter"><div class="bg d5"></div><div class="scrim"></div><div class="cap reveal"><div class="no">03 · DESIERTO</div><h2>Atacama</h2><div class="loc">SALAR · ARIDEZ EXTREMA</div></div></section>
+
+<!-- ===== MAP INTERACTIVO ===== -->
+<section class="map-sec" id="zonas">
+  <div class="head reveal">
+    <div class="kicker">La Red</div>
+    <h2>Cinco nodos, un país</h2>
+    <div class="sub">Selecciona un nodo para desplegar la universidad y su ambiente extremo.</div>
+  </div>
+
+  <div class="map-layout">
+    <div class="chile" id="chileMap">
+      <svg viewBox="0 0 460 670" aria-label="Mapa interactivo de Chile">
+        <path id="chilePath" d="M103.096,35.822L103.642,35.652L104.918,35.536L106.237,35.534L107.908,34.945L109.686,33.853L110.847,32.265L111.344,30.811L111.346,29.54L110.823,27.924L110.681,26.78L111.297,26.233L112.923,26.02L114.24,24.944L115.251,24L115.465,25.595L117.3,27.734L117.898,30.148L118.314,30.453L120.838,31.66L120.885,31.945L120.515,32.396L120.148,32.978L120.404,33.802L120.86,34.93L121.012,35.977L121.291,37.056L121.569,38.71L121.737,40.21L122.38,42.428L122.511,43.796L122.521,44.622L123.021,45.433L124,46.399L125.324,47.375L126.375,48.513L127.18,49.283L128.154,49.914L128.903,50.494L129.195,50.892L129.292,51.217L128.969,51.523L127.787,53.026L126.139,55.316L126.167,55.595L127.747,57.244L128,57.897L127.982,58.819L127.453,59.929L125.748,60.281L125.368,60.584L125.321,60.936L125.713,61.406L125.653,62.501L126.269,63.713L125.951,64.126L125.322,64.685L125.305,65.23L125.511,65.836L126.172,66.328L128.797,68.031L129.005,68.266L128.964,68.442L127.949,69.579L127.843,70.281L127.872,71.437L128.015,72.185L128.342,72.496L129.659,72.849L131.289,75.454L132.854,77.905L132.834,80.02L132.996,82.487L133.991,84.426L134.13,85.979L134.466,87.743L135.65,88.817L136.111,90.941L136.232,92.073L136.158,92.818L137.078,95.132L137.186,97.123L136.968,98.555L136.979,99.354L137.109,99.917L137.899,100.423L138.248,100.739L139.415,100.88L141.122,100.917L144.038,100.386L146.28,99.899L148.773,102.512L147.689,106.063L145.955,111.741L144.615,116.144L144.395,116.732L144.119,117.597L141.231,118.847L137.018,120.674L134.859,121.628L132.141,122.859L131.481,123.865L130.696,124.408L129.833,125.113L129.504,125.877L128.698,126.36L127.964,128.094L127.964,129.427L128.433,130.336L129.247,130.719L129.504,131.809L129.759,132.578L130.346,133.184L130.199,133.669L129.723,134.033L128.844,134.236L128.248,135.327L127.561,138.044L127.452,139.018L128.234,141.482L128.65,142.812L129.776,147.644L129.941,148.961L128.396,150.801L127.78,151.922L127.56,152.911L127.568,153.694L127.708,154.412L128.995,156.688L130.492,158.731L131.225,159.798L131.225,161.236L130.858,162.058L130.063,162.363L128.295,162.922L127.561,163.745L126.756,163.87L125.987,163.21L125.181,163.375L124.155,163.951L123.77,165.352L122.874,167.742L122.104,168.404L121.531,170.231L120.509,172.856L120.016,174.44L119.76,175.6L118.731,176.343L117.532,177.817L116.61,179.253L116.243,179.669L115.547,179.793L115.034,181.082L113.296,183.03L112.881,185.293L112.251,186.5L112.14,188.681L111.18,192.685L111.005,193.569L110.035,194.269L108.758,195.822L108.34,196.959L108.932,200.364L109.669,203.813L109.716,205.433L109.43,207.634L109.236,208.593L109.724,208.989L110.53,209.243L110.786,210.09L110.199,210.684L109.944,211.744L109.284,212.932L107.333,213.399L106.647,212.974L106.427,213.357L106.537,214.206L106.101,215.208L105.09,217.894L104.423,220.337L104.035,221.404L104.192,222.301L104.522,222.814L104.559,223.284L104.003,223.875L103.496,224.823L102.947,224.952L102.361,224.694L101.738,225.251L101.612,226.417L101.268,227.898L101.111,229.633L100.859,231.856L101.657,233.382L102.669,236.147L103.423,236.808L104.266,236.765L104.925,237.326L105.291,237.975L104.802,239.133L103.936,239.312L103.826,239.962L104.082,241.433L104.412,242.862L105.245,243.548L105.621,245.462L106.427,246.113L106.329,248.567L107.143,251.455L108.002,252.293L108.405,252.685L108.135,253.948L107.453,254.955L107.306,256.573L107.562,257.755L108.434,258.871L109.114,258.998L110.09,258.543L111.116,259.069L111.262,260.033L111.409,260.91L110.859,262.052L110.273,264.161L110.115,266.26L110.287,269.46L110.555,271.946L110.61,273.514L110.676,274.224L110.31,274.711L109.418,274.963L108.661,275.066L108.002,275.464L107.856,276.262L107.34,277.594L106.807,278.582L105.877,280.02L105.287,281.508L104.815,282.488L104.858,283.168L104.518,284.481L104.169,285.572L103.432,289.255L102.448,290.022L101.665,290.401L101.262,290.895L101.568,291.896L102.397,292.196L102.69,293.005L102.58,294.263L103.13,295.433L103.076,296.852L103.606,299.535L103.13,301.297L103.291,302.819L103.276,304.33L102.58,305.507L101.152,305.734L100.368,306.822L99.028,308.006L98.881,308.961L98.661,309.825L98.112,310.143L97.269,310.143L96.573,310.28L95.598,311.402L94.558,312.009L94.321,312.915L94.413,314.017L93.863,314.702L93.167,315.982L92.727,317.354L93.167,318.636L93.643,320.93L93.716,321.894L93.112,323.795L92.618,325.022L93.093,326.588L93.496,327.463L93.121,329.389L92.801,330.605L93.057,332.827L94.014,335.332L94.925,337.562L95.059,340.163L95.296,342.226L95.731,344.466L96.646,345.355L97.343,346.104L97.196,347.181L96.683,348.495L95.95,349.481L94.135,349.808L92.659,350.699L91.474,351.319L90.571,352.066L89.922,352.862L89.601,353.733L89.818,357.536L89.675,358.942L89.067,360.936L88.5,362.548L88.258,363.033L88.185,363.745L88.075,364.411L87.438,364.562L86.536,364.268L86.024,364.458L85.657,364.981L85.967,366.231L86.298,368.432L86.756,369.366L86.633,370.106L86.463,371.707L85.865,373.005L85.071,373L84.558,373.526L84.339,374.437L84.577,375.624L85.621,376.597L85.987,377.221L85.804,378.038L84.998,378.375L84.522,379.049L84.068,380.55L83.462,382.247L82.814,383.502L82.691,385.226L83.606,387.064L83.503,388.867L83.438,394.164L83.349,395.966L83.631,398.956L83.277,399.781L83.094,400.566L83.988,402.748L84.986,406.284L85.254,407.695L85.108,408.682L83.77,409.52L82.654,409.867L81.995,409.274L81.555,409.521L81.042,410.559L80.455,411.4L80.236,412.242L80.858,413.332L81.189,415.414L80.493,416.309L79.98,417.303L80.163,418.598L80.383,420.941L79.943,424.84L80.533,426.226L81.172,426.892L83.264,427.688L84.832,428.082L85.246,429.378L85.068,430.433L84.314,430.954L83.178,431.408L83.178,433.115L84.15,434.721L85.246,435.886L85.485,436.934L85.423,438.007L84.655,438.906L85.71,440.859L86.191,442.182L85.708,443.204L85.024,444.736L84.419,445.47L84.422,446.305L84.172,447.998L84.115,449.659L84.316,450.651L90.938,451.435L92.454,451.741L93.281,452.733L93.162,453.977L92.335,455.304L91.804,457.797L90.504,458.214L89.204,457.547L87.794,457.777L86.572,457.936L84.815,458.011L82.481,458.334L81.051,457.963L80.934,458.88L81.346,460.463L84.419,460.964L87.314,461.883L88.184,463.564L89.361,465.47L90.563,466.652L90.622,468.584L88.732,470.602L88.495,472.035L86.014,472.457L85.305,473.301L84.951,476.09L85.246,478.292L86.191,479.055L86.841,480.499L86.132,482.2L84.46,483.375L83.57,484.493L84.127,485.386L84.884,486.805L85.092,487.578L85.505,489.675L85.988,492.606L85.929,494.029L85.486,495.093L83.828,496.769L82.706,497.545L82.486,499.615L82.401,501.17L82.518,502.575L83.238,503.694L83.178,504.824L82.193,505.065L81.346,505.608L80.519,507.61L78.115,509.659L77.27,510.578L77.33,512.154L76.377,514.41L75.579,516.374L74.966,518.214L75.085,520.153L76.44,521.005L77.506,522.892L77.979,525.284L77.152,528.037L75.231,529.077L74.096,530.249L73.754,531.137L74.055,534.037L73.977,535.401L73.674,536.685L73.18,537.676L72.146,538.79L70.311,539.762L68.752,540.431L68.057,541.199L67.241,542.886L66.513,544.752L66.696,547.065L62.324,547.336L62.028,549.059L61.083,550.423L60.787,552.88L61.748,555.262L62.206,557.262L61.422,559.681L61.706,562.167L61.792,564.15L63.328,566.365L64.332,569.107L64.835,571.434L65.137,573.244L65.539,574.347L66.17,575.599L66.459,577.043L67.404,577.51L69.103,576.158L70.304,575.242L71.139,574.916L73.593,575.126L75.075,574.279L75.74,574.367L76.646,574.844L77.347,575.849L77.877,578.129L78.203,580.69L77.787,583.31L77.093,583.88L76.857,584.632L77.093,586.233L77.861,587.365L77.843,588.983L76.996,592.662L76.443,594.18L77.423,595.894L78.301,597.422L80.07,598.567L81.524,600.183L82.528,601.521L82.292,603.341L82.995,603.894L85.702,603.932L89.746,603.989L96.064,604.081L102.23,604.17L109.232,604.3L112.55,605.763L115.553,607.088L119.334,607.088L123.107,608.66L125.912,609.696L127.592,610.087L129.318,610.462L129.554,611.913L122,609.854L120.304,608.733L118.868,608.602L116.11,610.002L114.586,613.338L113.786,614.287L111.87,615.185L109.942,615.362L103.462,618.609L101.158,618.887L99.585,619.751L98.047,620.995L97.458,623.674L97.698,625.308L95.945,631.195L95.512,634.483L95.502,636.163L96.001,638.913L95.358,643.637L94.193,644.674L91.313,646L89.355,645.035L86.007,644.177L83.621,642.353L80.553,641.067L79.568,640.31L76.857,636.677L76.57,635.475L76.373,633.957L77.805,631.794L78.574,631.637L80.818,631.702L82.686,631.355L83.878,632.512L84.206,635.038L83.682,636.389L83.207,637.224L83.356,637.856L84.699,636.978L85.381,631.322L89.939,628.515L91.431,626.88L92.888,624.362L93.115,623.641L93.225,622.699L92.259,621.923L90.108,620.896L83.272,626.169L80.175,627.563L78.18,629.08L75.765,631.812L75.306,632.621L74.794,634.44L74.551,636.442L72.168,635.526L68.529,632.623L67.801,631.565L68.531,630.083L69.639,628.849L69.715,624.718L69.993,623.275L70.76,622.12L72.156,620.853L72.849,620.559L73.437,621.108L73.51,622.077L75.83,622.008L80.33,618.369L82.182,618.283L84.624,619.094L87.382,618.607L87.878,618.236L88.452,617.384L86.396,616.385L84.425,615.878L78.881,615.525L77.68,615.912L76.041,617.835L75.497,617.354L75.147,616.385L73.266,615.703L72.365,615.845L71.501,616.769L71.642,618.206L71.162,619.748L69.42,621.281L68.236,623.724L68.292,625.628L68.2,626.621L67.765,627.145L66.867,627.777L63.977,627.348L62.347,625.347L61.708,623.984L59.864,622.508L63.873,620.675L65.281,619.632L66.568,617.309L67.527,615.835L66.847,614.798L66.045,614.796L66.121,616.443L65.237,617.796L63.388,617.158L60.661,619.159L58.984,618.624L56.253,619.213L54.917,618.134L54.63,616.764L55.112,615.34L54.61,612.929L53.858,612.344L53.09,612.481L52.745,611.048L51.916,608.534L51.547,607.856L51.15,606.689L51.561,606.406L52.499,606.741L53.321,607.495L54.572,607.591L57.328,609.226L58.472,608.833L59.092,608.457L59.325,607.101L59.34,605.814L59.813,605.814L61.377,607.459L62.372,607.303L64.13,607.738L65.018,607.561L66.668,606.947L69.262,605.142L70.608,603.276L71.254,603.023L72.053,603.263L72.588,603.798L72.596,605.095L73.203,606.297L74.028,607.284L74.257,608.485L74.088,609.668L72.613,611.335L72.339,611.915L72.834,612.528L73.445,612.241L74.286,611.416L74.765,610.284L74.894,609.696L74.947,608.857L74.883,607.834L73.685,604.927L73.535,604.272L73.537,602.957L74.9,601.75L75.285,600.809L75.345,598.992L74.637,597.748L71.707,594.878L66.81,592.009L66.247,592.309L65.868,592.828L66.319,593.206L66.967,593.398L71.33,595.763L72.465,597.138L73.209,597.507L74.09,598.421L73.866,599.76L69.467,601.076L65.98,603.917L63.373,605.646L61.566,605.014L60.706,603.259L59.796,600.998L58.425,599.681L57.647,599.804L57.019,599.561L56.525,598.865L55.469,599.442L53.149,597.876L52.476,597.195L54.178,594.996L56.051,595.841L56.505,589.68L55.921,588.284L53.486,586.768L52.29,586.964L50.658,586.759L49.559,586.064L48.307,585.789L47.248,585.384L45.865,584.442L44.195,583.939L41.94,580.07L40.972,578.044L40.445,575.836L43.902,575.787L45.924,575.43L46.417,574.509L45.705,572.756L44.716,571.378L45.442,570.086L46.476,569.087L47.553,569.53L50.213,571.756L50.67,573.267L52.563,577.885L53.019,578.296L53.243,578.727L57.154,581.323L57.702,581.288L57.46,579.11L58.586,576.163L59.679,575.19L60.226,575.2L60.282,574.71L59.22,573.487L59.74,571.857L59.399,571.806L58.457,572.851L56.564,577.984L55.405,578.924L53.815,576.594L52.912,574.92L52.468,574.326L52.624,571.703L55.776,572.234L54.694,571.376L51.017,569.866L50.098,569.13L49.415,568.861L48.192,567.087L46.676,565.588L49.292,562.896L50.639,561.006L54.85,562.01L55.665,561.426L54.96,560.047L54.129,560.463L52.815,559.606L50.771,557.031L50.84,555.719L51.214,553.318L52.024,552.805L53.744,552.311L55.706,553.09L56.563,553.724L57.303,553.427L56.551,551.652L55.271,550.981L53.845,549.719L53.992,548.321L54.451,547.167L54.797,545.904L55.035,544.138L54.904,542.764L55.315,542.131L55.943,541.848L55.982,541.333L54.739,541.44L54.289,543.176L54.121,544.76L53.238,546.034L52.862,547.472L52.638,549.198L52.146,551.18L51.071,550.425L50.441,549.648L50.2,549.117L50.312,548.107L50.02,541.884L49.991,536.701L50.542,532.683L52.06,531.09L52.75,530.628L53.378,530.831L54.348,530.819L54.989,530.241L52.812,529.28L51.492,529.829L50.516,530.596L48.755,530.018L48.42,527.966L47.378,526.195L47.196,523.933L47.278,520.667L49.745,520.948L51.755,521.586L57.069,521.531L61.432,524.663L63.357,524.243L63.269,523.612L61.796,522.824L60.877,521.074L60.337,520.565L60.082,519.516L59.999,518.294L58.917,513.811L58.483,513.928L58.068,515.463L57.165,518.027L55.903,519.274L53.975,519.78L52.069,520.065L50.414,519.573L50.028,518.511L50.07,517.282L49.354,516.682L47.484,516.15L46.953,515.853L46.336,514.742L47.227,513.066L47.959,512.066L48.855,512.264L49.704,512.716L50.789,514.035L51.855,514.285L53.075,513.238L53.314,512.526L52.551,512.08L51.856,511.907L50.774,511.347L48.644,509.346L49.708,507.309L52.221,504.98L52.988,504.447L52.323,502.489L53.075,500.353L52.304,498.594L50.91,496.702L49.026,496.284L48.621,496.836L48.555,497.61L48.854,498.194L48.678,498.615L48.248,498.602L45.855,498.186L44.25,496.928L41.634,495.782L41.292,494.887L41.009,493.573L41.925,491.314L41.462,491.284L39.761,493.029L37.193,493.945L35.304,494.244L34.474,494.954L34.143,495.539L34.645,495.885L35.738,495.971L36.536,498.161L36.338,499.004L35.948,499.571L35.06,499.68L33.203,498.163L32.227,496.445L32.25,495.081L32.914,493.229L35.86,490.748L36.676,489.7L38.404,488.539L40.71,485.925L42.725,484.476L41.745,483.277L40.715,481.478L40.82,478.982L44.887,477.996L46.661,478.401L48.91,478.324L50.165,477.727L51.076,477.6L52.996,476.911L53.822,475.944L54.014,475.206L54.005,474.562L53.781,473.77L53.467,471.719L53.785,471.034L54.607,470.219L55.684,469.966L56.178,470.029L57.455,470.777L57.199,471.839L56.687,473.118L55.643,478.219L55.117,479.375L54.293,480.377L54.844,482.47L54.018,483.937L50.331,485.502L49.846,485.592L50.121,486.152L52.255,486.02L53.908,485.689L55.545,484.368L56.059,482.355L56.735,478.443L57.622,477.891L58.657,477.767L59.198,478.687L59.024,480.75L59.02,482.749L57.647,488.694L55.984,491.092L55.799,491.723L55.864,492.473L57.182,492.364L58.188,491.075L58.913,489.43L59.638,487.144L59.556,485.49L59.777,484.468L60.075,481.132L60.579,479.448L60.545,477.097L59.639,476.212L58.372,475.676L58.053,474.24L58.718,471.409L61.141,471.482L63.436,469.554L64.941,468.856L65.797,469.001L68.8,470.859L69.394,470.881L69.301,470.212L68.835,469.741L67.652,469.115L65.475,467.122L62.546,466.799L63.083,464.218L63.652,461.864L65.072,461.539L67.457,460.766L72.005,457.252L72.794,454.611L73.011,451.651L70.818,450.882L68.494,448.952L66.619,447.925L64.956,446.638L65.283,444.718L65.501,441.594L67.586,440.926L68.554,436.652L67.155,433.392L67.49,430.967L69.312,428.901L69.64,427.473L70.142,425.905L71.75,425.746L71.785,424.894L71.642,423.343L70.585,421.511L70.544,418.978L71.537,415.995L73.132,416.202L73.44,416.076L72.308,414.275L71.386,412.295L71.546,411.506L72.428,410.833L73.451,410.459L74.557,411.471L76.141,414.7L76.381,413.871L75.741,410.582L75.214,406.506L73.545,407.041L72.015,406.754L71.439,406.122L70.865,405.208L71.404,404.092L71.941,403.262L73.065,402.218L75.393,401.851L77.077,400.543L77.641,397.855L77.089,398.12L76.175,400.485L74.639,401.287L73.856,401.17L72.932,400.727L71.119,398.666L70.116,398.187L69.14,398.136L68.307,398.657L66.176,402.292L65.268,402.907L61.524,403.198L60.148,402.777L58.659,402.218L58.837,401.32L59.289,400.366L60.134,399.876L60.149,399.328L58.987,399.19L57.646,398.185L57.053,396.914L56.769,394.645L55.568,391.064L55.33,388.507L56.178,386.685L58.004,379.565L58.561,375.952L59.539,372.784L59.518,370.7L62.047,368.798L63.01,367.662L65.16,361.284L65.474,357.855L62.067,347.516L61.538,345.552L61.373,343.113L62.186,339.075L62.281,337.547L61.585,335.342L59.641,331.747L59.604,329.918L60.424,328.037L59.633,325.708L60.019,324.267L60.447,323.14L63.49,323.743L64.876,323.458L65.614,322.777L66.192,320.872L66.481,317.899L66.662,316.622L66.926,314.757L68.419,314.007L68.939,312.244L70.188,309.789L71.476,302.952L72.749,301.271L74.036,299.334L73.546,296.465L74.375,295.142L75.137,294.181L75.81,292.437L76.724,290.789L78.907,288.425L79.461,285.547L81.155,280.582L81.493,277.407L82.019,275.264L81.867,273.269L82.885,270.847L83.862,268.811L84.17,267.681L86.402,264.992L86.778,262.847L85.984,261.398L85.97,259.153L85.348,256.048L86.788,254.888L87.37,254.041L89.243,249.1L89.12,247.165L89.658,244.766L88.429,241.931L88.257,235.579L87.568,230.708L86.434,225.582L86.542,222.721L85.848,219.172L85.804,217.127L86.333,212.5L89.938,209.594L90.639,206.348L91.072,201.971L90.925,198.79L90.569,197.364L88.793,195.027L88.346,190.861L88.689,189.772L90.157,188.601L91.193,186.978L91.727,184.462L92.805,182.486L93.232,177.715L94.143,173.93L94.597,172.611L96.028,170.955L96.297,170.513L96.518,169.252L96.451,166.275L96.67,164.46L97.811,160.896L97.942,159.248L99.209,155.589L99.496,152.966L100.037,151.585L99.827,150.031L100.186,146.559L99.327,144.599L99.138,143.454L100.219,139.908L100.954,139.045L102.141,137.398L102.641,135.551L102.733,134.379L101.215,128.554L101.008,126.575L101.379,121.971L101.901,119.004L101.732,116.64L101.901,115.427L102.164,113.903L103.207,112.057L103.443,110.746L103.078,110.2L101.841,109.532L100.82,107.861L100.75,106.214L101.078,105.017L101.154,103.323L102.675,102.99L103.486,102.05L104.256,100.291L105.223,96.042L105.638,90.784L106.215,87.624L106.622,86.065L106.963,82.808L107.526,80.679L107.627,78.719L107.515,77.229L106.06,69.655L106.105,66.878L106.724,62.567L106.715,56.511L106.59,55.099L106.042,53.778L105.881,51.985L105.005,48.87L104.213,42.634L104.197,39.347L103.855,36.562Z" fill="rgba(243,239,232,0.05)" stroke="rgba(243,239,232,0.28)" stroke-width="1.1" stroke-linejoin="round" />
+        <path id="chiloePath" d="M58.146,431.377L57.139,431.762L56.2,431.858L55.245,431.575L53.578,431.598L51.914,430.879L50.355,429.861L49.921,429.274L50.111,428.43L51.234,426.48L52.304,422.803L53.017,417.547L52.447,415.562L52.517,414.739L52.778,413.75L52.909,412.734L52.829,411.71L52.964,410.759L54.142,408.761L54.315,407.866L54.349,406.893L54.859,404.886L54.702,404.222L54.266,403.66L54.619,403.17L58.715,404.64L61.436,404.983L61.582,406.506L62.107,407.702L62.419,409.846L62.842,410.333L62.623,411.871L61.37,412.534L61.48,413.95L62.2,415.289L61.149,415.766L60.015,416.05L59.753,416.422L58.932,416.714L57.934,417.46L58.234,418.117L59.491,419.621L60.895,420.665L61.665,422.227L62.662,423.861L62.175,424.899L61.262,426.374L59.805,427.354L58.464,427.941L58.622,430.374Z" fill="rgba(243,239,232,0.04)" stroke="rgba(243,239,232,0.2)" stroke-width="0.8" />
+        <line x1="95" y1="112" x2="95" y2="630" stroke="rgba(243,239,232,0.2)" stroke-width="0.8" stroke-dasharray="2 6" />
+        <g id="nodes"></g>
+      </svg>
+    </div>
+
+    <div class="ucard" id="ucard">
+      <div class="uc-head">Zona · Nodo</div>
+      <div class="uc-city">Red NEXER</div>
+      <div class="uc-uni">Selecciona un nodo en el mapa</div>
+      <div class="uc-tag serif-it">Cinco universidades, un territorio extremo</div>
+      <div class="uc-desc">Cada nodo investiga un ambiente extremo distinto, desde el desierto más árido del mundo hasta la Antártica.</div>
+      <div class="uc-env">17°S — 56°S · CHILE</div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter"><div class="bg d3"></div><div class="scrim"></div><div class="cap reveal"><div class="no">04 · SUBANTÁRTICO</div><h2>Patagonia</h2><div class="loc">ESTRECHO DE MAGALLANES · 53°S</div></div></section>
+<section class="chapter"><div class="bg d2"></div><div class="scrim"></div><div class="cap reveal"><div class="no">05 · ANTÁRTICA</div><h2>Hielo</h2><div class="loc">PENÍNSULA ANTÁRTICA · VIDA AL LÍMITE</div></div></section>
+
+<section class="news" id="noticias">
+  <div class="head reveal"><div class="kicker">Registro</div><h2>Noticias</h2></div>
+  <div class="nlist">
+    <a class="nitem" href="https://avergro.github.io/nexer-web/es/noticias/2026-05-02-incorporacion-universidad-ohiggins/" style="text-decoration:none;color:inherit"><span class="d">2026.05.02</span><span class="t">La Universidad de O'Higgins se integra a la red NEXER</span><span class="z">O'Higgins</span></a>
+    <a class="nitem" href="https://avergro.github.io/nexer-web/es/noticias/2023-06-08-nexer-avances-investigacion/" style="text-decoration:none;color:inherit"><span class="d">2023.06.08</span><span class="t">Red NEXER presentó avances en investigación y plantea nuevos objetivos</span><span class="z">General</span></a>
+    <a class="nitem" href="https://avergro.github.io/nexer-web/es/noticias/2022-05-31-concurso-investigaciones/" style="text-decoration:none;color:inherit"><span class="d">2022.05.31</span><span class="t">Abierto Concurso de Investigaciones Vinculados al Proyecto NEXER</span><span class="z">General</span></a>
+    <a class="nitem" href="https://avergro.github.io/nexer-web/es/noticias/2021-01-19-gaia-antarctica-newsletter/" style="text-decoration:none;color:inherit"><span class="d">2021.01.19</span><span class="t">Centro GAIA Antártida lanza su primer Newsletter de divulgación</span><span class="z">Sur</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="in">
+    <div class="logo">NEXER</div>
+    <div class="meta">RED DE AMBIENTES EXTREMOS<br/>coordinacion.nexer@ufrontera.cl · +56 45 259 68 56<br/>UA · UOH · USACH · UFRO · UMAG<br/><br/><a href="../" style="color:inherit">← Todos los diseños</a></div>
+  </div>
+  <div class="logos">
+    <a href="https://www.uantof.cl" target="_blank" rel="noopener"><img src="../../images/logos/ua-logo-blanco.png" style="--h:34px" alt="UA" /></a>
+    <a href="https://www.uoh.cl" target="_blank" rel="noopener"><img src="../../images/logos/uoh-horizontal-blanco.svg" style="--h:24px" alt="UOH" /></a>
+    <a href="https://www.usach.cl" target="_blank" rel="noopener"><img src="../../images/logos/usach-logo-black.png" style="--h:30px;filter:invert(1)" alt="USACH" /></a>
+    <a href="https://www.ufro.cl" target="_blank" rel="noopener"><img src="../../images/logos/ufro-logo-blanco.png" style="--h:30px" alt="UFRO" /></a>
+    <a href="https://www.umag.cl" target="_blank" rel="noopener"><img src="../../images/logos/umag-logo-blanco.png" style="--h:50px" alt="UMAG" /></a>
+  </div>
+</footer>
+
+<script>
+const NODES = [
+  {id:'norte', short:'UA', city:'Antofagasta', uni:'Universidad de Antofagasta', color:'#c4a04a', x:103, y:112, url:'https://www.uantof.cl',
+   tag:'Vida al límite del desierto más árido del mundo',
+   desc:'En el Desierto de Atacama, los organismos han desarrollado estrategias únicas para sobrevivir a la radiación extrema, la escasez hídrica y la salinidad. El nodo norte investiga estos mecanismos a nivel molecular y celular.',
+   env:'Desierto de Atacama · Ambientes Poliextremos'},
+  {id:'usach', short:'USACH', city:'Santiago', uni:'Universidad de Santiago de Chile', color:'#6b5f8e', x:100, y:262, url:'https://www.usach.cl',
+   tag:'Ciencia aplicada en el corazón de Chile',
+   desc:'La USACH aporta capacidades únicas en ecología urbana, química ambiental y biotecnología, estudiando la interfaz entre los ecosistemas andinos y el entorno metropolitano.',
+   env:'Cuencas Andinas · Interfaz Urbano-Natural'},
+  {id:'ohiggins', short:'UOH', city:'Rancagua', uni:"Universidad de O'Higgins", color:'#a06b3a', x:99, y:273, url:'https://www.uoh.cl',
+   tag:'Ecosistemas mediterráneos en el umbral del cambio',
+   desc:"O'Higgins es la principal zona agrícola de Chile. La sequía, las heladas tardías y las olas de calor someten estos cultivos a un estrés ambiental sin precedentes. El nodo UOH conecta ciencia de ambientes extremos con la seguridad alimentaria del país.",
+   env:'Agricultura Mediterránea · Estrés Hídrico y Térmico'},
+  {id:'centro', short:'UFRO', city:'Temuco', uni:'Universidad de La Frontera', color:'#3d6b4f', x:74, y:349, url:'https://www.ufro.cl',
+   tag:'Carbono, suelos y la memoria del bosque templado',
+   desc:'Los suelos volcánicos del sur de Chile almacenan vastas reservas de carbono. La sede coordinadora UFRO estudia la secuestración de carbono en suelos extremos, la tolerancia al estrés en plantas y los ciclos biogeoquímicos.',
+   env:'Bosque Valdiviano · Suelos Volcánicos Andosoles'},
+  {id:'sur', short:'UMAG', city:'Punta Arenas', uni:'Universidad de Magallanes', color:'#4a7fa5', x:97, y:630, url:'https://www.umag.cl',
+   tag:'Dinámica del carbono en el fin del mundo',
+   desc:'La Patagonia y sus ecosistemas subantárticos representan uno de los últimos grandes sumideros de carbono del planeta. El nodo austral estudia la dinámica del carbono en el Antropoceno.',
+   env:'Patagonia · Ecosistemas Subantárticos'},
+];
+
+const svg = document.querySelector('#nodes');
+const NS = 'http://www.w3.org/2000/svg';
+const card = document.getElementById('ucard');
+let selected = null;
+
+function renderNodes(){
+  svg.innerHTML = '';
+  NODES.forEach(n => {
+    const g = document.createElementNS(NS,'g');
+    g.setAttribute('class','node-dot');
+    g.style.cursor = 'pointer';
+
+    const ring = document.createElementNS(NS,'circle');
+    ring.setAttribute('cx', n.x); ring.setAttribute('cy', n.y);
+    ring.setAttribute('r', selected===n.id ? 14 : 9);
+    ring.setAttribute('fill','none');
+    ring.setAttribute('stroke', n.color);
+    ring.setAttribute('stroke-width', selected===n.id ? 1.6 : 1);
+    ring.setAttribute('opacity', selected===n.id ? 1 : 0.4);
+    ring.setAttribute('class','ring');
+
+    const dot = document.createElementNS(NS,'circle');
+    dot.setAttribute('cx', n.x); dot.setAttribute('cy', n.y);
+    dot.setAttribute('r', selected===n.id ? 7 : 5);
+    dot.setAttribute('fill', n.color);
+    dot.setAttribute('stroke','#0a0a09'); dot.setAttribute('stroke-width','1.5');
+
+    const hit = document.createElementNS(NS,'circle');
+    hit.setAttribute('cx', n.x); hit.setAttribute('cy', n.y);
+    hit.setAttribute('r', 24); hit.setAttribute('fill','transparent');
+
+    const lbl = document.createElementNS(NS,'text');
+    lbl.setAttribute('x', n.x + 16); lbl.setAttribute('y', n.y + 3.5);
+    lbl.setAttribute('class','node-label' + (selected===n.id ? ' on':''));
+    lbl.textContent = n.short + ' · ' + n.city;
+
+    g.appendChild(ring); g.appendChild(dot); g.appendChild(hit); g.appendChild(lbl);
+    g.addEventListener('click', () => select(n));
+    svg.appendChild(g);
+  });
+}
+
+function select(n){
+  selected = n.id;
+  renderNodes();
+  card.style.setProperty('--uc', n.color);
+  card.innerHTML =
+    '<div class="uc-head fade-in">Nodo · '+n.short+'</div>'+
+    '<div class="uc-city fade-in">'+n.city+'</div>'+
+    '<div class="uc-uni fade-in">'+n.uni+'</div>'+
+    '<div class="uc-tag serif-it fade-in">'+n.tag+'</div>'+
+    '<div class="uc-desc fade-in">'+n.desc+'</div>'+
+    '<div class="uc-env fade-in">'+n.env+'</div>'+
+    '<a class="uc-link fade-in" href="'+n.url+'" target="_blank" rel="noopener">Visitar '+n.short+' →</a>';
+}
+
+renderNodes();
+
+const io = new IntersectionObserver(es => es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
