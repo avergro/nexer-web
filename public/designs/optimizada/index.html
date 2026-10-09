@@ -85,6 +85,7 @@
   .node-label{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;fill:var(--muted);cursor:pointer;transition:fill .2s}
   .node-label.on{fill:var(--ink)}
   .ucard{border:1px solid var(--border);background:var(--paper);border-radius:14px;padding:40px;box-shadow:0 10px 40px rgba(28,25,23,.06)}
+  .ucard.preview{border-style:dashed;border-color:var(--muted)}
   .ucard .uh{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .ucard .uc{font-family:"Instrument Serif",serif;font-size:clamp(34px,4.5vw,52px);margin-top:14px;line-height:1}
   .ucard .uu{color:var(--muted);margin-top:8px}
@@ -267,7 +268,7 @@ const NODES=[
  {id:'centro',short:'UFRO',city:'Temuco',uni:'Universidad de La Frontera',color:'#3d6b4f',x:74,y:349,url:'https://www.ufro.cl',tag:'Carbono, suelos y bosque templado',desc:'La sede coordinadora UFRO estudia la secuestración de carbono en suelos volcánicos.',env:'Bosque Valdiviano · Suelos Volcánicos'},
  {id:'sur',short:'UMAG',city:'Punta Arenas',uni:'Universidad de Magallanes',color:'#4a7fa5',x:97,y:630,url:'https://www.umag.cl',tag:'Dinámica del carbono en el fin del mundo',desc:'La Patagonia y sus ecosistemas subantárticos son uno de los últimos grandes sumideros de carbono.',env:'Patagonia · Subantártico'},
 ];
-const svg=document.getElementById('nodes'),NS='http://www.w3.org/2000/svg',card=document.getElementById('ucard');let sel=null;
+const svg=document.getElementById('nodes'),NS='http://www.w3.org/2000/svg',card=document.getElementById('ucard');let sel=null,hover=null;
 const chileSvg=document.getElementById('chileSvg'),chileOutline=document.getElementById('chileOutline');
 
 /* draw-in: Chile outline se traza al entrar en vista */
@@ -290,30 +291,54 @@ tiltWrap.addEventListener('mouseleave',()=>{tx=0;ty=0;});
 function renderMap(){
   svg.innerHTML='';
   NODES.forEach(n=>{
-    const g=document.createElementNS(NS,'g');g.setAttribute('class','node-dot'+(sel===n.id?' sel':''));
-    // pulse radar (solo activo en el seleccionado)
+    const active=(sel===n.id||hover===n.id);
+    const g=document.createElementNS(NS,'g');g.setAttribute('class','node-dot'+(active?' sel':''));
+    // pulse radar (solo activo en el activo)
     const pulse=document.createElementNS(NS,'circle');pulse.setAttribute('class','pulse');pulse.setAttribute('cx',n.x);pulse.setAttribute('cy',n.y);pulse.setAttribute('r',6);pulse.setAttribute('fill','none');pulse.setAttribute('stroke',n.color);pulse.setAttribute('stroke-width','1.5');
-    if(sel!==n.id)pulse.style.animation='none';
+    if(!active)pulse.style.animation='none';
     // anillo de selección (spring)
-    const ring=document.createElementNS(NS,'circle');ring.setAttribute('class','nring');ring.setAttribute('cx',n.x);ring.setAttribute('cy',n.y);ring.setAttribute('r',sel===n.id?17:8);ring.setAttribute('fill','none');ring.setAttribute('stroke',n.color);ring.setAttribute('stroke-width',sel===n.id?1.8:0.8);ring.setAttribute('opacity',sel===n.id?1:.35);
-    // conector (aparece al seleccionar)
-    const cl=document.createElementNS(NS,'line');cl.setAttribute('class','clink');cl.setAttribute('x1',n.x+9);cl.setAttribute('y1',n.y);cl.setAttribute('x2',150);cl.setAttribute('y2',n.y);cl.setAttribute('stroke',n.color);cl.setAttribute('stroke-width',sel===n.id?1:.7);cl.setAttribute('stroke-dasharray','3 3');cl.setAttribute('opacity',sel===n.id?.85:.3);
+    const ring=document.createElementNS(NS,'circle');ring.setAttribute('class','nring');ring.setAttribute('cx',n.x);ring.setAttribute('cy',n.y);ring.setAttribute('r',active?17:8);ring.setAttribute('fill','none');ring.setAttribute('stroke',n.color);ring.setAttribute('stroke-width',active?1.8:0.8);ring.setAttribute('opacity',active?1:.35);
+    // conector (aparece al activar)
+    const cl=document.createElementNS(NS,'line');cl.setAttribute('class','clink');cl.setAttribute('x1',n.x+9);cl.setAttribute('y1',n.y);cl.setAttribute('x2',150);cl.setAttribute('y2',n.y);cl.setAttribute('stroke',n.color);cl.setAttribute('stroke-width',active?1:.7);cl.setAttribute('stroke-dasharray','3 3');cl.setAttribute('opacity',active?.85:.3);
     // dot principal (spring)
     const dot=document.createElementNS(NS,'circle');dot.setAttribute('class','ndot');dot.setAttribute('cx',n.x);dot.setAttribute('cy',n.y);dot.setAttribute('r',6);dot.setAttribute('fill',n.color);dot.setAttribute('stroke','#f9f7f2');dot.setAttribute('stroke-width','1.5');
     // etiqueta (a la derecha, como el sitio original)
-    const lbl=document.createElementNS(NS,'text');lbl.setAttribute('x',158);lbl.setAttribute('y',n.y+4);lbl.setAttribute('class','node-label'+(sel===n.id?' on':''));lbl.textContent=n.short+' · '+n.city;
+    const lbl=document.createElementNS(NS,'text');lbl.setAttribute('x',158);lbl.setAttribute('y',n.y+4);lbl.setAttribute('class','node-label'+(active?' on':''));lbl.textContent=n.short+' · '+n.city;
     // hit area
     const hit=document.createElementNS(NS,'circle');hit.setAttribute('cx',n.x);hit.setAttribute('cy',n.y);hit.setAttribute('r',28);hit.setAttribute('fill','transparent');hit.style.cursor='pointer';
     g.appendChild(pulse);g.appendChild(ring);g.appendChild(cl);g.appendChild(dot);g.appendChild(lbl);g.appendChild(hit);
-    g.addEventListener('click',()=>select(n));
+    g.addEventListener('click',()=>{sel=n.id;hover=null;renderMap();showCard(n,true);});
     svg.appendChild(g);
   });
 }
-function select(n){
-  sel=n.id;renderMap();card.style.setProperty('--uc',n.color);
+
+function showCard(n, locked){
+  if(!n){
+    card.style.setProperty('--uc','#1c1917');
+    card.classList.remove('preview');
+    card.innerHTML='<div class="uh card-el">Nodo</div><div class="uc card-el">Red NEXER</div><div class="uu card-el">Selecciona un nodo en el mapa</div><div class="ut card-el">Cinco universidades, un territorio extremo</div><div class="ud card-el">Cada nodo investiga un ambiente extremo distinto, del desierto más árido del mundo a la Antártica.</div><div class="ue card-el">17°S — 56°S · CHILE</div>';
+    return;
+  }
+  card.style.setProperty('--uc',n.color);
+  card.classList.toggle('preview',!locked);
+  const hint=locked?'':'<div class="uh card-el" style="color:var(--faint);animation-delay:0ms">↳ clic para fijar</div>';
   const items=[['uh','Nodo · '+n.short],['uc',n.city],['uu',n.uni],['ut',n.tag],['ud',n.desc],['ue',n.env]];
-  card.innerHTML=items.map(([c,t],i)=>'<div class="'+c+' card-el" style="animation-delay:'+(i*55)+'ms">'+t+'</div>').join('')+'<a class="ul card-el" style="animation-delay:360ms" href="'+n.url+'" target="_blank" rel="noopener">Visitar '+n.short+' →</a>';
+  card.innerHTML=hint+items.map(([c,t],i)=>'<div class="'+c+' card-el" style="animation-delay:'+(i*55)+'ms">'+t+'</div>').join('')+'<a class="ul card-el" style="animation-delay:360ms" href="'+n.url+'" target="_blank" rel="noopener">Visitar '+n.short+' →</a>';
 }
+
+/* hover por proximidad: desplegar el nodo más cercano al cursor */
+function nearest(vx,vy){let best=null,md=1e9;NODES.forEach(n=>{const d=Math.hypot(n.x-vx,n.y-vy);if(d<md){md=d;best=n;}});return best;}
+chileSvg.addEventListener('mousemove',e=>{
+  const r=chileSvg.getBoundingClientRect();
+  const vx=(e.clientX-r.left)/r.width*460;
+  const vy=(e.clientY-r.top)/r.height*670;
+  const n=nearest(vx,vy);
+  if(n && hover!==n.id){hover=n.id;renderMap();showCard(n,false);}
+});
+chileSvg.addEventListener('mouseleave',()=>{
+  if(hover!==null){hover=null;renderMap();showCard(sel?NODES.find(x=>x.id===sel):null,!!sel);}
+});
+
 renderMap();
 
 /* ---- nav scroll state ---- */
