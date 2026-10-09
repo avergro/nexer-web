@@ -67,8 +67,8 @@
   @media(max-width:820px){.map-layout{grid-template-columns:1fr;gap:40px}}
 
   .chile{width:100%;max-width:440px;margin:0 auto;perspective:1400px}
-  .map-entry{transform-style:preserve-3d;opacity:0;transform:rotateY(-85deg);transition:opacity 1s ease,transform 2.4s cubic-bezier(.12,.8,.18,1)}
-  .map-entry.in{opacity:1;transform:rotateY(0deg)}
+  .map-entry{transform-style:preserve-3d;transform:rotateY(-88deg);transition:transform 2.2s cubic-bezier(.12,.8,.18,1)}
+  .map-entry.in{transform:rotateY(0deg)}
   .map-tilt{transform-style:preserve-3d;will-change:transform}
   .chile svg{width:100%;height:auto;display:block}
   .node-dot{cursor:pointer}
@@ -349,11 +349,27 @@ mapSvg.addEventListener('mousemove', function(e){
 buildNodes();
 applyState();
 
-// Entrada del mapa (rotación 3D al hacer scroll)
+// Entrada del mapa (rotación 3D al hacer scroll) — con red de seguridad
 const entryEl = document.querySelector('.map-entry');
+function revealMap(){ if (entryEl && !entryEl.classList.contains('in')) entryEl.classList.add('in'); }
 if (entryEl) {
-  const eio = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ entryEl.classList.add('in'); eio.disconnect(); } }); }, {threshold:0.15});
-  eio.observe(entryEl);
+  function checkMap(){
+    const r = entryEl.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (r.top < vh * 0.92) {
+      revealMap();
+      window.removeEventListener('scroll', checkMap);
+      window.removeEventListener('resize', checkMap);
+    }
+  }
+  if ('IntersectionObserver' in window) {
+    const eio = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ revealMap(); eio.disconnect(); } }); }, {threshold:0.05});
+    eio.observe(entryEl);
+  }
+  window.addEventListener('scroll', checkMap, {passive:true});
+  window.addEventListener('resize', checkMap);
+  checkMap();
+  setTimeout(revealMap, 3000);
 }
 
 const io = new IntersectionObserver(es => es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:0.12});
