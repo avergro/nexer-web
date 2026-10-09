@@ -5,7 +5,7 @@ category: "investigación"
 zone: "sur"
 excerpt: "Experimentos in situ estudian cómo Deschampsia antarctica y Colobanthus quitensis responden al calentamiento acelerado de la Península Antártica."
 author: "Investigadores UFRO · UMAG"
-image: "/images/news/2019-antartica-plantas.jpg"
+image: "/images/news/2019-antartica-plantas.webp"
 ---
 
 Investigadores de NEXER desarrollan estudios experimentales in situ para comprender cómo las únicas dos plantas vasculares nativas de la Antártida responden a las condiciones de calentamiento regional que afectan a la Península Antártica.

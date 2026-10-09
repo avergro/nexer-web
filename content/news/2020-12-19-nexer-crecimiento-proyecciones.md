@@ -5,7 +5,7 @@ category: "institucional"
 zone: "general"
 excerpt: "Las universidades de Magallanes, La Frontera y Antofagasta presentan los logros de NEXER: más de 90 artículos de alto impacto, 31 tesis y posicionamiento internacional."
 author: "NEXER"
-image: "/images/news/2022-nexer1.jpg"
+image: "/images/news/2022-nexer1.webp"
 ---
 
 Las universidades de Magallanes, La Frontera y Antofagasta presentaron conjuntamente el balance de logros y proyecciones de la Red de Ambientes Extremos (NEXER), consolidando su posición como referente nacional e internacional en investigación de ecosistemas extremos.

@@ -5,7 +5,7 @@ category: "anuncio"
 zone: "general"
 excerpt: "NEXER es una red de investigación interinstitucional que reúne a investigadores de cuatro universidades chilenas para estudiar los mecanismos de adaptación en ambientes poliextremos."
 author: "Dra. Marcela Calabi-Floody"
-image: "/images/news/2026-nexer.jpg"
+image: "/images/news/2026-nexer.webp"
 ---
 
 La Red de Ambientes Extremos (NEXER) es una iniciativa financiada por ANID que articula capacidades de investigación de cuatro universidades chilenas para abordar preguntas fundamentales sobre cómo la vida persiste y se adapta en las condiciones más extremas del planeta.

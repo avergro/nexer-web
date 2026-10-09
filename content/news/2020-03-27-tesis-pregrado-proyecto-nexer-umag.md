@@ -5,7 +5,7 @@ category: "institucional"
 zone: "sur"
 excerpt: "Daniel Contreras Díaz obtuvo su título de Ingeniería en Recursos Naturales en la UMAG con un trabajo sobre dinámica de carbono en ecosistemas afectados por castores."
 author: "Dr. Armando Sepúlveda · UMAG"
-image: "/images/news/2020-tesis-umag.jpg"
+image: "/images/news/2020-tesis-umag.webp"
 ---
 
 Under the guidance of Dr. Armando Sepúlveda Jáuregui, on March 18, Daniel Contreras Díaz obtained his Engineering in Natural Resources degree at the University of Magallanes (UMAG). An outstanding presentation with a perfect grade under the framework of a project belonging to the Network for Extreme Environments Research (NEXER), which includes the study of carbon in ecosystems affected by human activity.

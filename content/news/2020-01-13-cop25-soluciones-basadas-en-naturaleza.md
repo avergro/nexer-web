@@ -5,7 +5,7 @@ category: "divulgación"
 zone: "general"
 excerpt: "El Dr. Francisco Matus, investigador asociado de NEXER, participó en el side-event de la COP25 sobre soluciones basadas en la naturaleza, realizado en Madrid."
 author: "Dr. Francisco Matus · UFRO"
-image: "/images/news/2020-cop25.jpg"
+image: "/images/news/2020-cop25.webp"
 ---
 
 The meeting “Conferences of the parties” (COP25) aims to make international political decisions to combat climate change and reduce greenhouse gas emissions.

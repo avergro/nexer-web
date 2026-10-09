@@ -12,7 +12,7 @@ const WEBINARS = [
     titleEn: "Microbial ecology in extreme environments of northern Chile",
     speaker: "Dra. María de la Luz Mora",
     institution: "Universidad de La Frontera",
-    poster: asset("/images/outreach/entrevista-maria-luz-mora.jpg"),
+    poster: asset("/images/outreach/entrevista-maria-luz-mora.webp"),
   },
   {
     date: "8 de septiembre 2020",
@@ -21,7 +21,7 @@ const WEBINARS = [
     titleEn: "Extreme environment biology: research at the southern node",
     speaker: "Dr. Pedro Zamorano",
     institution: "Universidad de La Frontera",
-    poster: asset("/images/outreach/entrevista-pedro-zamorano.jpg"),
+    poster: asset("/images/outreach/entrevista-pedro-zamorano.webp"),
   },
   {
     date: "1 de octubre 2020",
@@ -30,7 +30,7 @@ const WEBINARS = [
     titleEn: "Plants in extreme environments: stress and tolerance",
     speaker: "Dr. León Bravo",
     institution: "Universidad de La Frontera",
-    poster: asset("/images/outreach/entrevista-leon-bravo.jpg"),
+    poster: asset("/images/outreach/entrevista-leon-bravo.webp"),
   },
   {
     date: "24 de septiembre 2020",
@@ -39,7 +39,7 @@ const WEBINARS = [
     titleEn: "Microbiomes in polyextreme environments",
     speaker: "Dra. Leticia Barrientos",
     institution: "Universidad de La Frontera",
-    poster: asset("/images/outreach/entrevista-leticia-barrientos.jpg"),
+    poster: asset("/images/outreach/entrevista-leticia-barrientos.webp"),
   },
   {
     date: "29 de octubre 2020",
@@ -48,7 +48,7 @@ const WEBINARS = [
     titleEn: "Microbial bioprospecting in extreme environments",
     speaker: "Dr. Milko Jorquera",
     institution: "Universidad de La Frontera",
-    poster: asset("/images/outreach/webinar-nexer-1.jpg"),
+    poster: asset("/images/outreach/webinar-nexer-1.webp"),
   },
   {
     date: "3 de noviembre 2020",
@@ -57,7 +57,7 @@ const WEBINARS = [
     titleEn: "Carbon dynamics in extreme soils",
     speaker: "Dr. Francisco Matus",
     institution: "Universidad de La Frontera",
-    poster: asset("/images/outreach/webinar-francisco-matus.jpg"),
+    poster: asset("/images/outreach/webinar-francisco-matus.webp"),
   },
 ];
 

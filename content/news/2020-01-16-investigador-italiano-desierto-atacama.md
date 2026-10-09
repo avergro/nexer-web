@@ -5,7 +5,7 @@ category: "divulgación"
 zone: "norte"
 excerpt: "El investigador y deportista italiano Francesco Magistrali inició su travesía por el desierto de Atacama con seguimiento científico de investigadores NEXER de la UA."
 author: "Dr. Morín Lang Tapia · UA"
-image: "/images/news/2020-atacama-italiano.png"
+image: "/images/news/2020-atacama-italiano.webp"
 ---
 
 After a year and a half of preparation, the Italian researcher and sportsman Francesco Magistrali began the first part of his route through the Atacama Desert that will lead him to Uruguay. He started his route in “La Negra industrial” district (15 kilometers east of Antofagasta), where he prepared all the necessary equipment that will accompany him during the next six months.

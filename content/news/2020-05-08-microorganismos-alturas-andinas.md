@@ -5,7 +5,7 @@ category: "investigación"
 zone: "norte"
 excerpt: "Investigadores de la UA y NEXER realizaron una campaña de muestreo en el volcán Llullaillaco para identificar microorganismos que habitan sobre los 4.000 metros."
 author: "Pablo Arán · UA"
-image: "/images/news/2020-alturas-andinas.jpg"
+image: "/images/news/2020-alturas-andinas.webp"
 ---
 
 *Although the Andes Mountain Range is well known for its geography and tourism, the microbial communities in that zone are still poorly studied, mainly due to the challenges of all the logistics necessary to work in adverse environmental conditions and over 4,000 meters above sea level. The Laboratory of Microbial Complexity and Functional Ecology, of the UA (Universidad de Antofagasta) Antofagasta Institute, works to identify the microorganisms that live at these heights due to the scientific value and the biotechnological wealth that they hide.*

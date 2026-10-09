@@ -5,7 +5,7 @@ category: "investigación"
 zone: "centro"
 excerpt: "El Dr. León Bravo lidera la investigación en tolerancia al estrés de plantas extremófilas, incluyendo el descubrimiento de compuestos bioactivos con potencial biotecnológico."
 author: "Dr. León Bravo · UFRO"
-image: "/images/news/2019-salar-atacama.jpg"
+image: "/images/news/2019-salar-atacama.webp"
 ---
 
 El nodo UFRO de NEXER desarrolla investigación de frontera sobre los mecanismos moleculares y fisiológicos que permiten a las plantas de ambientes extremos sobrevivir condiciones que serían letales para la mayoría de las especies.

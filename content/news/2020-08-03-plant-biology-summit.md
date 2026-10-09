@@ -5,7 +5,7 @@ category: "investigación"
 zone: "centro"
 excerpt: "Investigadores del nodo UFRO presentaron resultados sobre plantas antárticas y especies del desierto en la cumbre mundial de biología vegetal, celebrada de forma virtual."
 author: "Dr. León Bravo · UFRO"
-image: "/images/news/2020-plant-biology-summit.jpg"
+image: "/images/news/2020-plant-biology-summit.webp"
 ---
 
 Investigadores afiliados a BIOREN-NEXER participaron activamente en el Plant Biology 2020 Worldwide Summit, conferencia virtual que reunió a los principales científicos del área entre el 27 y 31 de julio de 2020.

@@ -5,7 +5,7 @@ category: "investigación"
 zone: "sur"
 excerpt: "El Dr. Armando Sepúlveda-Jauregui lidera la investigación sobre acumulación de carbono en los ecosistemas subantárticos de la Patagonia, uno de los últimos grandes sumideros del planeta."
 author: "Dr. Armando Sepúlveda · UMAG"
-image: "/images/news/2020-patagonia-foto.jpg"
+image: "/images/news/2020-patagonia-foto.webp"
 ---
 
 El nodo UMAG de NEXER desarrolla investigación fundamental sobre la dinámica del carbono en los ecosistemas extremos de la Patagonia y la Antártida, regiones que juegan un papel crítico en el ciclo global del carbono.
