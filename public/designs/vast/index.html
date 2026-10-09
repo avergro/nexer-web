@@ -56,15 +56,23 @@
   .chapter h2{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(40px,7vw,96px);line-height:.95;letter-spacing:-.02em}
   .chapter .loc{margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;color:rgba(243,239,232,.55)}
 
-  /* ---- MAP SECTION ---- */
-  .map-sec{padding:140px 36px;background:var(--bg-2)}
-  .map-sec .head{max-width:1100px;margin:0 auto 64px}
+  /* ---- MAP SECTION (sticky scrollytelling: el scroll mueve el nodo) ---- */
+  .map-sec{position:relative;height:420vh;background:var(--bg-2)}
+  .map-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:40px 36px 70px;overflow:hidden}
+  .map-sec .head{max-width:1100px;margin:0 auto 32px}
   .map-sec .head .kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
   .map-sec .head h2{margin-top:20px;font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);letter-spacing:-.02em}
   .map-sec .head .sub{margin-top:14px;color:var(--muted);max-width:56ch}
 
   .map-layout{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(300px,440px) 1fr;gap:64px;align-items:center}
   @media(max-width:820px){.map-layout{grid-template-columns:1fr;gap:40px}}
+
+  .scroll-hint{position:absolute;left:36px;bottom:22px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:10px}
+  .scroll-hint .line{width:40px;height:1px;background:var(--faint);animation:hint 2.2s ease-in-out infinite}
+  @keyframes hint{0%,100%{opacity:.3}50%{opacity:1}}
+  .progress{position:absolute;right:36px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px}
+  .progress button{width:8px;height:8px;border-radius:50%;border:none;background:rgba(243,239,232,.22);cursor:pointer;transition:all .25s}
+  .progress button.on{background:var(--accent);height:24px;border-radius:99px}
 
   .chile{width:100%;max-width:440px;margin:0 auto;perspective:1400px}
   .map-entry{transform-style:preserve-3d;opacity:0;transform:rotateY(-85deg);transition:opacity 1s ease,transform 2.4s cubic-bezier(.12,.8,.18,1)}
@@ -149,6 +157,7 @@
 
 <!-- ===== MAP INTERACTIVO ===== -->
 <section class="map-sec" id="zonas">
+  <div class="map-sticky">
   <div class="head reveal">
     <div class="kicker">La Red</div>
     <h2>Cinco nodos, un país</h2>
@@ -179,6 +188,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="scroll-hint"><span class="line"></span>Desplázate para recorrer los nodos</div>
+  <div class="progress" id="progress"></div>
   </div>
 </section>
 
@@ -268,15 +280,6 @@ chileBox.addEventListener('mousemove', function(e){
   const ry = (e.clientY - rect.top) / rect.height - 0.5;    // -0.5..0.5
   tRotY = 56 * rx;    // rotateY: -28..28deg
   tRotX = -36 * ry;   // rotateX: -18..18deg
-  // Proximidad: usa el rect estable del contenedor (no el del svg inclinado)
-  const vx = (rx + 0.5) * 460;
-  const vy = (ry + 0.5) * 670;
-  let nearest = null, min = Infinity;
-  NODES.forEach(n => {
-    const d = Math.hypot(n.x - vx, n.y - vy);
-    if (d < min){ min = d; nearest = n; }
-  });
-  if (nearest && nearest.id !== selected) select(nearest);
 });
 chileBox.addEventListener('mouseleave', function(){ tRotX = 0; tRotY = 0; });
 
@@ -373,7 +376,7 @@ function buildNodes(){
     uni.textContent = n.uni;
 
     g.appendChild(halo); g.appendChild(ring); g.appendChild(pulse); g.appendChild(clink); g.appendChild(dot); g.appendChild(hit); g.appendChild(over); g.appendChild(city); g.appendChild(uni);
-    g.addEventListener('click', function(){ select(n); });
+    g.addEventListener('click', function(){ scrollToNode(NODES.indexOf(n)); });
     svg.appendChild(g);
     nodeEls[n.id] = { halo, ring, pulse, dot, clink, over, city, uni };
   });
@@ -426,13 +429,44 @@ function select(n){
   selected = n.id;
   applyState();
   renderCard(n);
+  updateProgress(NODES.findIndex(function(x){ return x.id === n.id; }));
 }
 
-// Proximidad: al mover el cursor por el mapa se selecciona el nodo más cercano
-// (ahora integrada en el mousemove del contenedor, con rect estable)
+/* ---- selección por scroll ---- */
+const progressEl = document.getElementById('progress');
+NODES.forEach(function(_, i){
+  const b = document.createElement('button');
+  b.addEventListener('click', function(){ scrollToNode(i); });
+  progressEl.appendChild(b);
+});
+function updateProgress(i){
+  document.querySelectorAll('.progress button').forEach(function(b,k){ b.classList.toggle('on', k === i); });
+}
+
+let suppressScroll = false;
+function scrollToNode(i){
+  select(NODES[i]);
+  const sec = document.getElementById('zonas');
+  const total = sec.offsetHeight - window.innerHeight;
+  const target = sec.offsetTop + ((i + 0.5) / NODES.length) * total;
+  suppressScroll = true;
+  window.scrollTo({ top: target, behavior: 'smooth' });
+  setTimeout(function(){ suppressScroll = false; }, 800);
+}
+
+function onScroll(){
+  if (suppressScroll) return;
+  const sec = document.getElementById('zonas');
+  const total = sec.offsetHeight - window.innerHeight;
+  const p = total > 0 ? Math.max(0, Math.min(1, -sec.getBoundingClientRect().top / total)) : 0;
+  const idx = Math.min(NODES.length - 1, Math.floor(p * NODES.length));
+  select(NODES[idx]);
+}
+window.addEventListener('scroll', onScroll, { passive: true });
 
 buildNodes();
 applyState();
+onScroll();
 
 // Entrada del mapa (rotación 3D al hacer scroll) — con red de seguridad
 const entryEl = document.querySelector('.map-entry');
