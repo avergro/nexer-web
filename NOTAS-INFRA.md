@@ -33,3 +33,21 @@
    - `www`: CNAME → `avergro.github.io`.
 2. **GitHub:** Settings → Pages → Custom domain → `nexer.cl`.
 3. **Código (después de 1 y 2):** quitar `NEXT_PUBLIC_BASE_PATH=/nexer-web` en `deploy.yml`; cambiar `preview_path` en `public/admin/config.yml` a `/es/noticias/{{slug}}`.
+
+## Auditoría de contenido vs nexer.cl (oct 2026)
+
+Estado de migración del contenido del WordPress anterior. **Decisión: NO migrar lo que falta** (por ahora).
+
+**Ya migrado:**
+- Noticias: 20 (incluidas 7 de 2020 bajadas de nexer.cl).
+- Investigadores: 67 + Comité Directivo (más que los 54 de nexer.cl).
+- Proyectos oficiales: 4.
+- Agenda: vacía en nexer.cl también.
+
+**Falta (se decidió no migrar):**
+- **Miembros por categoría** (~28): Postgrado/Pregrado (11), Técnicos (3), Colaboradores Nacionales (3), Colaboradores Internacionales (11). Nuestro `members.ts` define las categorías pero no tiene datos.
+- **Proyectos asociados**: nexer.cl tiene ~40 (2017–2020, por año/universidad: FONDECYT, INACH, FONTAGRO, ECOS/ANID…). Nosotros solo 2.
+- **Publicaciones**: ~70 vs "+90" que presume NEXER (no se pudo comparar del todo; servidor bloqueó).
+
+Si se retoma, las fuentes están en: investigadores-y-post-doc, estudiantes-de-doctorado-y-tecnicos, technicians, colaboradores-nacionales, colaboradores-internacionales y nexer-associated-research-projects-2 en nexer.cl.
+
