@@ -269,7 +269,7 @@ const NODES=[
  {id:'centro',short:'UFRO',city:'Temuco',uni:'Universidad de La Frontera',color:'#3d6b4f',x:74,y:349,url:'https://www.ufro.cl',tag:'Carbono, suelos y bosque templado',desc:'La sede coordinadora UFRO estudia la secuestración de carbono en suelos volcánicos.',env:'Bosque Valdiviano · Suelos Volcánicos'},
  {id:'sur',short:'UMAG',city:'Punta Arenas',uni:'Universidad de Magallanes',color:'#4a7fa5',x:97,y:630,url:'https://www.umag.cl',tag:'Dinámica del carbono en el fin del mundo',desc:'La Patagonia y sus ecosistemas subantárticos son uno de los últimos grandes sumideros de carbono.',env:'Patagonia · Subantártico'},
 ];
-const svg=document.getElementById('nodes'),NS='http://www.w3.org/2000/svg',card=document.getElementById('ucard');let sel=null,hover=null;
+const svg=document.getElementById('nodes'),NS='http://www.w3.org/2000/svg',card=document.getElementById('ucard');let sel=null;
 const chileSvg=document.getElementById('chileSvg'),chileOutline=document.getElementById('chileOutline');
 
 /* draw-in: Chile outline se traza al entrar en vista */
@@ -292,7 +292,7 @@ tiltWrap.addEventListener('mouseleave',()=>{tx=0;ty=0;});
 function renderMap(){
   svg.innerHTML='';
   NODES.forEach(n=>{
-    const active=(sel===n.id||hover===n.id);
+    const active=(sel===n.id);
     const g=document.createElementNS(NS,'g');g.setAttribute('class','node-dot'+(active?' sel':''));
     // halo (spotlight detrás del nodo activo)
     const halo=document.createElementNS(NS,'circle');halo.setAttribute('class','halo');halo.setAttribute('cx',n.x);halo.setAttribute('cy',n.y);halo.setAttribute('r',active?34:10);halo.setAttribute('fill',n.color);halo.setAttribute('opacity',active?.22:0);
@@ -310,12 +310,12 @@ function renderMap(){
     // hit area
     const hit=document.createElementNS(NS,'circle');hit.setAttribute('cx',n.x);hit.setAttribute('cy',n.y);hit.setAttribute('r',28);hit.setAttribute('fill','transparent');hit.style.cursor='pointer';
     g.appendChild(halo);g.appendChild(pulse);g.appendChild(ring);g.appendChild(cl);g.appendChild(dot);g.appendChild(lbl);g.appendChild(hit);
-    g.addEventListener('click',()=>{sel=n.id;hover=null;renderMap();showCard(n,true);});
+    g.addEventListener('click',()=>{sel=n.id;renderMap();showCard(n);});
     svg.appendChild(g);
   });
 }
 
-function showCard(n, locked){
+function showCard(n){
   if(!n){
     card.style.setProperty('--uc','#1c1917');
     card.classList.remove('preview');
@@ -323,23 +323,19 @@ function showCard(n, locked){
     return;
   }
   card.style.setProperty('--uc',n.color);
-  card.classList.toggle('preview',!locked);
-  const hint=locked?'':'<div class="uh card-el" style="color:var(--faint);animation-delay:0ms">↳ clic para fijar</div>';
+  card.classList.remove('preview');
   const items=[['uh','Nodo · '+n.short],['uc',n.city],['uu',n.uni],['ut',n.tag],['ud',n.desc],['ue',n.env]];
-  card.innerHTML=hint+items.map(([c,t],i)=>'<div class="'+c+' card-el" style="animation-delay:'+(i*55)+'ms">'+t+'</div>').join('')+'<a class="ul card-el" style="animation-delay:360ms" href="'+n.url+'" target="_blank" rel="noopener">Visitar '+n.short+' →</a>';
+  card.innerHTML=items.map(([c,t],i)=>'<div class="'+c+' card-el" style="animation-delay:'+(i*55)+'ms">'+t+'</div>').join('')+'<a class="ul card-el" style="animation-delay:360ms" href="'+n.url+'" target="_blank" rel="noopener">Visitar '+n.short+' →</a>';
 }
 
-/* hover por proximidad: desplegar el nodo más cercano al cursor */
+/* proximidad: al pasar el cursor, el nodo más cercano queda seleccionado y su cuadro abierto */
 function nearest(vx,vy){let best=null,md=1e9;NODES.forEach(n=>{const d=Math.hypot(n.x-vx,n.y-vy);if(d<md){md=d;best=n;}});return best;}
 chileSvg.addEventListener('mousemove',e=>{
   const r=chileSvg.getBoundingClientRect();
   const vx=(e.clientX-r.left)/r.width*460;
   const vy=(e.clientY-r.top)/r.height*670;
   const n=nearest(vx,vy);
-  if(n && hover!==n.id){hover=n.id;renderMap();showCard(n,false);}
-});
-chileSvg.addEventListener('mouseleave',()=>{
-  if(hover!==null){hover=null;renderMap();showCard(sel?NODES.find(x=>x.id===sel):null,!!sel);}
+  if(n && sel!==n.id){sel=n.id;renderMap();showCard(n);}
 });
 
 renderMap();
