@@ -238,7 +238,7 @@ const nodeEls = {};
 // --- Tilt 3D (spring con rebote, como la página actual) ---
 let rotX = 0, rotY = 0, tRotX = 0, tRotY = 0, velX = 0, velY = 0;
 (function tiltLoop(){
-  const k = 0.14, damp = 0.80;
+  const k = 0.20, damp = 0.72;
   velX += (tRotX - rotX) * k; velY += (tRotY - rotY) * k;
   velX *= damp; velY *= damp;
   rotX += velX; rotY += velY;
@@ -409,7 +409,6 @@ if (entryEl) {
   window.addEventListener('scroll', checkMap, {passive:true});
   window.addEventListener('resize', checkMap);
   checkMap();
-  setTimeout(revealMap, 3000);
 }
 
 const io = new IntersectionObserver(es => es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:0.12});
