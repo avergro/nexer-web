@@ -247,19 +247,16 @@ const card = document.getElementById('ucard');
 const ucGlare = document.getElementById('ucGlare');
 const ucBand = document.getElementById('ucBand');
 const ucInner = document.getElementById('ucInner');
-const mapSvg = document.querySelector('.chile svg');
 const chileBox = document.getElementById('chileMap');
 const tiltEl = document.querySelector('.map-tilt');
 let selected = null;
 const nodeEls = {};
 
-// --- Tilt 3D (spring con rebote, como la página actual) ---
-let rotX = 0, rotY = 0, tRotX = 0, tRotY = 0, velX = 0, velY = 0;
+// --- Tilt 3D (rápido y suave, sin oscilación) ---
+let rotX = 0, rotY = 0, tRotX = 0, tRotY = 0;
 (function tiltLoop(){
-  const k = 0.20, damp = 0.72;
-  velX += (tRotX - rotX) * k; velY += (tRotY - rotY) * k;
-  velX *= damp; velY *= damp;
-  rotX += velX; rotY += velY;
+  rotX += (tRotX - rotX) * 0.22;
+  rotY += (tRotY - rotY) * 0.22;
   if (tiltEl) tiltEl.style.transform = 'rotateX('+rotX.toFixed(3)+'deg) rotateY('+rotY.toFixed(3)+'deg)';
   requestAnimationFrame(tiltLoop);
 })();
@@ -271,6 +268,15 @@ chileBox.addEventListener('mousemove', function(e){
   const ry = (e.clientY - rect.top) / rect.height - 0.5;    // -0.5..0.5
   tRotY = 56 * rx;    // rotateY: -28..28deg
   tRotX = -36 * ry;   // rotateX: -18..18deg
+  // Proximidad: usa el rect estable del contenedor (no el del svg inclinado)
+  const vx = (rx + 0.5) * 460;
+  const vy = (ry + 0.5) * 670;
+  let nearest = null, min = Infinity;
+  NODES.forEach(n => {
+    const d = Math.hypot(n.x - vx, n.y - vy);
+    if (d < min){ min = d; nearest = n; }
+  });
+  if (nearest && nearest.id !== selected) select(nearest);
 });
 chileBox.addEventListener('mouseleave', function(){ tRotX = 0; tRotY = 0; });
 
@@ -423,18 +429,7 @@ function select(n){
 }
 
 // Proximidad: al mover el cursor por el mapa se selecciona el nodo más cercano
-mapSvg.addEventListener('mousemove', function(e){
-  const rect = mapSvg.getBoundingClientRect();
-  if (!rect.width || !rect.height) return;
-  const vx = (e.clientX - rect.left) / rect.width * 460;
-  const vy = (e.clientY - rect.top) / rect.height * 670;
-  let nearest = null, min = Infinity;
-  NODES.forEach(n => {
-    const d = Math.hypot(n.x - vx, n.y - vy);
-    if (d < min){ min = d; nearest = n; }
-  });
-  if (nearest && nearest.id !== selected) select(nearest);
-});
+// (ahora integrada en el mousemove del contenedor, con rect estable)
 
 buildNodes();
 applyState();
