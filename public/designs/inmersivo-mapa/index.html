@@ -312,7 +312,7 @@ function buildNodes(){
     const city=document.createElementNS(NS,'text');city.setAttribute('x',158);city.setAttribute('y',labelY+5);city.setAttribute('font-size',18);city.setAttribute('fill','#f3efe8');city.setAttribute('style','font-family:"Fraunces",serif');city.setAttribute('class','node-label');city.textContent=n.city;
     const uni=document.createElementNS(NS,'text');uni.setAttribute('x',158);uni.setAttribute('y',labelY+19);uni.setAttribute('font-size',10);uni.setAttribute('fill','#9c958b');uni.setAttribute('style','font-family:"Inter",sans-serif');uni.setAttribute('class','node-label');uni.textContent=n.uni;
     g.appendChild(halo);g.appendChild(ring);g.appendChild(pulse);g.appendChild(clink);g.appendChild(dot);g.appendChild(hit);g.appendChild(over);g.appendChild(city);g.appendChild(uni);
-    g.addEventListener('click',function(){goTo(NODES.indexOf(n))});
+    g.addEventListener('click',function(){goTo(NODES.indexOf(n), true)});
     svg.appendChild(g);
     nodeEls[n.id]={halo,ring,pulse,dot,clink,over,city,uni};
   });
@@ -349,14 +349,14 @@ function renderCard(n){
 
 /* ---- recorrido automático ---- */
 const dotsWrap=document.getElementById('dots');
-NODES.forEach((_,i)=>{const b=document.createElement('button');b.addEventListener('click',()=>goTo(i));dotsWrap.appendChild(b)});
+NODES.forEach((_,i)=>{const b=document.createElement('button');b.addEventListener('click',()=>goTo(i, true));dotsWrap.appendChild(b)});
 const fill=document.getElementById('fill');
 const count=document.getElementById('count');
 const playBtn=document.getElementById('playBtn');
 const playIcon=document.getElementById('playIcon');
 let cur=0,playing=true,DURATION=3600,start=performance.now(),remaining=DURATION;
 
-function goTo(i){
+function goTo(i, pause){
   cur=i;
   selected=NODES[i].id;
   applyState();
@@ -365,6 +365,7 @@ function goTo(i){
   document.querySelectorAll('.dots button').forEach((b,k)=>b.classList.toggle('on',k===i));
   count.textContent=(i+1)+' / '+NODES.length;
   start=performance.now();remaining=DURATION;
+  if(pause){ playing=false; playIcon.innerHTML='<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>'; }
 }
 function tick(now){
   if(playing){
