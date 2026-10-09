@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import {
   motion, AnimatePresence,
   useMotionValue, useSpring, useTransform,
@@ -28,31 +28,6 @@ function ChileSVG({
   onMouseMove: (e: React.MouseEvent<SVGSVGElement>) => void;
   lang: Lang;
 }) {
-  const chilePathRef = useRef<SVGPathElement>(null);
-
-  // Draw-in: el contorno de Chile se traza al entrar en vista
-  useEffect(() => {
-    const path = chilePathRef.current;
-    if (!path) return;
-    const len = path.getTotalLength();
-    path.style.strokeDasharray = `${len}`;
-    path.style.strokeDashoffset = `${len}`;
-    path.style.transition = "stroke-dashoffset 1.8s cubic-bezier(.4,0,.2,1)";
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            path.style.strokeDashoffset = "0";
-            obs.disconnect();
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-    obs.observe(path);
-    return () => obs.disconnect();
-  }, []);
-
   return (
     <svg
       viewBox="0 0 460 670"
@@ -62,7 +37,6 @@ function ChileSVG({
     >
       {/* Chile mainland silhouette */}
       <path
-        ref={chilePathRef}
         d={CHILE_PATH}
         fill="#e8e4dc"
         stroke="#1c1917"
@@ -311,14 +285,14 @@ export default function InteractiveMap({ dict, lang }: { dict: Dict; lang: Lang 
 
   // Proximidad: al mover el cursor por el mapa se selecciona el nodo más cercano
   function handleMapMouseMove(e: React.MouseEvent<SVGSVGElement>) {
-    const svg = e.currentTarget;
-    const ctm = svg.getScreenCTM();
-    if (!ctm) return;
-    const p = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm.inverse());
+    const rect = e.currentTarget.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return;
+    const vx = ((e.clientX - rect.left) / rect.width) * 460;
+    const vy = ((e.clientY - rect.top) / rect.height) * 670;
     let nearestId: string | null = null;
     let minDist = Infinity;
     ZONES.forEach((z) => {
-      const d = Math.hypot(z.mapX - p.x, z.mapY - p.y);
+      const d = Math.hypot(z.mapX - vx, z.mapY - vy);
       if (d < minDist) {
         minDist = d;
         nearestId = z.id;
