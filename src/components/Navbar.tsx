@@ -156,11 +156,8 @@ export default function Navbar({ dict, lang }: NavbarProps) {
             ))}
           </nav>
 
-          {/* Right: lang switcher + hamburger */}
+          {/* Right: hamburger (lang switcher vive en el Hero / Footer) */}
           <div className="flex items-center gap-4">
-            <div className="hidden md:block">
-              <LangSwitcher lang={lang} />
-            </div>
             <button
               className="md:hidden text-muted hover:text-foreground transition-colors"
               onClick={() => setMobileOpen(true)}
