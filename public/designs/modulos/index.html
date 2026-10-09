@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEXER — Red de Ambientes Extremos · Prototipo "Módulos de Color"</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#fceed4; --gold:#f2b561; --teal:#4ab291; --salmon:#f06161; --green:#48b468; --darkteal:#25576f;
+    --plum:#5c4d52; --plum-2:#5e4e53; --white:#ffffff; --ink:#3a3a3a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--white);color:var(--ink);font-family:"Open Sans",sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{text-decoration:none}
+
+  /* ---- nav ---- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;transition:background .3s,box-shadow .3s}
+  nav.scrolled{background:#ffffff;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+  nav .logo{font-weight:800;font-size:20px;letter-spacing:.02em;color:var(--plum)}
+  nav .links{display:flex;gap:28px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+  nav .links a{color:var(--plum);opacity:.8;transition:opacity .2s}
+  nav .links a:hover{opacity:1}
+  @media(max-width:720px){nav .links{display:none}}
+
+  /* ---- bandas de color a pantalla completa ---- */
+  .band{position:relative;overflow:hidden;background:var(--bc);padding:110px 0 120px}
+  .band .photo{position:absolute;top:0;bottom:0;right:0;width:58%;background-size:cover;background-position:center;background-repeat:no-repeat}
+  .band .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bc) 0%,rgba(0,0,0,0) 100%)}
+  .band .inner{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:0 40px}
+  .band .content{max-width:600px}
+  .band .label{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin-bottom:22px;color:var(--txt);opacity:.75}
+  .band h1{font-size:clamp(44px,7vw,72px);line-height:1.02;font-weight:800;letter-spacing:-.01em;color:var(--txt)}
+  .band .tagline{font-size:clamp(20px,2.6vw,30px);line-height:1.25;font-weight:700;margin-top:22px;color:var(--txt)}
+  .band .uni{font-size:15px;font-weight:600;margin-top:10px;color:var(--txt);opacity:.8}
+  .band .desc{margin-top:20px;font-size:15.5px;line-height:1.7;color:var(--txt);opacity:.85;max-width:52ch}
+  .band .btns{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;background:#ffffff;color:var(--plum);font-weight:800;font-size:15px;border-radius:5px;box-shadow:0 4px 0 rgba(0,0,0,.18);transition:transform .12s ease,box-shadow .12s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(0,0,0,.18)}
+  .btn .ar{font-size:18px;line-height:1}
+  .btn.ghost{background:transparent;color:var(--txt);box-shadow:inset 0 0 0 2px var(--txt);box-shadow:0 0 0 2px var(--txt) inset}
+  .btn.ghost:hover{transform:translateY(-2px)}
+  .band .coord{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--txt);opacity:.55;margin-top:34px;text-transform:uppercase}
+
+  /* hero */
+  .hero{padding:160px 0 150px}
+  .hero .photo{width:100%}
+  .hero .photo::after{background:linear-gradient(90deg,var(--bc) 0%,rgba(252,238,212,0.75) 45%,rgba(252,238,212,0) 100%)}
+  .hero h1{font-size:clamp(56px,9vw,104px)}
+
+  /* stats / mision */
+  .mission{background:var(--plum)}
+  .mission .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;margin-top:44px;max-width:560px}
+  .stat{padding:22px 24px 22px 0;border-top:2px solid rgba(255,255,255,.25)}
+  .stat .n{font-size:clamp(34px,4vw,48px);font-weight:800;color:#ffffff;line-height:1}
+  .stat .l{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:8px}
+
+  /* noticias */
+  .news{background:#ffffff;padding:100px 0 110px}
+  .news .inner{max-width:1120px;margin:0 auto;padding:0 40px}
+  .news h2{font-size:clamp(32px,5vw,48px);font-weight:800;color:var(--plum)}
+  .news .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px;margin-top:40px}
+  .ncard{border:1px solid #eee;border-radius:10px;overflow:hidden;color:inherit;display:block;background:#fff;transition:transform .2s ease,box-shadow .2s ease}
+  .ncard:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(0,0,0,.1)}
+  .ncard .im{height:160px;background-size:cover;background-position:center;background-color:var(--nc,#eee)}
+  .ncard .bd{padding:20px}
+  .ncard .meta{display:flex;justify-content:space-between;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:8px}
+  .ncard .t{font-weight:700;font-size:17px;line-height:1.35;color:var(--plum)}
+
+  footer{background:var(--plum);padding:60px 40px 50px}
+  footer .in{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+  footer .logo{font-weight:800;font-size:28px;color:#ffffff}
+  footer .meta{font-size:13px;color:rgba(255,255,255,.65);line-height:1.9}
+  footer .meta a{color:rgba(255,255,255,.65)}
+  footer .meta a:hover{color:#fff}
+  .logos{max-width:1120px;margin:40px auto 0;padding-top:34px;border-top:1px solid rgba(255,255,255,.15);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
+  .logos a{display:flex;align-items:center;filter:brightness(0) invert(1);opacity:.7}
+  .logos a:hover{opacity:1}
+  .logos img{height:var(--h);width:auto;display:block}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="logo" href="#top">NEXER</a>
+  <div class="links"><a href="#mision">Misión</a><a href="#nodos">Nodos</a><a href="#noticias">Noticias</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="band hero" style="--bc:var(--cream);--txt:var(--plum-2)" id="top">
+  <div class="photo" style="background-image:url('../../images/gallery/atacama-desierto.jpg')"></div>
+  <div class="inner">
+    <div class="content">
+      <div class="label reveal">Red de Investigación · Chile</div>
+      <h1 class="reveal">NEXER</h1>
+      <div class="tagline reveal">Red de Ambientes Extremos</div>
+      <p class="desc reveal">Comprendiendo los límites de la vida en un mundo cambiante. Investigamos ambientes poliextremos en cinco nodos a lo largo de Chile, del desierto más árido a la Antártica.</p>
+      <div class="btns reveal">
+        <a class="btn" href="#nodos">Explorar los nodos <span class="ar">→</span></a>
+        <a class="btn ghost" href="mailto:coordinacion.nexer@ufrontera.cl">Contacto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NODO NORTE -->
+<section class="band" style="--bc:var(--gold);--txt:var(--plum-2)" id="nodos">
+  <div class="photo" style="background-image:url('../../images/gallery/atacama-desierto.jpg')"></div>
+  <div class="inner">
+    <div class="content">
+      <div class="label reveal">Módulo Norte · UA</div>
+      <h1 class="reveal">Nodo<br>Norte</h1>
+      <div class="tagline reveal">Vida al límite del desierto más árido del mundo</div>
+      <div class="uni reveal">Universidad de Antofagasta — Antofagasta</div>
+      <p class="desc reveal">En el Desierto de Atacama, los organismos han desarrollado estrategias únicas para sobrevivir en condiciones de radiación extrema, escasez hídrica y salinidad. El nodo norte investiga estos mecanismos a nivel molecular y celular.</p>
+      <div class="btns reveal">
+        <a class="btn" href="https://www.uantof.cl" target="_blank" rel="noopener">Visitar UA <span class="ar">→</span></a>
+        <span class="coord">Desierto de Atacama · Poliextremo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NODO CENTRAL -->
+<section class="band" style="--bc:var(--teal);--txt:var(--white)">
+  <div class="photo" style="background-image:url('../../images/news/2020-alturas-andinas.jpg')"></div>
+  <div class="inner">
+    <div class="content">
+      <div class="label reveal">Módulo Central · USACH</div>
+      <h1 class="reveal">Nodo<br>Central</h1>
+      <div class="tagline reveal">Ciencia aplicada en el corazón de Chile</div>
+      <div class="uni reveal">Universidad de Santiago de Chile — Santiago</div>
+      <p class="desc reveal">La Universidad de Santiago aporta capacidades únicas en ecología urbana, química ambiental y biotecnología. El nodo USACH estudia la interfaz entre los ecosistemas andinos y el entorno metropolitano.</p>
+      <div class="btns reveal">
+        <a class="btn" href="https://www.usach.cl" target="_blank" rel="noopener">Visitar USACH <span class="ar">→</span></a>
+        <span class="coord">Cuencas Andinas · Interfaz Urbano-Natural</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NODO O'HIGGINS -->
+<section class="band" style="--bc:var(--salmon);--txt:var(--white)">
+  <div class="photo" style="background-image:url('../../images/news/2020-food-security.jpg')"></div>
+  <div class="inner">
+    <div class="content">
+      <div class="label reveal">Módulo O'Higgins · UOH</div>
+      <h1 class="reveal">Nodo<br>O'Higgins</h1>
+      <div class="tagline reveal">Ecosistemas mediterráneos en el umbral del cambio</div>
+      <div class="uni reveal">Universidad de O'Higgins — Rancagua</div>
+      <p class="desc reveal">El nodo UOH conecta la ciencia de ambientes extremos con la seguridad alimentaria: sequía, heladas tardías y olas de calor someten a los cultivos del país a un estrés ambiental sin precedentes.</p>
+      <div class="btns reveal">
+        <a class="btn" href="https://www.uoh.cl" target="_blank" rel="noopener">Visitar UOH <span class="ar">→</span></a>
+        <span class="coord">Agricultura Mediterránea · Estrés Hídrico</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NODO ARAUCANÍA -->
+<section class="band" style="--bc:var(--green);--txt:var(--white)">
+  <div class="photo" style="background-image:url('../../images/news/2020-plant-biology-summit.jpg')"></div>
+  <div class="inner">
+    <div class="content">
+      <div class="label reveal">Módulo Araucanía · UFRO</div>
+      <h1 class="reveal">Nodo<br>Araucanía</h1>
+      <div class="tagline reveal">Carbono, suelos y la memoria del bosque templado</div>
+      <div class="uni reveal">Universidad de La Frontera — Temuco</div>
+      <p class="desc reveal">Los suelos volcánicos del sur de Chile almacenan vastas reservas de carbono orgánico. La sede coordinadora UFRO estudia la secuestración de carbono en suelos extremos y la tolerancia al estrés en plantas.</p>
+      <div class="btns reveal">
+        <a class="btn" href="https://www.ufro.cl" target="_blank" rel="noopener">Visitar UFRO <span class="ar">→</span></a>
+        <span class="coord">Bosque Valdiviano · Suelos Volcánicos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NODO AUSTRAL -->
+<section class="band" style="--bc:var(--darkteal);--txt:var(--white)">
+  <div class="photo" style="background-image:url('../../images/news/2019-antartica-plantas.jpg')"></div>
+  <div class="inner">
+    <div class="content">
+      <div class="label reveal">Módulo Austral · UMAG</div>
+      <h1 class="reveal">Nodo<br>Austral</h1>
+      <div class="tagline reveal">Dinámica del carbono en el fin del mundo</div>
+      <div class="uni reveal">Universidad de Magallanes — Punta Arenas</div>
+      <p class="desc reveal">La Patagonia y sus ecosistemas subantárticos representan uno de los últimos grandes sumideros de carbono del planeta. El nodo austral estudia la dinámica del carbono en el Antropoceno.</p>
+      <div class="btns reveal">
+        <a class="btn" href="https://www.umag.cl" target="_blank" rel="noopener">Visitar UMAG <span class="ar">→</span></a>
+        <span class="coord">Patagonia · Ecosistemas Subantárticos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISION -->
+<section class="band mission" style="--bc:var(--plum);--txt:var(--white)" id="mision">
+  <div class="inner">
+    <div class="content" style="max-width:640px">
+      <div class="label reveal">Nuestra misión</div>
+      <h1 class="reveal" style="font-size:clamp(34px,5vw,52px)">Comprendiendo los límites de la vida en un mundo cambiante.</h1>
+      <p class="desc reveal">Red interinstitucional de investigación. Estudiamos los mecanismos de adaptación en ambientes poliextremos a lo largo de Chile, desde el nivel molecular hasta el paisaje, y su relación con las dinámicas de carbono en el Antropoceno.</p>
+      <div class="stats reveal">
+        <div class="stat"><div class="n" data-count="90" data-suffix="+">0</div><div class="l">Artículos publicados</div></div>
+        <div class="stat"><div class="n" data-count="31">0</div><div class="l">Tesis completadas</div></div>
+        <div class="stat"><div class="n" data-count="45" data-suffix="+">0</div><div class="l">Actividades</div></div>
+        <div class="stat"><div class="n" data-count="5">0</div><div class="l">Nodos</div></div>
+      </div>
+      <div class="btns reveal">
+        <a class="btn" href="mailto:coordinacion.nexer@ufrontera.cl">Únete a la red <span class="ar">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICIAS -->
+<section class="news" id="noticias">
+  <div class="inner">
+    <h2 class="reveal">Últimas noticias</h2>
+    <div class="grid">
+      <a class="ncard reveal" style="--nc:#f2b561" href="https://avergro.github.io/nexer-web/es/noticias/2026-05-02-incorporacion-universidad-ohiggins/"><div class="im" style="background-image:url('../../images/logos/uoh-horizontal-original-500.png');background-size:60%;background-repeat:no-repeat;background-position:center"></div><div class="bd"><div class="meta"><span>2026.05.02</span><span>O'Higgins</span></div><div class="t">La Universidad de O'Higgins se integra a la red NEXER</div></div></a>
+      <a class="ncard reveal" style="--nc:#4ab291" href="https://avergro.github.io/nexer-web/es/noticias/2023-06-08-nexer-avances-investigacion/"><div class="im" style="background-image:url('../../images/news/2023-unnamed.jpg')"></div><div class="bd"><div class="meta"><span>2023.06.08</span><span>General</span></div><div class="t">Red NEXER presentó avances en investigación</div></div></a>
+      <a class="ncard reveal" style="--nc:#25576f" href="https://avergro.github.io/nexer-web/es/noticias/2022-05-31-concurso-investigaciones/"><div class="im" style="background-image:url('../../images/news/2022-banner-nexer.jpg')"></div><div class="bd"><div class="meta"><span>2022.05.31</span><span>General</span></div><div class="t">Abierto Concurso de Investigaciones NEXER</div></div></a>
+      <a class="ncard reveal" style="--nc:#f06161" href="https://avergro.github.io/nexer-web/es/noticias/2021-01-19-gaia-antarctica-newsletter/"><div class="im" style="background-image:url('../../images/news/2021-gaia-antarctica.jpg')"></div><div class="bd"><div class="meta"><span>2021.01.19</span><span>Sur</span></div><div class="t">Centro GAIA Antártida lanza su Newsletter</div></div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="in">
+    <div class="logo">NEXER</div>
+    <div class="meta">RED DE AMBIENTES EXTREMOS<br/>coordinacion.nexer@ufrontera.cl · +56 45 259 68 56<br/>UA · UOH · USACH · UFRO · UMAG<br/><br/><a href="../">← Todos los diseños</a></div>
+  </div>
+  <div class="logos">
+    <a href="https://www.uantof.cl" target="_blank" rel="noopener"><img src="../../images/logos/ua-logo-new.png" style="--h:34px" alt="UA"/></a>
+    <a href="https://www.uoh.cl" target="_blank" rel="noopener"><img src="../../images/logos/uoh-horizontal-negro.svg" style="--h:24px" alt="UOH"/></a>
+    <a href="https://www.usach.cl" target="_blank" rel="noopener"><img src="../../images/logos/usach-logo-black.png" style="--h:30px" alt="USACH"/></a>
+    <a href="https://www.ufro.cl" target="_blank" rel="noopener"><img src="../../images/logos/ufro-logo-blanco.png" style="--h:30px" alt="UFRO"/></a>
+    <a href="https://www.umag.cl" target="_blank" rel="noopener"><img src="../../images/logos/mag-logo.png" style="--h:50px" alt="UMAG"/></a>
+  </div>
+</footer>
+
+<script>
+/* nav scroll */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* contadores */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const t=+el.dataset.count;const suf=el.dataset.suffix||'';const dur=1200;const t0=performance.now();function tick(t){const p=Math.min((t-t0)/dur,1);el.textContent=Math.round(t*p)+suf;if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);cio.unobserve(el);}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>
