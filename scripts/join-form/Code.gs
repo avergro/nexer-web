@@ -21,8 +21,15 @@
 var SHEET_ID = 'PEGA_AQUI_EL_ID_DE_TU_HOJA';
 
 var RECIPIENTS = [
-  'coordinacion.nexer@ufrontera.cl'
-  // Agrega aquí los emails de los 5 nodos del directorio.
+  'marcela.calabi@ufrontera.cl',
+  'alexander.vergara@uoh.cl',
+  'claudiaandrea.mansilla@umag.cl',
+  'gustavo.zuniga@usach.cl',
+  'jenny.blamey@usach.cl',
+  'leon.bravo@ufrontera.cl',
+  'mailing.rivera@uantof.cl',
+  'manuel.martinez@uoh.cl',
+  'pedro.zamorano@uantof.cl'
 ];
 
 function doPost(e) {
