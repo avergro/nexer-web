@@ -15,11 +15,11 @@ const INSTITUTION_LINKS = [
 ];
 
 const UNIVERSITY_LOGOS = [
-  { label: "UA",    href: "https://www.uantof.cl", logo: asset("/images/logos/ua-logo-new.png"),         h: 36, filter: "brightness(0)" },
+  { label: "UA",    href: "https://www.uantof.cl", logo: asset("/images/logos/ua-logo-new.webp"),         h: 36, filter: "brightness(0)" },
   { label: "UOH",  href: "https://www.uoh.cl",    logo: asset("/images/logos/uoh-horizontal-negro.svg"), h: 26, filter: "brightness(0)" },
-  { label: "USACH",href: "https://www.usach.cl",  logo: asset("/images/logos/usach-logo-black.png"),     h: 32, filter: "brightness(0)" },
-  { label: "UFRO", href: "https://www.ufro.cl",   logo: asset("/images/logos/ufro-logo-blanco.png"),     h: 32, filter: "brightness(0)" },
-  { label: "UMAG", href: "https://www.umag.cl",   logo: asset("/images/logos/mag-logo.png"),             h: 54, filter: "none" },
+  { label: "USACH",href: "https://www.usach.cl",  logo: asset("/images/logos/usach-logo-black.webp"),     h: 32, filter: "brightness(0)" },
+  { label: "UFRO", href: "https://www.ufro.cl",   logo: asset("/images/logos/ufro-logo-blanco.webp"),     h: 32, filter: "brightness(0)" },
+  { label: "UMAG", href: "https://www.umag.cl",   logo: asset("/images/logos/mag-logo.webp"),             h: 54, filter: "none" },
 ];
 
 export default function Footer({ dict, lang }: { dict: Dict; lang: Lang }) {

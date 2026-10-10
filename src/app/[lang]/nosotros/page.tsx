@@ -91,11 +91,11 @@ export default async function NosotrosPage({ params }: Props) {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
             {[
-              { src: asset("/images/logos/ua-logo.png"),                   alt: "Universidad de Antofagasta", href: "https://www.uantof.cl" },
+              { src: asset("/images/logos/ua-logo.webp"),                   alt: "Universidad de Antofagasta", href: "https://www.uantof.cl" },
               { src: asset("/images/logos/uoh-horizontal-original.svg"),   alt: "Universidad de O'Higgins",   href: "https://www.uoh.cl" },
-              { src: asset("/images/logos/ufro-logo.png"),                  alt: "Universidad de La Frontera", href: "https://www.ufro.cl" },
-              { src: asset("/images/logos/mag-logo.png"),                   alt: "Universidad de Magallanes",  href: "https://www.umag.cl" },
-              { src: asset("/images/logos/bioren-logo.png"),                alt: "BIOREN · UFRO",              href: "https://www.ufro.cl" },
+              { src: asset("/images/logos/ufro-logo.webp"),                  alt: "Universidad de La Frontera", href: "https://www.ufro.cl" },
+              { src: asset("/images/logos/mag-logo.webp"),                   alt: "Universidad de Magallanes",  href: "https://www.umag.cl" },
+              { src: asset("/images/logos/bioren-logo.webp"),                alt: "BIOREN · UFRO",              href: "https://www.ufro.cl" },
             ].map((inst) => (
               <a
                 key={inst.alt}
