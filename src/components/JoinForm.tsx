@@ -46,6 +46,8 @@ export default function JoinForm({ t, lang }: { t: JoinUsDict; lang: string }) {
           _template: "table",
           _captcha: "false",
           _honey: honey,
+          _cc: JOIN_CONFIG.cc.join(","),
+          _replyto: values.email,
           name: values.name,
           email: values.email,
           phone: values.phone,
