@@ -137,15 +137,6 @@
   </div>
 </section>
 
-<!-- MISSION -->
-<section class="mission" id="mision">
-  <div class="inner">
-    <div class="lbl">Nuestra misión</div>
-    <p>"Comprendiendo los límites de la vida en un mundo cambiante."</p>
-    <div class="inst"><span>UA</span><span>USACH</span><span>UOH</span><span>UFRO</span><span>UMAG</span></div>
-  </div>
-</section>
-
 <!-- ZONES / MAPA CON RECORRIDO AUTOMÁTICO -->
 <section class="zones" id="zonas">
   <div class="wrap">
@@ -182,6 +173,15 @@
       </div>
       <div class="ucard" id="card"></div>
     </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission" id="mision">
+  <div class="inner">
+    <div class="lbl">Nuestra misión</div>
+    <p>"Comprendiendo los límites de la vida en un mundo cambiante."</p>
+    <div class="inst"><span>UA</span><span>USACH</span><span>UOH</span><span>UFRO</span><span>UMAG</span></div>
   </div>
 </section>
 
@@ -313,7 +313,7 @@ const count=document.getElementById('count');
 const playBtn=document.getElementById('playBtn');
 const playIcon=document.getElementById('playIcon');
 
-let cur=0, playing=true, DURATION=3600, start=performance.now(), remaining=DURATION;
+let cur=0, playing=true, DURATION=1200, start=performance.now(), remaining=DURATION;
 
 function select(i){
   cur=i;
