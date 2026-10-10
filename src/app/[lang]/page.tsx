@@ -16,8 +16,8 @@ export default async function Page({ params }: Props) {
   return (
     <main className="flex-1">
       <Hero dict={dict} lang={lang} />
-      <MissionSection dict={dict} lang={lang} news={news} />
       <InteractiveMap dict={dict} lang={lang} />
+      <MissionSection dict={dict} lang={lang} news={news} />
       <Footer dict={dict} lang={lang} />
     </main>
   );
