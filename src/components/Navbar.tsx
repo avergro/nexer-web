@@ -142,7 +142,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={asset("/images/logos/nexer-logo.jpg")}
+              src={asset("/images/logos/nexer-logo.webp")}
               alt="Red NEXER"
               style={{ height: "32px", width: "auto", mixBlendMode: "multiply" }}
               draggable={false}
@@ -189,7 +189,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={asset("/images/logos/nexer-logo.jpg")}
+                  src={asset("/images/logos/nexer-logo.webp")}
                   alt="Red NEXER"
                   style={{ height: "30px", width: "auto", mixBlendMode: "multiply" }}
                   draggable={false}

@@ -5,7 +5,7 @@ category: "anuncio"
 zone: "ohiggins"
 excerpt: "La Universidad de O'Higgins (UOH) se une formalmente como cuarto nodo de la red, aportando expertise en ecosistemas mediterráneos semiáridos y humedales costeros de la región del Libertador."
 author: "Coordinación NEXER"
-image: "/images/logos/uoh-horizontal-original-500.png"
+image: "/images/logos/uoh-horizontal-original-500.webp"
 ---
 
 La red NEXER da la bienvenida a la **Universidad de O'Higgins** (UOH) como su cuarto nodo institucional. Con sede en Rancagua, la UOH aporta una perspectiva única sobre los ecosistemas mediterráneos semiáridos de Chile central, un tipo de ambiente extremo poco representado en la red hasta ahora.
