@@ -22,17 +22,16 @@
 export const JOIN_CONFIG = {
   // TEMPORAL (pruebas): los envíos van solo a Alexander. Restaurar a
   // marcela.calabi@ufrontera.cl / coordinación al publicar con nexer.cl.
-  to: "alexander.vergara@uoh.cl",
+  to: "vergara.alexander@gmail.com",
 
   // Copia ("CC") — vacío durante las pruebas para no molestar al directorio.
   cc: [],
 
   // Todo el directorio (para referencia y para la opción de Google Sheets).
-  recipients: ["alexander.vergara@uoh.cl"],
+  recipients: ["vergara.alexander@gmail.com"],
 
   // Endpoint de FormSubmit (AJAX) para el destinatario principal.
-  // Usa el "random-like string" de FormSubmit (oculta el email desnudo).
-  endpoint: "https://formsubmit.co/ajax/f5a072f8498495e7483af9710d56cb80",
+  endpoint: "https://formsubmit.co/ajax/vergara.alexander@gmail.com",
 
   subject: "Nueva solicitud de ingreso a NEXER",
 };
