@@ -40,14 +40,8 @@ export default function JoinForm({ t, lang }: { t: JoinUsDict; lang: string }) {
     try {
       const res = await fetch(JOIN_CONFIG.endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({
-          _subject: JOIN_CONFIG.subject,
-          _template: "table",
-          _captcha: "false",
-          _honey: honey,
-          _cc: JOIN_CONFIG.cc.join(","),
-          _replyto: values.email,
           name: values.name,
           email: values.email,
           phone: values.phone,

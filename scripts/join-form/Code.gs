@@ -18,18 +18,10 @@
  * Este script también acepta form-encoded normal (e.parameter).
  */
 
-var SHEET_ID = 'PEGA_AQUI_EL_ID_DE_TU_HOJA';
+var SHEET_ID = '1ld5wHGSAiF8_NT-nc40wiJIRPfVgaee_woRKb9YzF20';
 
 var RECIPIENTS = [
-  'marcela.calabi@ufrontera.cl',
-  'alexander.vergara@uoh.cl',
-  'claudiaandrea.mansilla@umag.cl',
-  'gustavo.zuniga@usach.cl',
-  'jenny.blamey@usach.cl',
-  'leon.bravo@ufrontera.cl',
-  'mailing.rivera@uantof.cl',
-  'manuel.martinez@uoh.cl',
-  'pedro.zamorano@uantof.cl'
+  'vergara.alexander@gmail.com'
 ];
 
 function doPost(e) {
