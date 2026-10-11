@@ -36,6 +36,13 @@ a lo largo de Chile. La web es su sitio público + CMS para noticias.
 
 ## Log de sesiones
 
+### 2026-10-11 — Formulario "Únete a NEXER" operativo
+- El formulario `Únete` ahora envía a un **Google Apps Script** (antes FormSubmit, abandonado por su pantalla de activación que daba error 500).
+- El script guarda cada solicitud en la Google Sheet "Solicitudes NEXER" (`SHEET_ID=1ld5wHGSAiF8_NT-nc40wiJIRPfVgaee_woRKb9YzF20`) y envía el correo a `RECIPIENTS` desde una **cuenta de Gmail dedicada** (no expone el Gmail personal).
+- **Para cambiar el email destino:** editar `RECIPIENTS` en el script (cuenta dedicada) y hacer *Deploy → Manage deployments → Edit → New version → Deploy*. La URL no cambia. Procedimiento completo en `scripts/join-form/README.md`.
+- Mensaje de éxito del formulario acortado a "Solicitud enviada." y se eliminó la caja "Categorías disponibles".
+- `src/lib/join.ts` solo exporta `endpoint` (la URL `/exec` del web app).
+
 ### 2026-10-09 — Sistema de memoria + mapa del prototipo "Extremo Inmersivo"
 - Se creó el sistema de memoria: `CLAUDE.md` (contexto estable, auto-cargado por Claude Code) + `MEMORY.md` (memoria de trabajo) + puntero en `AGENTS.md`.
 - Se portó la interactividad del mapa actual (`src/components/InteractiveMap.tsx`) al prototipo **Extremo Inmersivo** (`public/designs/vast/index.html`): hover por proximidad, halo, pulso, tilt 3D y entrada rotada (en JS/CSS vanilla, sin React).
