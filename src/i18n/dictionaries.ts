@@ -135,14 +135,11 @@ const es = {
     bioLabel: "Breve biografía",
     submitLabel: "Enviar solicitud",
     sendingLabel: "Enviando…",
-    successMessage:
-      "Solicitud enviada. El directorio revisará tu solicitud y te contactará.",
+    successMessage: "Solicitud enviada.",
     errorMessage:
       "No se pudo enviar. Revisa tu nombre y correo, o escribe a coordinación.",
     contactInfo:
       "Para más información: coordinacion.nexer@ufrontera.cl · +56 45 259 68 56",
-    categories:
-      "Categorías disponibles: Investigadores · Postgrado/Pregrado · Técnicos · Colaboradores Nacionales · Colaboradores Internacionales",
   },
 };
 
@@ -282,14 +279,11 @@ const en: typeof es = {
     bioLabel: "Brief biography",
     submitLabel: "Submit application",
     sendingLabel: "Sending…",
-    successMessage:
-      "Application sent. The board will review your application and contact you.",
+    successMessage: "Application sent.",
     errorMessage:
       "Could not send. Check your name and email, or write to coordination.",
     contactInfo:
       "For more information: coordinacion.nexer@ufrontera.cl · +56 45 259 68 56",
-    categories:
-      "Available categories: Researchers · Graduate/Undergraduate · Technicians · National Collaborators · International Collaborators",
   },
 };
 
