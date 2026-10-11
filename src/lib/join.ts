@@ -1,37 +1,16 @@
 // Configuración del formulario "Únete a NEXER".
 //
-// IMPORTANTE: GitHub Pages es un hosting estático (sin servidor ni base de datos
-// en tiempo de ejecución). Por eso el formulario envía a FormSubmit, un servicio
-// gratuito que reenvía el contenido por email al directorio.
+// GitHub Pages es un hosting estático (sin servidor ni base de datos). Por eso
+// el formulario envía a un endpoint de Google Apps Script (scripts/join-form/)
+// que guarda cada solicitud en una Google Sheet y envía el correo al directorio
+// desde una cuenta de Gmail propia. Sin terceros ni activación.
 //
-// FormSubmit envía el correo al destinatario principal (`to`) y una copia a cada
-// email de `cc`. Así llega a todo el directorio sin backend propio.
-//
-// Para tener además una "base de datos" que se vaya actualizando (Google Sheets),
-// ver scripts/join-form/ — es un endpoint de Google Apps Script que guarda cada
-// solicitud como fila y envía el correo a todos los destinatarios.
-
-// Directorio NEXER completo — restaurar al publicar con nexer.cl:
-//   to:      "marcela.calabi@ufrontera.cl"  (o "coordinacion.nexer@ufrontera.cl")
-//   cc:      ["alexander.vergara@uoh.cl", "claudiaandrea.mansilla@umag.cl",
-//             "gustavo.zuniga@usach.cl", "jenny.blamey@usach.cl",
-//             "leon.bravo@ufrontera.cl", "mailing.rivera@uantof.cl",
-//             "manuel.martinez@uoh.cl", "pedro.zamorano@uantof.cl"]
-//   endpoint: "https://formsubmit.co/ajax/marcela.calabi@ufrontera.cl"
+// Para volver a FormSubmit (solo email, sin base de datos), reemplaza `endpoint`
+// por "https://formsubmit.co/ajax/<email>" y restaura en JoinForm.tsx el body con
+// _subject/_cc/_replyto.
 
 export const JOIN_CONFIG = {
-  // TEMPORAL (pruebas): los envíos van solo a Alexander. Restaurar a
-  // marcela.calabi@ufrontera.cl / coordinación al publicar con nexer.cl.
-  to: "vergara.alexander@gmail.com",
-
-  // Copia ("CC") — vacío durante las pruebas para no molestar al directorio.
-  cc: [],
-
-  // Todo el directorio (para referencia y para la opción de Google Sheets).
-  recipients: ["vergara.alexander@gmail.com"],
-
-  // Endpoint de FormSubmit (AJAX) para el destinatario principal.
-  endpoint: "https://formsubmit.co/ajax/vergara.alexander@gmail.com",
-
-  subject: "Nueva solicitud de ingreso a NEXER",
+  // URL del web app de Google Apps Script (termina en /exec).
+  // Pégala aquí después de hacer el deploy del script.
+  endpoint: "https://script.google.com/macros/s/AKfycbwKgvEiklq9vXWPyYn15JrJ31yGJHomfStbye---slUDeVM2HBjO8FhVTvzXBG-HLp6/exec",
 };
