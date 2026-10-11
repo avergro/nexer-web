@@ -20,11 +20,6 @@ export default async function UnetePage({ params }: Props) {
           <p className="text-base text-muted leading-relaxed">{t.intro}</p>
         </div>
 
-        {/* Categories info */}
-        <div className="mb-10 p-5 bg-card border border-border rounded-lg">
-          <p className="text-xs text-muted leading-relaxed">{t.categories}</p>
-        </div>
-
         {/* Contact form */}
         <JoinForm t={t} lang={lang} />
 
