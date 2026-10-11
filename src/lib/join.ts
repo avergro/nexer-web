@@ -12,5 +12,5 @@
 export const JOIN_CONFIG = {
   // URL del web app de Google Apps Script (termina en /exec).
   // Pégala aquí después de hacer el deploy del script.
-  endpoint: "https://script.google.com/macros/s/AKfycbxd28_UpmKsU9UPMEe0XxXtAjYoDjV0Gn_iQiFVF5_iNp8OZ2MKZwTMUXNOaz37GNY/exec",
+  endpoint: "https://script.google.com/macros/s/AKfycbwrbY-Ez26UuDmDMh1hVArKgdnjyrAgMJRCn2wvfSAbPEUNIzGwe1spdTfALtE_4I9A0g/exec",
 };
