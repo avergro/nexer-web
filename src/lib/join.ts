@@ -31,7 +31,8 @@ export const JOIN_CONFIG = {
   recipients: ["alexander.vergara@uoh.cl"],
 
   // Endpoint de FormSubmit (AJAX) para el destinatario principal.
-  endpoint: "https://formsubmit.co/ajax/alexander.vergara@uoh.cl",
+  // Usa el "random-like string" de FormSubmit (oculta el email desnudo).
+  endpoint: "https://formsubmit.co/ajax/f5a072f8498495e7483af9710d56cb80",
 
   subject: "Nueva solicitud de ingreso a NEXER",
 };
