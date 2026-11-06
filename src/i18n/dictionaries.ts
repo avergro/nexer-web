@@ -275,7 +275,7 @@ const en: typeof es = {
   joinUs: {
     pageTitle: "Join NEXER",
     intro:
-      "Researchers, students and professionals from the network's five universities can join as members. People from other institutions can join as collaborators.",
+      "Researchers, students and technicians from the network's five universities can join as members. People from other institutions can join as collaborators.",
     nameLabel: "Full name",
     emailLabel: "Email",
     phoneLabel: "Phone",
@@ -288,7 +288,7 @@ const en: typeof es = {
     collabTypeLabel: "Collaboration type",
     collabTypeOptions: ["National collaborator", "International collaborator"],
     categoryLabel: "Category",
-    categoryOptions: ["Researcher", "Graduate/Undergraduate", "Professional"],
+    categoryOptions: ["Researcher", "Graduate/Undergraduate", "Technician"],
     areaLabel: "NEXER thematic area",
     areaPlaceholder: "Select an area…",
     orcidLabel: "ORCID iD",
