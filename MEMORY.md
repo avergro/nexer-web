@@ -22,6 +22,7 @@ a lo largo de Chile. La web es su sitio público + CMS para noticias.
 ## Estado actual (última sesión)
 
 **Últimos trabajos completados (commits recientes):**
+- `29b6d5c`…`bc2228b` (2026-11-06) — Comité Científico dentro de Acerca de, logos oficiales a color, formulario Únete ampliado (ORCID, género, área temática, colaboradores/as), footer ordenado de norte a sur. Detalle en el log.
 - `d1a63d3` — Auditoría de contenido vs nexer.cl → **decidido NO migrar** lo que falta (miembros por categoría, proyectos asociados ~40, publicaciones ~70).
 - `7204019` — Mapa arreglado: se quitaron APIs frágiles (`getScreenCTM` / `getTotalLength`) que rompían la página.
 - `43c6c05` — Se eliminó el switch de idioma duplicado (queda el de la esquina del Hero, en blanco).
@@ -31,6 +32,9 @@ a lo largo de Chile. La web es su sitio público + CMS para noticias.
 **Pendientes conocidos:**
 - Migrar dominio `nexer.cl` a GitHub Pages (pasos exactos en `NOTAS-INFRA.md`; titular del dominio es Francisco Javier Morales Muñoz, NO el usuario).
 - Migrar contenido faltante si se decide retomar (fuentes listadas en `NOTAS-INFRA.md`).
+- Formulario Únete: `RECIPIENTS` del Apps Script sigue siendo solo `vergara.alexander@gmail.com` (pruebas). Cambiar a coordinación cuando se decida.
+- Borrar las 2 filas de prueba ("PRUEBA Claude (borrar)", "PRUEBA 2…") de la hoja "Solicitudes NEXER".
+- Pedido sin resolver: "cambiar la red de colores para que se parezca a la versión previa al skill martin-rosvall". Probablemente se refiere a la figura de red del informe NEXER 2030 (`../../INFORME_NEXER/`, la versión `_rosvall` dejó la red en gris), no a la web. Falta confirmar con el usuario.
 
 ---
 
@@ -43,6 +47,9 @@ a lo largo de Chile. La web es su sitio público + CMS para noticias.
 - Logos de "Acerca de": ahora son los **oficiales a color** de las 5 universidades, ordenados de norte a sur (UA, USACH, UOH, UFRO, UMAG). Se quitó BIOREN. Datos en `src/lib/network.ts`. Logos: `public/images/logos/{ua,ufro,umag}-original.webp`, `usach-escudo.svg`, `uoh-horizontal-original.svg`.
 - Formulario Únete: dropdown con las 5 universidades + "Otra institución (colaborador/a)". Los miembros de la red eligen categoría y **área temática** (las 5 áreas del informe NEXER 2030). Los colaboradores indican su institución y si son nacionales o internacionales. **ORCID obligatorio** (se valida el dígito verificador), **género** (Femenino / Masculino / Prefiero no declarar) y "Proyectos de investigación" opcional.
 - `scripts/join-form/Code.gs` actualizado: agrega 6 columnas **al final** de la hoja. Ya redesplegado (06-nov) y probado: los campos nuevos llegan a la hoja y al correo. ⚠️ Ojo: en *Manage deployments* hay 2 implementaciones activas. La que usa la web es **"Untitled"** (URL terminada en `...4I9A0g/exec`). "nexer Form" no se usa. Al redesplegar, editar siempre "Untitled" → New version.
+- Footer (logos grises + links de texto): orden **UA → USACH → UOH → UFRO → UMAG** (norte a sur), igual que en Acerca de.
+- Formulario Únete: en **español** la categoría es **"Profesional"** (antes "Técnico(a)"); en **inglés se mantiene "Technician"** (el usuario lo pidió así). El filtro "Técnicos" de la página Miembros no se tocó.
+- GitHub Pages a veces deja el deploy en `deployment_queued` hasta que se agota el tiempo ("Deployment failed, try again later"), aunque el build esté bien. Se arregla con `gh run rerun <id>` tras esperar unos ~10 min. El sitio se verifica con el header `last-modified`.
 
 ### 2026-10-11 — Formulario "Únete a NEXER" operativo
 - El formulario `Únete` ahora envía a un **Google Apps Script** (antes FormSubmit, abandonado por su pantalla de activación que daba error 500).
