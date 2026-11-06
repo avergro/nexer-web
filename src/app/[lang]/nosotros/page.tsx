@@ -1,6 +1,6 @@
-import { asset } from "@/lib/assets";
 import { getDictionary, type Lang } from "@/i18n/dictionaries";
 import { MEMBERS } from "@/lib/members";
+import { UNIVERSITIES } from "@/lib/network";
 import Footer from "@/components/Footer";
 import NexerAims from "@/components/NexerAims";
 import AnimatedCard from "@/components/AnimatedCard";
@@ -13,7 +13,7 @@ export default async function NosotrosPage({ params }: Props) {
   const dict = getDictionary(lang);
   const t = dict.about;
 
-  const boardMembers = MEMBERS.filter((m) => m.category === "board");
+  const committee = MEMBERS.filter((m) => m.category === "committee");
 
   const aims = [
     { title: t.aim1Title, text: t.aim1 },
@@ -68,13 +68,24 @@ export default async function NosotrosPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Board */}
-        <section className="mb-20">
-          <h2 className="font-serif text-2xl text-foreground mb-8">{t.boardTitle}</h2>
+        {/* Comité Científico */}
+        <section id="comite-cientifico" className="mb-20 scroll-mt-20">
+          <h2 className="font-serif text-2xl text-foreground mb-8">{t.committeeTitle}</h2>
           <div className="grid sm:grid-cols-2 gap-6 p-2 -m-2">
-            {boardMembers.map((member) => (
+            {committee.map((member) => (
               <AnimatedCard key={member.id} className="p-6 border border-border rounded-lg bg-card">
-                <p className="font-medium text-foreground">{member.name}</p>
+                {member.scholarUrl ? (
+                  <a
+                    href={member.scholarUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-foreground hover:opacity-60 transition-opacity"
+                  >
+                    {member.name}
+                  </a>
+                ) : (
+                  <p className="font-medium text-foreground">{member.name}</p>
+                )}
                 {member.role && (
                   <p className="text-sm text-muted mt-1">{member.role}</p>
                 )}
@@ -84,29 +95,27 @@ export default async function NosotrosPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Member institutions */}
+        {/* Universidades de la red (logos oficiales a color) */}
         <section className="mb-20">
-          <h2 className="font-serif text-2xl text-foreground mb-10">
-            {lang === "en" ? "Member Institutions" : "Instituciones Miembro"}
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
-            {[
-              { src: asset("/images/logos/ua-logo.webp"),                   alt: "Universidad de Antofagasta", href: "https://www.uantof.cl" },
-              { src: asset("/images/logos/uoh-horizontal-original.svg"),   alt: "Universidad de O'Higgins",   href: "https://www.uoh.cl" },
-              { src: asset("/images/logos/ufro-logo.webp"),                  alt: "Universidad de La Frontera", href: "https://www.ufro.cl" },
-              { src: asset("/images/logos/mag-logo.webp"),                   alt: "Universidad de Magallanes",  href: "https://www.umag.cl" },
-              { src: asset("/images/logos/bioren-logo.webp"),                alt: "BIOREN · UFRO",              href: "https://www.ufro.cl" },
-            ].map((inst) => (
+          <h2 className="font-serif text-2xl text-foreground mb-10">{t.institutionsTitle}</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {UNIVERSITIES.map((u) => (
               <a
-                key={inst.alt}
-                href={inst.href}
+                key={u.id}
+                href={u.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center p-4 rounded-lg border border-border hover:border-foreground/20 transition-all duration-300 grayscale hover:grayscale-0"
-                title={inst.alt}
+                title={u.name}
+                className="flex items-center justify-center h-28 p-4 rounded-lg border border-border bg-white hover:border-foreground/20 transition-colors duration-300"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={inst.src} alt={inst.alt} className="max-h-14 w-auto object-contain" />
+                <img
+                  src={u.logo}
+                  alt={u.name}
+                  style={{ height: `${u.h}px` }}
+                  className="w-auto max-w-full object-contain"
+                  draggable={false}
+                />
               </a>
             ))}
           </div>

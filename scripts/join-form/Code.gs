@@ -41,10 +41,12 @@ function doPost(e) {
   var sheet = SpreadsheetApp.openById(SHEET_ID);
   var sh = sheet.getSheetByName('Solicitudes') || sheet.getSheets()[0];
 
-  if (!sh.getLastRow()) {
-    sh.appendRow(['Fecha', 'Nombre', 'Email', 'Teléfono', 'Categoría',
-      'Línea de investigación', 'Palabras clave', 'Biografía', 'Idioma']);
-  }
+  // Las columnas nuevas van AL FINAL para no desalinear las filas antiguas.
+  var HEADERS = ['Fecha', 'Nombre', 'Email', 'Teléfono', 'Categoría',
+    'Línea de investigación', 'Palabras clave', 'Biografía', 'Idioma',
+    'Tipo de membresía', 'Universidad / Institución', 'Área temática',
+    'ORCID', 'Género', 'Proyectos de investigación'];
+  sh.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
 
   sh.appendRow([
     new Date(),
@@ -55,8 +57,16 @@ function doPost(e) {
     p.researchLine || '',
     p.keywords || '',
     p.bio || '',
-    p.lang || ''
+    p.lang || '',
+    p.membership || '',
+    p.institution || '',
+    p.area || '',
+    p.orcid || '',
+    p.gender || '',
+    p.projects || ''
   ]);
+
+  var orcidUrl = p.orcid ? 'https://orcid.org/' + p.orcid : '';
 
   var body = [
     'Nueva solicitud de ingreso a NEXER',
@@ -64,9 +74,15 @@ function doPost(e) {
     'Nombre: ' + (p.name || ''),
     'Email: ' + (p.email || ''),
     'Teléfono: ' + (p.phone || ''),
+    'Tipo de membresía: ' + (p.membership || ''),
+    'Universidad / Institución: ' + (p.institution || ''),
     'Categoría: ' + (p.category || ''),
+    'Área temática: ' + (p.area || '—'),
+    'ORCID: ' + orcidUrl,
+    'Género: ' + (p.gender || ''),
     'Línea de investigación: ' + (p.researchLine || ''),
     'Palabras clave: ' + (p.keywords || ''),
+    'Proyectos de investigación: ' + (p.projects || ''),
     'Biografía: ' + (p.bio || '')
   ].join('\n');
 

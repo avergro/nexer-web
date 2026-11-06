@@ -3,8 +3,8 @@ export interface Member {
   name: string;
   institution: string;
   zone: "norte" | "usach" | "ohiggins" | "centro" | "sur";
-  category: "researcher" | "postgrad" | "technician" | "national_collab" | "intl_collab" | "board";
-  role?: string; // used for board members only
+  category: "researcher" | "postgrad" | "technician" | "national_collab" | "intl_collab" | "committee";
+  role?: string; // solo para miembros del Comité Científico
   scholarUrl?: string;
   expertise?: string;
   bio?: string;
@@ -13,16 +13,16 @@ export interface Member {
 const S = (id: string) => `https://scholar.google.com/citations?user=${id}`;
 
 export const MEMBERS: Member[] = [
-  // Comité Directivo 2026
-  { id: "board-marcela-calabi",  name: "Dra. Marcela Calabi-Floody", institution: "Universidad de La Frontera",       zone: "centro",   category: "board", role: "Coordinadora General",   scholarUrl: S("CmmbHmMAAAAJ") },
-  { id: "board-leon-bravo",      name: "Dr. León A. Bravo",          institution: "Universidad de La Frontera",       zone: "centro",   category: "board", scholarUrl: S("_ERGBOEAAAAJ") },
-  { id: "board-jenny-blamey",    name: "Dra. Jenny Blamey",          institution: "Universidad de Santiago de Chile", zone: "usach",    category: "board", scholarUrl: S("bXcdEp4AAAAJ") },
-  { id: "board-gustavo-zuniga",  name: "Dr. Gustavo Zúñiga",         institution: "Universidad de Santiago de Chile", zone: "usach",    category: "board", scholarUrl: S("cLH8_BEAAAAJ") },
-  { id: "board-pedro-zamorano",  name: "Dr. Pedro Zamorano",         institution: "Universidad de Antofagasta",       zone: "norte",    category: "board", scholarUrl: S("3fpYxmgAAAAJ") },
-  { id: "board-mailing-rivera",  name: "Dra. Mailing Rivera",        institution: "Universidad de Antofagasta",       zone: "norte",    category: "board", scholarUrl: S("6jEQMNgAAAAJ") },
-  { id: "board-alexander",       name: "Dr. Alexander Vergara",      institution: "Universidad de O'Higgins",         zone: "ohiggins", category: "board", scholarUrl: S("AQKvOdQAAAAJ") },
-  { id: "board-manuel-martinez", name: "Dr. Manuel Martínez",        institution: "Universidad de O'Higgins",         zone: "ohiggins", category: "board", scholarUrl: S("LMTdtVYAAAAJ") },
-  { id: "board-claudia-mansilla",name: "Dra. Claudia Mansilla",      institution: "Universidad de Magallanes",        zone: "sur",      category: "board", scholarUrl: S("8jkdO00AAAAJ") },
+  // Comité Científico 2026 (informe NEXER 2030, oct 2026)
+  { id: "committee-marcela-calabi",  name: "Dra. Marcela Calabi-Floody", institution: "Universidad de La Frontera",       zone: "centro",   category: "committee", role: "Coordinadora General",   scholarUrl: S("CmmbHmMAAAAJ") },
+  { id: "committee-leon-bravo",      name: "Dr. León A. Bravo",          institution: "Universidad de La Frontera",       zone: "centro",   category: "committee", scholarUrl: S("_ERGBOEAAAAJ") },
+  { id: "committee-jenny-blamey",    name: "Dra. Jenny Blamey",          institution: "Universidad de Santiago de Chile", zone: "usach",    category: "committee", scholarUrl: S("bXcdEp4AAAAJ") },
+  { id: "committee-gustavo-zuniga",  name: "Dr. Gustavo Zúñiga",         institution: "Universidad de Santiago de Chile", zone: "usach",    category: "committee", scholarUrl: S("cLH8_BEAAAAJ") },
+  { id: "committee-pedro-zamorano",  name: "Dr. Pedro Zamorano",         institution: "Universidad de Antofagasta",       zone: "norte",    category: "committee", scholarUrl: S("3fpYxmgAAAAJ") },
+  { id: "committee-mailing-rivera",  name: "Dra. Mailing Rivera",        institution: "Universidad de Antofagasta",       zone: "norte",    category: "committee", scholarUrl: S("6jEQMNgAAAAJ") },
+  { id: "committee-alexander",       name: "Dr. Alexander Vergara",      institution: "Universidad de O'Higgins",         zone: "ohiggins", category: "committee", scholarUrl: S("AQKvOdQAAAAJ") },
+  { id: "committee-manuel-martinez", name: "Dr. Manuel Martínez",        institution: "Universidad de O'Higgins",         zone: "ohiggins", category: "committee", scholarUrl: S("LMTdtVYAAAAJ") },
+  { id: "committee-claudia-mansilla",name: "Dra. Claudia Mansilla",      institution: "Universidad de Magallanes",        zone: "sur",      category: "committee", scholarUrl: S("8jkdO00AAAAJ") },
 
   // Universidad de Antofagasta — norte
   {

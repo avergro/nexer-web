@@ -36,9 +36,17 @@ a lo largo de Chile. La web es su sitio público + CMS para noticias.
 
 ## Log de sesiones
 
+### 2026-11-06 — Comité Científico, logos oficiales y nuevo formulario Únete
+- "Comité Directivo" pasa a ser **Comité Científico** (los mismos 9 nombres del informe NEXER 2030). Ahora vive **dentro de** `/nosotros` (ancla `#comite-cientifico`). Se eliminó la página `/nosotros/comite` y su link del menú. En `members.ts` la categoría `board` pasó a llamarse `committee`.
+- Menú "Acerca de" en este orden: Acerca de NEXER → Misión y Objetivos → Miembros → Únete.
+- "Colaboradores" → "Colaboradores(as)".
+- Logos de "Acerca de": ahora son los **oficiales a color** de las 5 universidades, ordenados de norte a sur (UA, USACH, UOH, UFRO, UMAG). Se quitó BIOREN. Datos en `src/lib/network.ts`. Logos: `public/images/logos/{ua,ufro,umag}-original.webp`, `usach-escudo.svg`, `uoh-horizontal-original.svg`.
+- Formulario Únete: dropdown con las 5 universidades + "Otra institución (colaborador/a)". Los miembros de la red eligen categoría y **área temática** (las 5 áreas del informe NEXER 2030). Los colaboradores indican su institución y si son nacionales o internacionales. **ORCID obligatorio** (se valida el dígito verificador), **género** (Femenino / Masculino / Prefiero no declarar) y "Proyectos de investigación" opcional.
+- `scripts/join-form/Code.gs` actualizado: agrega 6 columnas **al final** de la hoja. Ya redesplegado (06-nov) y probado: los campos nuevos llegan a la hoja y al correo. ⚠️ Ojo: en *Manage deployments* hay 2 implementaciones activas. La que usa la web es **"Untitled"** (URL terminada en `...4I9A0g/exec`). "nexer Form" no se usa. Al redesplegar, editar siempre "Untitled" → New version.
+
 ### 2026-10-11 — Formulario "Únete a NEXER" operativo
 - El formulario `Únete` ahora envía a un **Google Apps Script** (antes FormSubmit, abandonado por su pantalla de activación que daba error 500).
-- El script guarda cada solicitud en la Google Sheet "Solicitudes NEXER" (`SHEET_ID=1ld5wHGSAiF8_NT-nc40wiJIRPfVgaee_woRKb9YzF20`) y envía el correo a `RECIPIENTS` desde una **cuenta de Gmail dedicada** (no expone el Gmail personal).
+- El script guarda cada solicitud en la Google Sheet "Solicitudes NEXER" (`SHEET_ID=1ld5wHGSAiF8_NT-nc40wiJIRPfVgaee_woRKb9YzF20`) y envía el correo a `RECIPIENTS` desde una **cuenta de Gmail dedicada** (no expone el Gmail personal): **`solicitudes.nexer@gmail.com`** (dueña del Apps Script; hay que entrar con ella para editar o redesplegar).
 - **Para cambiar el email destino:** editar `RECIPIENTS` en el script (cuenta dedicada) y hacer *Deploy → Manage deployments → Edit → New version → Deploy*. La URL no cambia. Procedimiento completo en `scripts/join-form/README.md`.
 - Mensaje de éxito del formulario acortado a "Solicitud enviada." y se eliminó la caja "Categorías disponibles".
 - `src/lib/join.ts` solo exporta `endpoint` (la URL `/exec` del web app).
