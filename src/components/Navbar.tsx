@@ -102,17 +102,19 @@ export default function Navbar({ dict, lang }: NavbarProps) {
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileResearchOpen, setMobileResearchOpen] = useState(false);
 
+  // Submenú "Acerca de". El Comité Científico vive dentro de /nosotros.
+  const aboutItems: DropdownItem[] = [
+    { label: t.aboutNexer, href: `/${lang}/nosotros` },
+    { label: t.mision, href: `/${lang}/nosotros/mision` },
+    { label: t.members, href: `/${lang}/nosotros/miembros` },
+    { label: t.joinUs, href: `/${lang}/nosotros/unete` },
+  ];
+
   const navItems: NavItem[] = [
     { label: t.home, href: `/${lang}` },
     {
       label: t.about,
-      dropdown: [
-        { label: t.aboutNexer, href: `/${lang}/nosotros` },
-        { label: t.board, href: `/${lang}/nosotros/comite` },
-        { label: t.members, href: `/${lang}/nosotros/miembros` },
-        { label: t.mision, href: `/${lang}/nosotros/mision` },
-        { label: t.joinUs, href: `/${lang}/nosotros/unete` },
-      ],
+      dropdown: aboutItems,
     },
     {
       label: t.research,
@@ -235,13 +237,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden pl-4 pb-2 flex flex-col gap-1"
                     >
-                      {[
-                        { label: t.aboutNexer, href: `/${lang}/nosotros` },
-                        { label: t.board, href: `/${lang}/nosotros/comite` },
-                        { label: t.members, href: `/${lang}/nosotros/miembros` },
-                        { label: t.mision, href: `/${lang}/nosotros/mision` },
-                        { label: t.joinUs, href: `/${lang}/nosotros/unete` },
-                      ].map((item) => (
+                      {aboutItems.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}

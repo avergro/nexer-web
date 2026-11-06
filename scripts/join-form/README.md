@@ -11,8 +11,10 @@ dedicada, para no exponer el Gmail personal de nadie).
 
 ## Estado actual (2026-10)
 
-- **Cuenta que ejecuta el script:** una cuenta de Gmail dedicada (preguntar a
-  Alexander cuál es; NO es su Gmail personal).
+- **Cuenta que ejecuta el script:** `solicitudes.nexer@gmail.com` (cuenta de
+  Gmail dedicada, dueña del Apps Script y remitente de los correos; NO es el
+  Gmail personal de Alexander). Para editar/redesplegar el script hay que entrar
+  a script.google.com con esta cuenta.
 - **Google Sheet:** "Solicitudes NEXER" (compartida como *Editor* con la cuenta
   dedicada).
 - **SHEET_ID:** `1ld5wHGSAiF8_NT-nc40wiJIRPfVgaee_woRKb9YzF20`

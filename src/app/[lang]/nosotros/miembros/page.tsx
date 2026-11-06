@@ -13,7 +13,7 @@ export default async function MiembrosPage({ params }: Props) {
   const dict = getDictionary(lang);
   const t = dict.members;
 
-  const members = MEMBERS.filter((m) => m.category !== "board");
+  const members = MEMBERS.filter((m) => m.category !== "committee");
   const allLabel = lang === "en" ? "All" : "Todos";
 
   return (
