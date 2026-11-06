@@ -118,7 +118,7 @@ const es = {
   joinUs: {
     pageTitle: "Únete a NEXER",
     intro:
-      "Investigadores(as), estudiantes y técnicos(as) de las cinco universidades de la red pueden incorporarse como miembros. Quienes pertenecen a otra institución pueden sumarse como colaboradores(as).",
+      "Investigadores(as), estudiantes y profesionales de las cinco universidades de la red pueden incorporarse como miembros. Quienes pertenecen a otra institución pueden sumarse como colaboradores(as).",
     nameLabel: "Nombre completo",
     emailLabel: "Email",
     phoneLabel: "Teléfono",
@@ -131,7 +131,7 @@ const es = {
     collabTypeLabel: "Tipo de colaboración",
     collabTypeOptions: ["Colaborador(a) nacional", "Colaborador(a) internacional"],
     categoryLabel: "Categoría",
-    categoryOptions: ["Investigador(a)", "Postgrado/Pregrado", "Técnico(a)"],
+    categoryOptions: ["Investigador(a)", "Postgrado/Pregrado", "Profesional"],
     areaLabel: "Área temática NEXER",
     areaPlaceholder: "Selecciona un área…",
     orcidLabel: "ORCID iD",
@@ -275,7 +275,7 @@ const en: typeof es = {
   joinUs: {
     pageTitle: "Join NEXER",
     intro:
-      "Researchers, students and technicians from the network's five universities can join as members. People from other institutions can join as collaborators.",
+      "Researchers, students and professionals from the network's five universities can join as members. People from other institutions can join as collaborators.",
     nameLabel: "Full name",
     emailLabel: "Email",
     phoneLabel: "Phone",
@@ -288,7 +288,7 @@ const en: typeof es = {
     collabTypeLabel: "Collaboration type",
     collabTypeOptions: ["National collaborator", "International collaborator"],
     categoryLabel: "Category",
-    categoryOptions: ["Researcher", "Graduate/Undergraduate", "Technician"],
+    categoryOptions: ["Researcher", "Graduate/Undergraduate", "Professional"],
     areaLabel: "NEXER thematic area",
     areaPlaceholder: "Select an area…",
     orcidLabel: "ORCID iD",
